@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import TYPE_CHECKING, List, Dict, Union, Optional
+from typing import TYPE_CHECKING, List, Union, Optional
 from sqlmodel import Column, DateTime, Field, Relationship, SQLModel, func, String
 from sqlalchemy.dialects.postgresql import JSONB
 
