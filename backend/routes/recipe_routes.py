@@ -32,7 +32,7 @@ def create_new_recipe(
 def get_recipe_by_id(recipeId: int, db: Session=Depends(get_session)):
     recipe = db.get(Recipe, recipeId)
     if not recipe:
-        raise HTTPException(status_code=404, detail="Recipe not found")
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Recipe not found")
     return recipe
 
 
@@ -40,7 +40,7 @@ def get_recipe_by_id(recipeId: int, db: Session=Depends(get_session)):
 def get_recipes_by_user(userId: int, db: Session=Depends(get_session)):
     user  = db.get(User, userId)
     if not user:
-        raise HTTPException(status_code=404, detail="User not found")
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
     query = select(Recipe).where(Recipe.author_id == userId)
     recipes = db.exec(query).all()
     return recipes
