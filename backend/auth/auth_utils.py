@@ -42,7 +42,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme), db: Session = De
     from db.models.user_model import User
     
     payload = verify_token(token)
-    user_id: int = payload.get("sub")
+    user_id = payload.get("sub")
     if user_id is None:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
@@ -50,7 +50,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme), db: Session = De
             headers={"WWW-Authenticate": "Bearer"},
         )
     
-    user = db.get(User, user_id)
+    user = db.get(User, int(user_id))
     if user is None:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
