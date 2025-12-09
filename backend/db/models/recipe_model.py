@@ -5,7 +5,8 @@ from sqlalchemy.dialects.postgresql import JSONB
 
 
 if TYPE_CHECKING:
-    from .user_model import User  
+    from .user_model import User
+    from .comment_model import Comment  
     
 class RecipeBlock(SQLModel):
     type: str
@@ -36,6 +37,4 @@ class Recipe(RecipeBase, table=True):
     created_at: datetime = Field(sa_column=Column(DateTime(timezone=True),nullable=False,server_default=func.now()))
     
     author: "User" = Relationship(back_populates="recipes")
-    
-    
-    
+    comments: List["Comment"] = Relationship(back_populates="recipe")

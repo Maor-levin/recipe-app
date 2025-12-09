@@ -5,6 +5,7 @@ from sqlmodel import Column, DateTime, Relationship, SQLModel, Field, String, fu
 
 if TYPE_CHECKING:
     from .recipe_model import Recipe
+    from .comment_model import Comment
 
 class UserBase(SQLModel):
     user_name: str = Field(sa_column=Column(String(50), unique=True))
@@ -31,3 +32,4 @@ class User(UserBase, table=True):
     hashed_password: str = Field(repr=False)
     
     recipes: List["Recipe"] = Relationship(back_populates="author")
+    comments: List["Comment"] = Relationship(back_populates="author")
