@@ -15,21 +15,25 @@ def get_comments_for_recipe(recipe_id: int, db: Session = Depends(get_session)):
     if not recipe:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Recipe not found")
     
-    query = select(Comment).where(Comment.recipe_id == recipe_id)
-    comments = db.exec(query).all()
+    # Use outerjoin to include comments from deleted users
+    query = (
+        select(Comment, User.user_name)
+        .outerjoin(User, Comment.user_id == User.id)
+        .where(Comment.recipe_id == recipe_id)
+    )
+    results = db.exec(query).all()
     
-    result = []
-    for comment in comments:
-        author = db.get(User, comment.user_id)
-        result.append(CommentOut(
+    output = []
+    for comment, user_name in results:
+        output.append(CommentOut(
             id=comment.id,
             content=comment.content,
             created_at=comment.created_at,
             user_id=comment.user_id,
             recipe_id=comment.recipe_id,
-            author_name=author.user_name if author else "Unknown"
+            author_name=user_name if user_name else "Deleted User"
         ))
-    return result
+    return output
 
 
 @router.post("/recipe/{recipe_id}", response_model=CommentOut, status_code=status.HTTP_201_CREATED)

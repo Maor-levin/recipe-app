@@ -1,10 +1,10 @@
 import React from 'react'
 
 const RecipeCard = ({ r }) => {
-    const { title, description, thumbnail, recipe, created_at } = r
+    const { title, description, thumbnail_image_url, recipe, created_at } = r
     
-    // Use thumbnail field, or fall back to first image in recipe blocks
-    const displayImage = thumbnail || recipe?.find(b => b.type === 'img')?.value;
+    // Use thumbnail_image_url field, or fall back to first image in recipe blocks
+    const displayImage = thumbnail_image_url || recipe?.find(b => b.type === 'img')?.value;
     
     // Format date if available
     const formatDate = (dateStr) => {

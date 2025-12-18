@@ -24,7 +24,8 @@ def user_delete(
     db.commit()
     return {"detail": "User deleted"}
 
-@router.get("/all_users",response_model=list[UserOut])
-def get_all_users(db: Session = Depends(get_session)):
-    users = db.exec(select(User)).all()
-    return users
+# TODO: Implement admin-only access for this endpoint
+# @router.get("/all_users",response_model=list[UserOut])
+# def get_all_users(db: Session = Depends(get_session)):
+#     users = db.exec(select(User)).all()
+#     return users

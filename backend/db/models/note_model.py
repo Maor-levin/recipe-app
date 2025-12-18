@@ -31,8 +31,8 @@ class Note(NoteBase, table=True):
     created_at: datetime = Field(sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now()))
     updated_at: datetime = Field(sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now(), onupdate=func.now()))
     
-    user_id: int = Field(foreign_key="user.id")
-    recipe_id: int = Field(foreign_key="recipe.id")
+    user_id: int = Field(foreign_key="user.id", ondelete="CASCADE")
+    recipe_id: int = Field(foreign_key="recipe.id", ondelete="CASCADE")
     
     owner: "User" = Relationship(back_populates="notes")
     recipe: "Recipe" = Relationship(back_populates="notes")

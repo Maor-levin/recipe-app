@@ -15,7 +15,7 @@ const CreateRecipe = () => {
 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [thumbnail, setThumbnail] = useState('');
+  const [thumbnailImageUrl, setThumbnailImageUrl] = useState('');
   const [blocks, setBlocks] = useState([]);
 
   // Redirect if not logged in
@@ -76,7 +76,7 @@ const CreateRecipe = () => {
     console.log('Title:', title);
     console.log('Description:', description);
     console.log('Blocks:', blocks);
-    
+
     if (!title.trim()) {
       setToast({ message: 'Please enter a title', type: 'error' });
       return;
@@ -88,7 +88,7 @@ const CreateRecipe = () => {
       const { data } = await api.post('/recipes/', {
         title,
         description,
-        thumbnail: thumbnail || null,
+        thumbnail_image_url: thumbnailImageUrl || null,
         recipe: blocks,
       });
       console.log('Response:', data);
@@ -100,16 +100,16 @@ const CreateRecipe = () => {
       console.error('Error response:', err.response);
       console.error('Error status:', err.response?.status);
       console.error('Error data:', JSON.stringify(err.response?.data, null, 2));
-      
+
       let errorMsg = 'Failed to create recipe';
       if (err.response?.data?.detail) {
-        errorMsg = typeof err.response.data.detail === 'string' 
-          ? err.response.data.detail 
+        errorMsg = typeof err.response.data.detail === 'string'
+          ? err.response.data.detail
           : JSON.stringify(err.response.data.detail);
       } else if (err.message) {
         errorMsg = err.message;
       }
-      
+
       setToast({
         message: errorMsg,
         type: 'error',
@@ -166,8 +166,8 @@ const CreateRecipe = () => {
               <div className="flex-1">
                 <input
                   type="url"
-                  value={thumbnail}
-                  onChange={(e) => setThumbnail(e.target.value)}
+                  value={thumbnailImageUrl}
+                  onChange={(e) => setThumbnailImageUrl(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
                   placeholder="https://example.com/your-recipe-image.jpg"
                 />
@@ -175,11 +175,11 @@ const CreateRecipe = () => {
                   This image will be shown as the recipe card preview
                 </p>
               </div>
-              {thumbnail && (
+              {thumbnailImageUrl && (
                 <div className="w-24 h-24 rounded-lg overflow-hidden border border-gray-200 flex-shrink-0">
-                  <img 
-                    src={thumbnail} 
-                    alt="Thumbnail preview" 
+                  <img
+                    src={thumbnailImageUrl}
+                    alt="Thumbnail preview"
                     className="w-full h-full object-cover"
                     onError={(e) => e.target.style.display = 'none'}
                   />

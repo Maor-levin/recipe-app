@@ -4,8 +4,8 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": -206.1073,
-    "scrollLeft": -126.3729,
+    "scrollTop": -100,
+    "scrollLeft": -300.6918,
     "zoomLevel": 0.91,
     "show": 493,
     "database": 16,
@@ -34,14 +34,14 @@
       "sQfz0veX1T8s8ZlkwIq45",
       "3uKeAa8r3iQiKKTwOq6V2",
       "v68FPlSmSY-HsTpLo05mh",
-      "3HK_oqCUeG8xoAB4d7Lr3"
+      "notes_table_id"
     ],
     "relationshipIds": [
       "phCr6Qi-8QBhptbDlY2t6",
       "fzV7Pe6XaWhueQNll2SGT",
       "TyWNjPwQ8rukJxJO6LvQg",
-      "gPqA0KNdWjp5udyZjwoA-",
-      "3zKkbnJ-bKkRU0uskR3qj"
+      "notes_user_rel",
+      "notes_recipe_rel"
     ],
     "indexIds": [],
     "memoIds": [
@@ -96,6 +96,8 @@
           "xuuec_nTStgb9uNhxoR5S",
           "4jENHHo0Mngq0YlIAjWrI",
           "KRGwPapyT78nFqR0NwxFc",
+          "recipe_thumbnail_col",
+          "recipe_thumbnail_opacity_col",
           "Y1YptglI4b8mF8hHODmbI",
           "HwjccYM_kLqZcbmQI5ol8"
         ],
@@ -104,13 +106,14 @@
           "xuuec_nTStgb9uNhxoR5S",
           "4jENHHo0Mngq0YlIAjWrI",
           "KRGwPapyT78nFqR0NwxFc",
+          "recipe_thumbnail_col",
+          "recipe_thumbnail_opacity_col",
           "Y1YptglI4b8mF8hHODmbI",
-          "HwjccYM_kLqZcbmQI5ol8",
-          "pZToNKs-HDKXZCFbm-uR8"
+          "HwjccYM_kLqZcbmQI5ol8"
         ],
         "ui": {
-          "x": 760.0892,
-          "y": 489.0016,
+          "x": 760,
+          "y": 169,
           "zIndex": 65,
           "widthName": 60,
           "widthComment": 60,
@@ -134,15 +137,14 @@
         ],
         "seqColumnIds": [
           "r0PfO12mDvKs9wwRDloSZ",
-          "pBu4pP0sVyu3q2ye7OWN7",
           "RPwiyTa-IsaIxghPh5xx9",
           "yr__VQcakyXj_UzmAPDLN",
           "XL8Jr8_4ES40SJc2q0Fh0",
           "1-llSPE7UQX83PLm3Xw-l"
         ],
         "ui": {
-          "x": 274.0524,
-          "y": 609.5741,
+          "x": 271,
+          "y": 500,
           "zIndex": 96,
           "widthName": 60,
           "widthComment": 60,
@@ -153,31 +155,37 @@
           "createAt": 1753256468022
         }
       },
-      "3HK_oqCUeG8xoAB4d7Lr3": {
-        "id": "3HK_oqCUeG8xoAB4d7Lr3",
-        "name": "saved_recipes",
-        "comment": "",
+      "notes_table_id": {
+        "id": "notes_table_id",
+        "name": "notes",
+        "comment": "Personal user notes on recipes",
         "columnIds": [
-          "OB-79m4v9o2ycEo5TxxnQ",
-          "2o3XrfEV0scqk2__1KniY",
-          "oWu3tc4dRQiuYtXsq9lv9"
+          "notes_id_col",
+          "notes_user_id_col",
+          "notes_recipe_id_col",
+          "notes_content_col",
+          "notes_created_at_col",
+          "notes_updated_at_col"
         ],
         "seqColumnIds": [
-          "OB-79m4v9o2ycEo5TxxnQ",
-          "2o3XrfEV0scqk2__1KniY",
-          "oWu3tc4dRQiuYtXsq9lv9"
+          "notes_id_col",
+          "notes_user_id_col",
+          "notes_recipe_id_col",
+          "notes_content_col",
+          "notes_created_at_col",
+          "notes_updated_at_col"
         ],
         "ui": {
-          "x": 742.7569,
-          "y": 203.2383,
-          "zIndex": 161,
-          "widthName": 75,
-          "widthComment": 60,
+          "x": 760,
+          "y": 500,
+          "zIndex": 100,
+          "widthName": 60,
+          "widthComment": 163,
           "color": ""
         },
         "meta": {
-          "updateAt": 1753263266804,
-          "createAt": 1753256870404
+          "updateAt": 1753270000000,
+          "createAt": 1753270000000
         }
       }
     },
@@ -187,7 +195,7 @@
         "tableId": "sQfz0veX1T8s8ZlkwIq45",
         "name": "id",
         "comment": "",
-        "dataType": "uuid",
+        "dataType": "serial",
         "default": "",
         "options": 10,
         "ui": {
@@ -200,6 +208,26 @@
         "meta": {
           "updateAt": 1753255974785,
           "createAt": 1753172875765
+        }
+      },
+      "JKciRb-JtO8Bb5V1n0u_R": {
+        "id": "JKciRb-JtO8Bb5V1n0u_R",
+        "tableId": "sQfz0veX1T8s8ZlkwIq45",
+        "name": "user_name",
+        "comment": "",
+        "dataType": "varchar(50)",
+        "default": "",
+        "options": 12,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 61,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1753263545763,
+          "createAt": 1753263521874
         }
       },
       "Oxyh5JDwNumNW2RUghuTa": {
@@ -262,97 +290,17 @@
           "createAt": 1753172946807
         }
       },
-      "e8DI6spgcWtiNbw_oHADZ": {
-        "id": "e8DI6spgcWtiNbw_oHADZ",
-        "tableId": "3uKeAa8r3iQiKKTwOq6V2",
-        "name": "id",
-        "comment": "",
-        "dataType": "uuid",
-        "default": "",
-        "options": 10,
-        "ui": {
-          "keys": 1,
-          "widthName": 60,
-          "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1753255971531,
-          "createAt": 1753173076331
-        }
-      },
-      "xuuec_nTStgb9uNhxoR5S": {
-        "id": "xuuec_nTStgb9uNhxoR5S",
-        "tableId": "3uKeAa8r3iQiKKTwOq6V2",
-        "name": "author_id",
-        "comment": "",
-        "dataType": "uuid",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 2,
-          "widthName": 60,
-          "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1753255974785,
-          "createAt": 1753173100969
-        }
-      },
-      "4jENHHo0Mngq0YlIAjWrI": {
-        "id": "4jENHHo0Mngq0YlIAjWrI",
-        "tableId": "3uKeAa8r3iQiKKTwOq6V2",
-        "name": "title",
-        "comment": "",
-        "dataType": "text",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1753255965559,
-          "createAt": 1753173112566
-        }
-      },
-      "KRGwPapyT78nFqR0NwxFc": {
-        "id": "KRGwPapyT78nFqR0NwxFc",
-        "tableId": "3uKeAa8r3iQiKKTwOq6V2",
-        "name": "description",
-        "comment": "",
-        "dataType": "text",
-        "default": "'description'",
-        "options": 0,
-        "ui": {
-          "keys": 0,
-          "widthName": 61,
-          "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 66
-        },
-        "meta": {
-          "updateAt": 1753255963358,
-          "createAt": 1753173139085
-        }
-      },
       "UrB-stjNbFqbWRyi2yYSu": {
         "id": "UrB-stjNbFqbWRyi2yYSu",
         "tableId": "sQfz0veX1T8s8ZlkwIq45",
-        "name": "password",
+        "name": "hashed_password",
         "comment": "",
         "dataType": "text",
         "default": "",
         "options": 8,
         "ui": {
           "keys": 0,
-          "widthName": 60,
+          "widthName": 95,
           "widthComment": 60,
           "widthDataType": 60,
           "widthDefault": 60
@@ -402,18 +350,118 @@
           "createAt": 1753174072367
         }
       },
-      "Y1YptglI4b8mF8hHODmbI": {
-        "id": "Y1YptglI4b8mF8hHODmbI",
+      "e8DI6spgcWtiNbw_oHADZ": {
+        "id": "e8DI6spgcWtiNbw_oHADZ",
         "tableId": "3uKeAa8r3iQiKKTwOq6V2",
-        "name": "recipe",
+        "name": "id",
         "comment": "",
-        "dataType": "jsonb",
+        "dataType": "serial",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1753255971531,
+          "createAt": 1753173076331
+        }
+      },
+      "xuuec_nTStgb9uNhxoR5S": {
+        "id": "xuuec_nTStgb9uNhxoR5S",
+        "tableId": "3uKeAa8r3iQiKKTwOq6V2",
+        "name": "author_id",
+        "comment": "FK to users, CASCADE on delete",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 170,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1753255974785,
+          "createAt": 1753173100969
+        }
+      },
+      "4jENHHo0Mngq0YlIAjWrI": {
+        "id": "4jENHHo0Mngq0YlIAjWrI",
+        "tableId": "3uKeAa8r3iQiKKTwOq6V2",
+        "name": "title",
+        "comment": "",
+        "dataType": "text",
         "default": "",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
           "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1753255965559,
+          "createAt": 1753173112566
+        }
+      },
+      "KRGwPapyT78nFqR0NwxFc": {
+        "id": "KRGwPapyT78nFqR0NwxFc",
+        "tableId": "3uKeAa8r3iQiKKTwOq6V2",
+        "name": "description",
+        "comment": "",
+        "dataType": "text",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 61,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1753255963358,
+          "createAt": 1753173139085
+        }
+      },
+      "recipe_thumbnail_col": {
+        "id": "recipe_thumbnail_col",
+        "tableId": "3uKeAa8r3iQiKKTwOq6V2",
+        "name": "thumbnail_image_url",
+        "comment": "Thumbnail image URL",
+        "dataType": "text",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 126,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1753270000000,
+          "createAt": 1753270000000
+        }
+      },
+      "Y1YptglI4b8mF8hHODmbI": {
+        "id": "Y1YptglI4b8mF8hHODmbI",
+        "tableId": "3uKeAa8r3iQiKKTwOq6V2",
+        "name": "recipe",
+        "comment": "JSONB array of RecipeBlocks",
+        "dataType": "jsonb",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 153,
           "widthDataType": 60,
           "widthDefault": 60
         },
@@ -447,7 +495,7 @@
         "tableId": "v68FPlSmSY-HsTpLo05mh",
         "name": "id",
         "comment": "",
-        "dataType": "uuid",
+        "dataType": "serial",
         "default": "",
         "options": 10,
         "ui": {
@@ -462,58 +510,18 @@
           "createAt": 1753256473795
         }
       },
-      "pBu4pP0sVyu3q2ye7OWN7": {
-        "id": "pBu4pP0sVyu3q2ye7OWN7",
-        "tableId": "v68FPlSmSY-HsTpLo05mh",
-        "name": "",
-        "comment": "",
-        "dataType": "",
-        "default": "",
-        "options": 0,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1753256484824,
-          "createAt": 1753256484824
-        }
-      },
-      "pZToNKs-HDKXZCFbm-uR8": {
-        "id": "pZToNKs-HDKXZCFbm-uR8",
-        "tableId": "3uKeAa8r3iQiKKTwOq6V2",
-        "name": "id",
-        "comment": "",
-        "dataType": "uuid",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1753256512957,
-          "createAt": 1753256512957
-        }
-      },
       "RPwiyTa-IsaIxghPh5xx9": {
         "id": "RPwiyTa-IsaIxghPh5xx9",
         "tableId": "v68FPlSmSY-HsTpLo05mh",
         "name": "recipe_id",
-        "comment": "",
-        "dataType": "uuid",
+        "comment": "FK to recipes, CASCADE on delete",
+        "dataType": "int",
         "default": "",
         "options": 8,
         "ui": {
           "keys": 2,
           "widthName": 60,
-          "widthComment": 60,
+          "widthComment": 180,
           "widthDataType": 60,
           "widthDefault": 60
         },
@@ -526,14 +534,14 @@
         "id": "yr__VQcakyXj_UzmAPDLN",
         "tableId": "v68FPlSmSY-HsTpLo05mh",
         "name": "user_id",
-        "comment": "",
-        "dataType": "uuid",
+        "comment": "FK to users, SET NULL on delete",
+        "dataType": "int",
         "default": "",
-        "options": 8,
+        "options": 0,
         "ui": {
           "keys": 2,
           "widthName": 60,
-          "widthComment": 60,
+          "widthComment": 170,
           "widthDataType": 60,
           "widthDefault": 60
         },
@@ -582,10 +590,90 @@
           "createAt": 1753256669258
         }
       },
-      "OB-79m4v9o2ycEo5TxxnQ": {
-        "id": "OB-79m4v9o2ycEo5TxxnQ",
-        "tableId": "3HK_oqCUeG8xoAB4d7Lr3",
-        "name": "saved_at",
+      "notes_id_col": {
+        "id": "notes_id_col",
+        "tableId": "notes_table_id",
+        "name": "id",
+        "comment": "",
+        "dataType": "serial",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1753270000000,
+          "createAt": 1753270000000
+        }
+      },
+      "notes_user_id_col": {
+        "id": "notes_user_id_col",
+        "tableId": "notes_table_id",
+        "name": "user_id",
+        "comment": "FK to users, CASCADE on delete",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 170,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1753270000000,
+          "createAt": 1753270000000
+        }
+      },
+      "notes_recipe_id_col": {
+        "id": "notes_recipe_id_col",
+        "tableId": "notes_table_id",
+        "name": "recipe_id",
+        "comment": "FK to recipes, CASCADE on delete",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 180,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1753270000000,
+          "createAt": 1753270000000
+        }
+      },
+      "notes_content_col": {
+        "id": "notes_content_col",
+        "tableId": "notes_table_id",
+        "name": "content",
+        "comment": "",
+        "dataType": "text",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1753270000000,
+          "createAt": 1753270000000
+        }
+      },
+      "notes_created_at_col": {
+        "id": "notes_created_at_col",
+        "tableId": "notes_table_id",
+        "name": "created_at",
         "comment": "",
         "dataType": "timestamp",
         "default": "NOW()",
@@ -598,68 +686,28 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1753256929320,
-          "createAt": 1753256887273
+          "updateAt": 1753270000000,
+          "createAt": 1753270000000
         }
       },
-      "2o3XrfEV0scqk2__1KniY": {
-        "id": "2o3XrfEV0scqk2__1KniY",
-        "tableId": "3HK_oqCUeG8xoAB4d7Lr3",
-        "name": "user_id",
+      "notes_updated_at_col": {
+        "id": "notes_updated_at_col",
+        "tableId": "notes_table_id",
+        "name": "updated_at",
         "comment": "",
-        "dataType": "uuid",
-        "default": "",
+        "dataType": "timestamp",
+        "default": "NOW()",
         "options": 8,
-        "ui": {
-          "keys": 2,
-          "widthName": 60,
-          "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1753256987552,
-          "createAt": 1753256983089
-        }
-      },
-      "oWu3tc4dRQiuYtXsq9lv9": {
-        "id": "oWu3tc4dRQiuYtXsq9lv9",
-        "tableId": "3HK_oqCUeG8xoAB4d7Lr3",
-        "name": "recipeid",
-        "comment": "",
-        "dataType": "uuid",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 2,
-          "widthName": 60,
-          "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1753257015156,
-          "createAt": 1753257010932
-        }
-      },
-      "JKciRb-JtO8Bb5V1n0u_R": {
-        "id": "JKciRb-JtO8Bb5V1n0u_R",
-        "tableId": "sQfz0veX1T8s8ZlkwIq45",
-        "name": "user_name",
-        "comment": "",
-        "dataType": "varchar(50)",
-        "default": "",
-        "options": 12,
         "ui": {
           "keys": 0,
-          "widthName": 60,
+          "widthName": 62,
           "widthComment": 60,
-          "widthDataType": 61,
+          "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1753263545763,
-          "createAt": 1753263521874
+          "updateAt": 1753270000000,
+          "createAt": 1753270000000
         }
       }
     },
@@ -674,8 +722,8 @@
           "columnIds": [
             "8cecix6JCMHudRH9QJlQ8"
           ],
-          "x": 605,
-          "y": 355,
+          "x": 640,
+          "y": 231,
           "direction": 2
         },
         "end": {
@@ -683,8 +731,8 @@
           "columnIds": [
             "xuuec_nTStgb9uNhxoR5S"
           ],
-          "x": 760.0892,
-          "y": 539.0016,
+          "x": 760,
+          "y": 231,
           "direction": 1
         },
         "meta": {
@@ -702,8 +750,8 @@
           "columnIds": [
             "e8DI6spgcWtiNbw_oHADZ"
           ],
-          "x": 760.0892,
-          "y": 639.0016,
+          "x": 760,
+          "y": 355,
           "direction": 1
         },
         "end": {
@@ -711,8 +759,8 @@
           "columnIds": [
             "RPwiyTa-IsaIxghPh5xx9"
           ],
-          "x": 601.0524,
-          "y": 697.5741,
+          "x": 598,
+          "y": 588,
           "direction": 2
         },
         "meta": {
@@ -724,13 +772,13 @@
         "id": "TyWNjPwQ8rukJxJO6LvQg",
         "identification": false,
         "relationshipType": 16,
-        "startRelationshipType": 2,
+        "startRelationshipType": 1,
         "start": {
           "tableId": "sQfz0veX1T8s8ZlkwIq45",
           "columnIds": [
             "8cecix6JCMHudRH9QJlQ8"
           ],
-          "x": 438,
+          "x": 455.5,
           "y": 417,
           "direction": 8
         },
@@ -739,8 +787,8 @@
           "columnIds": [
             "yr__VQcakyXj_UzmAPDLN"
           ],
-          "x": 437.5524,
-          "y": 609.5741,
+          "x": 434.5,
+          "y": 500,
           "direction": 4
         },
         "meta": {
@@ -748,8 +796,8 @@
           "createAt": 1753256623083
         }
       },
-      "gPqA0KNdWjp5udyZjwoA-": {
-        "id": "gPqA0KNdWjp5udyZjwoA-",
+      "notes_user_rel": {
+        "id": "notes_user_rel",
         "identification": false,
         "relationshipType": 16,
         "startRelationshipType": 2,
@@ -758,26 +806,26 @@
           "columnIds": [
             "8cecix6JCMHudRH9QJlQ8"
           ],
-          "x": 605,
-          "y": 231,
+          "x": 640,
+          "y": 355,
           "direction": 2
         },
         "end": {
-          "tableId": "3HK_oqCUeG8xoAB4d7Lr3",
+          "tableId": "notes_table_id",
           "columnIds": [
-            "2o3XrfEV0scqk2__1KniY"
+            "notes_user_id_col"
           ],
-          "x": 742.7569,
-          "y": 267.2383,
+          "x": 760,
+          "y": 600,
           "direction": 1
         },
         "meta": {
-          "updateAt": 1753256983089,
-          "createAt": 1753256983089
+          "updateAt": 1753270000000,
+          "createAt": 1753270000000
         }
       },
-      "3zKkbnJ-bKkRU0uskR3qj": {
-        "id": "3zKkbnJ-bKkRU0uskR3qj",
+      "notes_recipe_rel": {
+        "id": "notes_recipe_rel",
         "identification": false,
         "relationshipType": 16,
         "startRelationshipType": 2,
@@ -786,22 +834,22 @@
           "columnIds": [
             "e8DI6spgcWtiNbw_oHADZ"
           ],
-          "x": 927.0892,
-          "y": 489.0016,
-          "direction": 4
-        },
-        "end": {
-          "tableId": "3HK_oqCUeG8xoAB4d7Lr3",
-          "columnIds": [
-            "oWu3tc4dRQiuYtXsq9lv9"
-          ],
-          "x": 906.2569,
-          "y": 331.2383,
+          "x": 952.5,
+          "y": 417,
           "direction": 8
         },
+        "end": {
+          "tableId": "notes_table_id",
+          "columnIds": [
+            "notes_recipe_id_col"
+          ],
+          "x": 924.5,
+          "y": 500,
+          "direction": 4
+        },
         "meta": {
-          "updateAt": 1753257010932,
-          "createAt": 1753257010932
+          "updateAt": 1753270000000,
+          "createAt": 1753270000000
         }
       }
     },
@@ -810,17 +858,17 @@
     "memoEntities": {
       "R6OIVX7M8kMhlp9EI3nYs": {
         "id": "R6OIVX7M8kMhlp9EI3nYs",
-        "value": "[\n  { \"type\": \"subtitle\", \"value\": \"Ingredients\" },\n  { \"type\": \"list\", \"value\": [\"2 cups flour\", \"1 tsp baking soda\", \"1 cup sugar\"] },\n  { \"type\": \"text\", \"value\": \"Mix all dry ingredients in a bowl.\" },\n  { \"type\": \"img\", \"value\": \"https://example.com/step1.jpg\" },\n  { \"type\": \"subtitle\", \"value\": \"Instructions\" },\n  { \"type\": \"list\", \"value\": [\"Preheat oven to 180°C\", \"Scoop dough\", \"Bake 12 minutes\"] },\n  { \"type\": \"text\", \"value\": \"Cool before serving.\" }\n]",
+        "value": "RecipeBlock types:\n- subtitle: { type, text }\n- text: { type, text }\n- list: { type, items[] }\n- image: { type, url }",
         "ui": {
-          "x": 1102.6298,
-          "y": 502.5184,
+          "x": 1150,
+          "y": 169,
           "zIndex": 215,
-          "width": 473,
-          "height": 145,
+          "width": 300,
+          "height": 150,
           "color": ""
         },
         "meta": {
-          "updateAt": 1753263268844,
+          "updateAt": 1753270000000,
           "createAt": 1753259560020
         }
       }
