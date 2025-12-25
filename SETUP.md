@@ -1,74 +1,58 @@
 # Recipe App Setup Guide
 
-## Environment Variables
+## Quick Start
 
-### Backend Configuration
+**1. Set up environment files:**
 
-Create a `.env` file in the `backend/` directory with:
-
-```env
-# Database Configuration
-DATABASE_URL=postgresql://user:password@db:5432/recipe_db
-
-# JWT Configuration
-SECRET_KEY=your-secret-key-here-change-in-production
-ACCESS_TOKEN_EXPIRE_MINUTES=30
+```bash
+cp postgres.env.example postgres.env
+cp backend/env.example backend/.env
+# Edit both files with your values
 ```
 
-### Frontend Configuration
-
-Create a `.env` file in the `frontend/` directory with:
-
-```env
-# API Configuration
-VITE_API_URL=http://localhost:8000
-```
-
-### PostgreSQL Configuration
-
-Create a `postgres.env` file in the root directory with:
-
-```env
-POSTGRES_USER=user
-POSTGRES_PASSWORD=password
-POSTGRES_DB=recipe_db
-```
-
-## Running the Application
-
-### Using Docker Compose (Recommended)
+**2. Run the application:**
 
 ```bash
 docker-compose up --build
 ```
 
-This will start:
-- Backend API on http://localhost:8000
-- PostgreSQL database
-- Adminer (database admin) on http://localhost:8080
+**Access:**
 
-### Running Frontend Separately
+- Frontend: http://localhost:5173
+- Backend API: http://localhost:8000/docs
+- Adminer (DB): http://localhost:8080
+
+---
+
+## Alternative: Frontend Local (Faster Development)
 
 ```bash
-cd frontend
-npm install
-npm run dev
+# Terminal 1 - Backend only
+docker-compose up backend db adminer
+
+# Terminal 2 - Frontend locally
+cd frontend-v1 && npm install && npm run dev
 ```
 
-Frontend will be available at http://localhost:5173
+---
 
-## Authentication
+## Switching Frontend Versions
 
-The app now includes JWT authentication:
-- Click "Login" button in the navbar
-- Toggle between Login and Register
-- After login, you'll see your username with a dropdown menu
-- Protected routes: creating recipes, deleting recipes
+Edit `docker-compose.yml` lines 4 & 6:
 
-## Default Ports
+```yaml
+build: ./frontend-v1 # Change to ./frontend-v2
+volumes:
+  - ./frontend-v1:/app # Change to ./frontend-v2:/app
+```
 
-- Backend API: 8000
-- Frontend Dev Server: 5173
-- PostgreSQL: 5432
+Then: `docker-compose up --build`
+
+---
+
+## Ports
+
+- Frontend: 5173
+- Backend: 8000
+- Database: 5432
 - Adminer: 8080
-

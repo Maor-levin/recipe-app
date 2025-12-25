@@ -2,10 +2,11 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
+# Copy requirements first (better layer caching)
 COPY requirements.txt .
 
+# Install Python dependencies
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
-COPY . . 
-
-
+# Copy application code
+COPY . .

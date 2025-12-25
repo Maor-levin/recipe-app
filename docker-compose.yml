@@ -1,4 +1,14 @@
 services:
+    # Change 'frontend-v1' to 'frontend-v2' below when switching versions
+    frontend:
+        build: ./frontend-v1
+        volumes:
+          - ./frontend-v1:/app
+          - /app/node_modules
+        ports:
+          - "5173:5173"
+        depends_on:
+          - backend
 
     backend: 
         build: ./backend
@@ -9,6 +19,7 @@ services:
         command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
         depends_on: 
           - db
+          
     db:
         image: postgres:17.5
         restart: always
@@ -22,8 +33,6 @@ services:
         restart: always
         ports:
           - 8080:8080
-
-
 
 volumes:
   pgdata:
