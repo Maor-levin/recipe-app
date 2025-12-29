@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import TYPE_CHECKING
-from sqlmodel import Column, DateTime, Field, Relationship, SQLModel, func, UniqueConstraint
+from sqlmodel import Column, DateTime, Field, Relationship, SQLModel, func, UniqueConstraint, Text
 
 if TYPE_CHECKING:
     from .user_model import User
@@ -8,7 +8,7 @@ if TYPE_CHECKING:
 
 
 class NoteBase(SQLModel):
-    content: str
+    content: str = Field(min_length=1, max_length=5000)
 
 
 class NoteCreate(NoteBase):
@@ -28,6 +28,7 @@ class Note(NoteBase, table=True):
     )
     
     id: int | None = Field(default=None, primary_key=True)
+    content: str = Field(min_length=1, max_length=5000, sa_column=Column(Text))
     created_at: datetime = Field(sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now()))
     updated_at: datetime = Field(sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now(), onupdate=func.now()))
     

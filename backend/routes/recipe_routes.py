@@ -13,6 +13,9 @@ router = APIRouter(prefix="/recipes", tags=["recipes"])
 def get_all_recipes(db: Session = Depends(get_session)):
     query = select(Recipe)
     recipes = db.exec(query).all()
+    # Explicitly load author for each recipe
+    for recipe in recipes:
+        db.refresh(recipe, ["author"])
     return recipes
 
 @router.post('/', response_model=RecipeOut, status_code=status.HTTP_201_CREATED)

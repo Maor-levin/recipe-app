@@ -1,9 +1,9 @@
 services:
     # Change 'frontend-v1' to 'frontend-v2' below when switching versions
     frontend:
-        build: ./frontend-v1
+        build: ./frontend-v2
         volumes:
-          - ./frontend-v1:/app
+          - ./frontend-v2:/app
           - /app/node_modules
         ports:
           - "5173:5173"

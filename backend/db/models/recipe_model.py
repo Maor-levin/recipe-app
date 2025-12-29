@@ -1,6 +1,7 @@
 from datetime import datetime
 from typing import TYPE_CHECKING, List, Literal, Optional, Union
-from sqlmodel import Column, DateTime, Field, Relationship, SQLModel, func, String
+from pydantic import field_validator, HttpUrl
+from sqlmodel import Column, DateTime, Field, Relationship, SQLModel, func, String, Text
 from sqlalchemy.dialects.postgresql import JSONB
 
 
@@ -8,36 +9,61 @@ if TYPE_CHECKING:
     from .user_model import User
     from .comment_model import Comment
     from .note_model import Note
+    from .favorite_model import Favorite
 
 
 class SubtitleBlock(SQLModel):
     type: Literal["subtitle"] = "subtitle"
-    text: str
+    text: str = Field(min_length=1, max_length=200)
 
 
 class TextBlock(SQLModel):
     type: Literal["text"] = "text"
-    text: str
+    text: str = Field(min_length=1, max_length=10000)
 
 
 class ListBlock(SQLModel):
     type: Literal["list"] = "list"
-    items: List[str]
+    items: List[str] = Field(min_length=1)
+    
+    @field_validator('items')
+    @classmethod
+    def validate_items(cls, v: List[str]) -> List[str]:
+        if not v:
+            raise ValueError('List must have at least one item')
+        for item in v:
+            if len(item) > 500:
+                raise ValueError('List item cannot exceed 500 characters')
+        return v
 
 
 class ImageBlock(SQLModel):
     type: Literal["image"] = "image"
-    url: str
+    url: str = Field(max_length=2048)
+    
+    @field_validator('url')
+    @classmethod
+    def validate_url(cls, v: str) -> str:
+        if not v.startswith(('http://', 'https://')):
+            raise ValueError('Image URL must start with http:// or https://')
+        return v
 
 
 RecipeBlock = Union[SubtitleBlock, TextBlock, ListBlock, ImageBlock]
 
 
 class RecipeBase(SQLModel):
-    title: str
-    description: str = ""
-    thumbnail_image_url: Optional[str] = None
+    title: str = Field(min_length=3, max_length=200, sa_column=Column(String(200)))
+    description: str = Field(default="", max_length=1000, sa_column=Column(String(1000)))
+    thumbnail_image_url: Optional[str] = Field(default=None, max_length=2048)
     recipe: List[RecipeBlock] = Field(default_factory=list, sa_column=Column(JSONB))
+    
+    @field_validator('thumbnail_image_url')
+    @classmethod
+    def validate_thumbnail_url(cls, v: Optional[str]) -> Optional[str]:
+        if v and not v.startswith(('http://', 'https://')):
+            raise ValueError('Thumbnail URL must start with http:// or https://')
+        return v
 
 
 class RecipeCreate(RecipeBase):
@@ -51,11 +77,15 @@ class RecipeUpdate(SQLModel):
     recipe: Optional[List[RecipeBlock]] = None
 
 
+class RecipeAuthor(SQLModel):
+    user_name: str
+    
 class RecipeOut(RecipeBase):
     id: int
     author_id: int
     created_at: datetime
     updated_at: datetime
+    author: Optional[RecipeAuthor] = None
     
     class Config:
         from_attributes = True
@@ -64,9 +94,12 @@ class RecipeOut(RecipeBase):
 class Recipe(RecipeBase, table=True):
     id: int = Field(default=None, primary_key=True)
     author_id: int = Field(foreign_key="user.id", ondelete="CASCADE")
-    thumbnail_image_url: Optional[str] = Field(default=None, sa_column=Column(String, nullable=True))
+    title: str = Field(min_length=3, max_length=200, sa_column=Column(String(200)))
+    description: str = Field(default="", max_length=1000, sa_column=Column(String(1000)))
+    thumbnail_image_url: Optional[str] = Field(default=None, max_length=2048, sa_column=Column(String(2048), nullable=True))
     created_at: datetime = Field(sa_column=Column(DateTime(timezone=True),nullable=False,server_default=func.now()))
     updated_at: datetime = Field(sa_column=Column(DateTime(timezone=True),nullable=False,server_default=func.now(),onupdate=func.now()))
     author: "User" = Relationship(back_populates="recipes")
     comments: List["Comment"] = Relationship(back_populates="recipe")
     notes: List["Note"] = Relationship(back_populates="recipe")
+    favorited_by: List["Favorite"] = Relationship(back_populates="recipe")

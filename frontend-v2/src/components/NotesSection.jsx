@@ -1,0 +1,184 @@
+import { useState, useEffect } from 'react'
+import { noteAPI, favoriteAPI } from '../utils/api'
+
+function NotesSection({ recipeId, onAuthRequired, refreshTrigger }) {
+    const [note, setNote] = useState(null)
+    const [content, setContent] = useState('')
+    const [originalContent, setOriginalContent] = useState('')
+    const [saving, setSaving] = useState(false)
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState('')
+    const [currentUser, setCurrentUser] = useState(null)
+    const [isFavorited, setIsFavorited] = useState(false)
+    const [checkingFavorite, setCheckingFavorite] = useState(true)
+
+    const maxLength = 5000
+
+    // Check if content has changed
+    const hasChanges = content.trim() !== originalContent.trim()
+
+    useEffect(() => {
+        const username = localStorage.getItem('username')
+        setCurrentUser(username)
+
+        if (username) {
+            checkIfFavorited()
+            fetchNote()
+        } else {
+            setLoading(false)
+            setCheckingFavorite(false)
+        }
+    }, [recipeId, refreshTrigger])
+
+    const checkIfFavorited = async () => {
+        try {
+            const response = await favoriteAPI.check(recipeId)
+            setIsFavorited(response.data.is_favorited)
+        } catch (err) {
+            console.error('Error checking favorite:', err)
+        } finally {
+            setCheckingFavorite(false)
+        }
+    }
+
+    const fetchNote = async () => {
+        try {
+            setLoading(true)
+            const response = await noteAPI.getForRecipe(recipeId)
+            if (response.data) {
+                setNote(response.data)
+                setContent(response.data.content)
+                setOriginalContent(response.data.content)
+            } else {
+                setContent('')
+                setOriginalContent('')
+            }
+        } catch (err) {
+            // 404 is expected when no note exists
+            if (err.response?.status !== 404) {
+                console.error('Error fetching note:', err)
+            }
+            setContent('')
+            setOriginalContent('')
+        } finally {
+            setLoading(false)
+        }
+    }
+
+    const handleSave = async () => {
+        setSaving(true)
+        setError('')
+
+        try {
+            if (!content.trim()) {
+                // Delete note if content is empty
+                await noteAPI.delete(recipeId)
+                setNote(null)
+                setContent('')
+                setOriginalContent('')
+            } else {
+                // Save or update note
+                const response = await noteAPI.saveOrUpdate(recipeId, content.trim())
+                setNote(response.data)
+                setContent(response.data.content)
+                setOriginalContent(response.data.content)
+            }
+        } catch (err) {
+            console.error('Error saving note:', err)
+            setError('Failed to save note')
+        } finally {
+            setSaving(false)
+        }
+    }
+
+    if (loading || checkingFavorite) {
+        return null // Don't show anything while loading
+    }
+
+    if (!currentUser) {
+        return null // Don't show notes section for non-logged-in users
+    }
+
+    return (
+        <div className="h-full">
+            <div
+                className="relative rounded-lg overflow-hidden h-full flex flex-col"
+                style={{
+                    background: 'linear-gradient(to bottom, #fef9e7 0%, #fef3c7 100%)',
+                    backgroundImage: `
+            repeating-linear-gradient(
+              transparent,
+              transparent 31px,
+              #e8d4a0 31px,
+              #e8d4a0 32px
+            )
+          `,
+                    backgroundSize: '100% 32px',
+                    backgroundPosition: '0 16px',
+                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 -2px 4px -1px rgba(0, 0, 0, 0.1), -2px 0 4px -1px rgba(0, 0, 0, 0.1)'
+                }}
+            >
+                {/* Red vertical margin line */}
+                <div
+                    className="absolute top-0 bottom-0 w-0.5 bg-red-400"
+                    style={{ left: '48px' }}
+                />
+
+                {/* Content area */}
+                <div className="relative pl-16 pr-6 pb-6 flex-1 flex flex-col" style={{ paddingTop: '16px' }}>
+                    <div className="flex justify-between items-start" style={{ height: '32px', marginBottom: '0', paddingTop: '4px' }}>
+                        <h3 className="text-lg font-bold text-gray-800" style={{ fontFamily: 'Georgia, serif', lineHeight: '32px', margin: 0, padding: 0 }}>
+                            My Notes
+                        </h3>
+                    </div>
+
+                    <div className="flex-1 flex flex-col">
+                        {!isFavorited ? (
+                            <div className="text-center py-6 flex-1 flex items-center justify-center">
+                                <p className="text-gray-600 mb-2 text-sm" style={{ fontFamily: 'Georgia, serif' }}>
+                                    ⭐ Favorite to add notes
+                                </p>
+                            </div>
+                        ) : (
+                            <div className="flex-1 flex flex-col">
+                                <textarea
+                                    value={content}
+                                    onChange={(e) => setContent(e.target.value)}
+                                    maxLength={maxLength}
+                                    placeholder="Add your personal notes here..."
+                                    className="w-full px-3 py-0 border-0 bg-transparent focus:outline-none resize-none text-base flex-1"
+                                    style={{
+                                        fontFamily: 'Georgia, serif',
+                                        lineHeight: '32px',
+                                        paddingLeft: '0',
+                                        paddingRight: '0',
+                                        paddingTop: '4px'
+                                    }}
+                                />
+                                <div className="flex justify-between items-center mt-2">
+                                    <span className={`text-xs ${content.length > maxLength * 0.9 ? 'text-red-600' : 'text-gray-600'}`}>
+                                        {content.length}/{maxLength}
+                                    </span>
+                                    <button
+                                        onClick={handleSave}
+                                        disabled={saving || !hasChanges}
+                                        className="px-3 py-1 text-xs bg-yellow-700 text-white rounded hover:bg-yellow-800 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
+                                        style={{ fontFamily: 'Georgia, serif' }}
+                                    >
+                                        {saving ? 'Saving...' : 'Save'}
+                                    </button>
+                                </div>
+                                {error && (
+                                    <p className="text-red-600 text-xs mt-1">{error}</p>
+                                )}
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default NotesSection
+

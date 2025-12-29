@@ -86,3 +86,36 @@ def delete_comment(
     db.commit()
     return {"detail": "Comment deleted"}
 
+
+@router.put("/{comment_id}", response_model=CommentOut)
+def update_comment(
+    comment_id: int,
+    comment_data: CommentCreate,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_session)
+):
+    comment = db.get(Comment, comment_id)
+    if not comment:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Comment not found")
+    
+    if comment.user_id != current_user.id:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="You can only edit your own comments"
+        )
+    
+    # Update comment content
+    comment.content = comment_data.content
+    db.add(comment)
+    db.commit()
+    db.refresh(comment)
+    
+    return CommentOut(
+        id=comment.id,
+        content=comment.content,
+        created_at=comment.created_at,
+        user_id=comment.user_id,
+        recipe_id=comment.recipe_id,
+        author_name=current_user.user_name
+    )
+

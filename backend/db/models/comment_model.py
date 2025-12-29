@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import TYPE_CHECKING, Optional
-from sqlmodel import Column, DateTime, Field, Relationship, SQLModel, func
+from sqlmodel import Column, DateTime, Field, Relationship, SQLModel, func, Text
 
 if TYPE_CHECKING:
     from .user_model import User
@@ -8,7 +8,7 @@ if TYPE_CHECKING:
 
 
 class CommentBase(SQLModel):
-    content: str
+    content: str = Field(min_length=1, max_length=2000)
 
 
 class CommentCreate(CommentBase):
@@ -25,6 +25,7 @@ class CommentOut(CommentBase):
 
 class Comment(CommentBase, table=True):
     id: int | None = Field(default=None, primary_key=True)
+    content: str = Field(min_length=1, max_length=2000, sa_column=Column(Text))
     created_at: datetime = Field(sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now()))
     
     user_id: Optional[int] = Field(default=None, foreign_key="user.id", ondelete="SET NULL")

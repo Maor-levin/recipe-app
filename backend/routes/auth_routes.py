@@ -26,20 +26,23 @@ def register(user: UserCreate, db: Session = Depends(get_session)):
             detail="Email already registered"
         )
     
-    # Check if username already exists
-    existing_user = db.exec(select(User).where(User.user_name == user.user_name)).first()
+    # Check if username already exists (case insensitive)
+    existing_user = db.exec(select(User).where(User.user_name.ilike(user.user_name))).first()
     if existing_user:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Username already taken"
         )
     
+    # Capitalize first letter of username
+    capitalized_username = user.user_name.capitalize() if user.user_name else ""
+    
     # Create new user
     hashed_password = hash_password(user.password)
     db_user = User(
         email=user.email,
         hashed_password=hashed_password,
-        user_name=user.user_name,
+        user_name=capitalized_username,
         first_name=user.first_name,
         last_name=user.last_name,
         country=user.country
@@ -51,11 +54,11 @@ def register(user: UserCreate, db: Session = Depends(get_session)):
 
 @router.post("/login", response_model=LoginResponse)
 def login(credentials: LoginRequest, db: Session = Depends(get_session)):
-    # Try to find user by email or username
+    # Try to find user by email or username (case-insensitive for username)
     user = db.exec(
         select(User).where(
             (User.email == credentials.username_or_email) | 
-            (User.user_name == credentials.username_or_email)
+            (User.user_name.ilike(credentials.username_or_email))
         )
     ).first()
     
@@ -74,8 +77,4 @@ def login(credentials: LoginRequest, db: Session = Depends(get_session)):
         "token_type": "bearer",
         "user": user
     }
-
-@router.get("/me", response_model=UserOut)
-async def get_current_user_info(current_user: User = Depends(get_current_user)):
-    return current_user
 
