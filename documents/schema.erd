@@ -4,9 +4,9 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": -100,
-    "scrollLeft": -300.6918,
-    "zoomLevel": 0.91,
+    "scrollTop": -306.575,
+    "scrollLeft": 0,
+    "zoomLevel": 0.85,
     "show": 493,
     "database": 16,
     "databaseName": "",
@@ -34,19 +34,20 @@
       "sQfz0veX1T8s8ZlkwIq45",
       "3uKeAa8r3iQiKKTwOq6V2",
       "v68FPlSmSY-HsTpLo05mh",
-      "notes_table_id"
+      "notes_table_id",
+      "favorites_table_id"
     ],
     "relationshipIds": [
       "phCr6Qi-8QBhptbDlY2t6",
       "fzV7Pe6XaWhueQNll2SGT",
       "TyWNjPwQ8rukJxJO6LvQg",
       "notes_user_rel",
-      "notes_recipe_rel"
+      "notes_recipe_rel",
+      "favorites_user_rel",
+      "favorites_recipe_rel"
     ],
     "indexIds": [],
-    "memoIds": [
-      "R6OIVX7M8kMhlp9EI3nYs"
-    ]
+    "memoIds": []
   },
   "collections": {
     "tableEntities": {
@@ -75,15 +76,15 @@
           "w-g_11Ry-E7iU2bTpKP_9"
         ],
         "ui": {
-          "x": 271,
-          "y": 169,
+          "x": 245.6266,
+          "y": 169.0002,
           "zIndex": 2,
           "widthName": 60,
           "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1753263525024,
+          "updateAt": 1767008515733,
           "createAt": 1753172869858
         }
       },
@@ -97,9 +98,9 @@
           "4jENHHo0Mngq0YlIAjWrI",
           "KRGwPapyT78nFqR0NwxFc",
           "recipe_thumbnail_col",
-          "recipe_thumbnail_opacity_col",
           "Y1YptglI4b8mF8hHODmbI",
-          "HwjccYM_kLqZcbmQI5ol8"
+          "HwjccYM_kLqZcbmQI5ol8",
+          "recipe_updated_at_col"
         ],
         "seqColumnIds": [
           "e8DI6spgcWtiNbw_oHADZ",
@@ -107,20 +108,20 @@
           "4jENHHo0Mngq0YlIAjWrI",
           "KRGwPapyT78nFqR0NwxFc",
           "recipe_thumbnail_col",
-          "recipe_thumbnail_opacity_col",
           "Y1YptglI4b8mF8hHODmbI",
-          "HwjccYM_kLqZcbmQI5ol8"
+          "HwjccYM_kLqZcbmQI5ol8",
+          "recipe_updated_at_col"
         ],
         "ui": {
-          "x": 760,
-          "y": 169,
+          "x": 1092.8358,
+          "y": 189.8955,
           "zIndex": 65,
           "widthName": 60,
           "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1753263264600,
+          "updateAt": 1767008512053,
           "createAt": 1753173068097
         }
       },
@@ -143,15 +144,15 @@
           "1-llSPE7UQX83PLm3Xw-l"
         ],
         "ui": {
-          "x": 271,
-          "y": 500,
+          "x": 139.5136,
+          "y": 537.1703,
           "zIndex": 96,
           "widthName": 60,
           "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1753257113127,
+          "updateAt": 1767008540630,
           "createAt": 1753256468022
         }
       },
@@ -176,15 +177,44 @@
           "notes_updated_at_col"
         ],
         "ui": {
-          "x": 760,
-          "y": 500,
+          "x": 1124.8541,
+          "y": 613.3924,
           "zIndex": 100,
           "widthName": 60,
           "widthComment": 163,
           "color": ""
         },
         "meta": {
-          "updateAt": 1753270000000,
+          "updateAt": 1767008551022,
+          "createAt": 1753270000000
+        }
+      },
+      "favorites_table_id": {
+        "id": "favorites_table_id",
+        "name": "favorites",
+        "comment": "User favorite recipes",
+        "columnIds": [
+          "favorites_id_col",
+          "favorites_user_id_col",
+          "favorites_recipe_id_col",
+          "favorites_created_at_col"
+        ],
+        "seqColumnIds": [
+          "favorites_id_col",
+          "favorites_user_id_col",
+          "favorites_recipe_id_col",
+          "favorites_created_at_col"
+        ],
+        "ui": {
+          "x": 572.0015,
+          "y": 647.5732,
+          "zIndex": 101,
+          "widthName": 60,
+          "widthComment": 110,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1767008546072,
           "createAt": 1753270000000
         }
       }
@@ -235,14 +265,14 @@
         "tableId": "sQfz0veX1T8s8ZlkwIq45",
         "name": "first_name",
         "comment": "",
-        "dataType": "varchar(50)",
+        "dataType": "varchar(100)",
         "default": "",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
           "widthComment": 60,
-          "widthDataType": 61,
+          "widthDataType": 67,
           "widthDefault": 60
         },
         "meta": {
@@ -255,14 +285,14 @@
         "tableId": "sQfz0veX1T8s8ZlkwIq45",
         "name": "last_name",
         "comment": "",
-        "dataType": "varchar(50)",
+        "dataType": "varchar(100)",
         "default": "",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
           "widthComment": 60,
-          "widthDataType": 61,
+          "widthDataType": 67,
           "widthDefault": 60
         },
         "meta": {
@@ -395,14 +425,14 @@
         "tableId": "3uKeAa8r3iQiKKTwOq6V2",
         "name": "title",
         "comment": "",
-        "dataType": "text",
+        "dataType": "varchar(200)",
         "default": "",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
           "widthComment": 60,
-          "widthDataType": 60,
+          "widthDataType": 67,
           "widthDefault": 60
         },
         "meta": {
@@ -415,14 +445,14 @@
         "tableId": "3uKeAa8r3iQiKKTwOq6V2",
         "name": "description",
         "comment": "",
-        "dataType": "text",
+        "dataType": "varchar(1000)",
         "default": "",
         "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 61,
           "widthComment": 60,
-          "widthDataType": 60,
+          "widthDataType": 74,
           "widthDefault": 60
         },
         "meta": {
@@ -435,14 +465,14 @@
         "tableId": "3uKeAa8r3iQiKKTwOq6V2",
         "name": "thumbnail_image_url",
         "comment": "Thumbnail image URL",
-        "dataType": "text",
+        "dataType": "varchar(2048)",
         "default": "",
         "options": 0,
         "ui": {
           "keys": 0,
-          "widthName": 60,
-          "widthComment": 126,
-          "widthDataType": 60,
+          "widthName": 112,
+          "widthComment": 118,
+          "widthDataType": 74,
           "widthDefault": 60
         },
         "meta": {
@@ -488,6 +518,26 @@
         "meta": {
           "updateAt": 1753174276278,
           "createAt": 1753174260340
+        }
+      },
+      "recipe_updated_at_col": {
+        "id": "recipe_updated_at_col",
+        "tableId": "3uKeAa8r3iQiKKTwOq6V2",
+        "name": "updated_at",
+        "comment": "",
+        "dataType": "timestamp",
+        "default": "NOW()",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 62,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1753270000000,
+          "createAt": 1753270000000
         }
       },
       "r0PfO12mDvKs9wwRDloSZ": {
@@ -709,6 +759,86 @@
           "updateAt": 1753270000000,
           "createAt": 1753270000000
         }
+      },
+      "favorites_id_col": {
+        "id": "favorites_id_col",
+        "tableId": "favorites_table_id",
+        "name": "id",
+        "comment": "",
+        "dataType": "serial",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1753270000000,
+          "createAt": 1753270000000
+        }
+      },
+      "favorites_user_id_col": {
+        "id": "favorites_user_id_col",
+        "tableId": "favorites_table_id",
+        "name": "user_id",
+        "comment": "FK to users, CASCADE on delete",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 170,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1753270000000,
+          "createAt": 1753270000000
+        }
+      },
+      "favorites_recipe_id_col": {
+        "id": "favorites_recipe_id_col",
+        "tableId": "favorites_table_id",
+        "name": "recipe_id",
+        "comment": "FK to recipes, CASCADE on delete",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 180,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1753270000000,
+          "createAt": 1753270000000
+        }
+      },
+      "favorites_created_at_col": {
+        "id": "favorites_created_at_col",
+        "tableId": "favorites_table_id",
+        "name": "created_at",
+        "comment": "",
+        "dataType": "timestamp",
+        "default": "NOW()",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1753270000000,
+          "createAt": 1753270000000
+        }
       }
     },
     "relationshipEntities": {
@@ -722,8 +852,8 @@
           "columnIds": [
             "8cecix6JCMHudRH9QJlQ8"
           ],
-          "x": 640,
-          "y": 231,
+          "x": 614.6266,
+          "y": 231.0002,
           "direction": 2
         },
         "end": {
@@ -731,8 +861,8 @@
           "columnIds": [
             "xuuec_nTStgb9uNhxoR5S"
           ],
-          "x": 760,
-          "y": 231,
+          "x": 1092.8358,
+          "y": 231.22883333333334,
           "direction": 1
         },
         "meta": {
@@ -750,8 +880,8 @@
           "columnIds": [
             "e8DI6spgcWtiNbw_oHADZ"
           ],
-          "x": 760,
-          "y": 355,
+          "x": 1092.8358,
+          "y": 313.8955,
           "direction": 1
         },
         "end": {
@@ -759,8 +889,8 @@
           "columnIds": [
             "RPwiyTa-IsaIxghPh5xx9"
           ],
-          "x": 598,
-          "y": 588,
+          "x": 466.5136,
+          "y": 625.1703,
           "direction": 2
         },
         "meta": {
@@ -778,8 +908,8 @@
           "columnIds": [
             "8cecix6JCMHudRH9QJlQ8"
           ],
-          "x": 455.5,
-          "y": 417,
+          "x": 337.8766,
+          "y": 417.0002,
           "direction": 8
         },
         "end": {
@@ -787,8 +917,8 @@
           "columnIds": [
             "yr__VQcakyXj_UzmAPDLN"
           ],
-          "x": 434.5,
-          "y": 500,
+          "x": 303.0136,
+          "y": 537.1703,
           "direction": 4
         },
         "meta": {
@@ -806,8 +936,8 @@
           "columnIds": [
             "8cecix6JCMHudRH9QJlQ8"
           ],
-          "x": 640,
-          "y": 355,
+          "x": 614.6266,
+          "y": 355.0002,
           "direction": 2
         },
         "end": {
@@ -815,8 +945,8 @@
           "columnIds": [
             "notes_user_id_col"
           ],
-          "x": 760,
-          "y": 600,
+          "x": 1124.8541,
+          "y": 713.3924,
           "direction": 1
         },
         "meta": {
@@ -834,8 +964,8 @@
           "columnIds": [
             "e8DI6spgcWtiNbw_oHADZ"
           ],
-          "x": 952.5,
-          "y": 417,
+          "x": 1289.3358,
+          "y": 437.89549999999997,
           "direction": 8
         },
         "end": {
@@ -843,9 +973,65 @@
           "columnIds": [
             "notes_recipe_id_col"
           ],
-          "x": 924.5,
-          "y": 500,
+          "x": 1289.3541,
+          "y": 613.3924,
           "direction": 4
+        },
+        "meta": {
+          "updateAt": 1753270000000,
+          "createAt": 1753270000000
+        }
+      },
+      "favorites_user_rel": {
+        "id": "favorites_user_rel",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "sQfz0veX1T8s8ZlkwIq45",
+          "columnIds": [
+            "8cecix6JCMHudRH9QJlQ8"
+          ],
+          "x": 522.3766,
+          "y": 417.0002,
+          "direction": 8
+        },
+        "end": {
+          "tableId": "favorites_table_id",
+          "columnIds": [
+            "favorites_user_id_col"
+          ],
+          "x": 572.0015,
+          "y": 723.5732,
+          "direction": 1
+        },
+        "meta": {
+          "updateAt": 1753270000000,
+          "createAt": 1753270000000
+        }
+      },
+      "favorites_recipe_rel": {
+        "id": "favorites_recipe_rel",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "3uKeAa8r3iQiKKTwOq6V2",
+          "columnIds": [
+            "e8DI6spgcWtiNbw_oHADZ"
+          ],
+          "x": 1092.8358,
+          "y": 396.5621666666667,
+          "direction": 1
+        },
+        "end": {
+          "tableId": "favorites_table_id",
+          "columnIds": [
+            "favorites_recipe_id_col"
+          ],
+          "x": 899.0015,
+          "y": 723.5732,
+          "direction": 2
         },
         "meta": {
           "updateAt": 1753270000000,
@@ -860,15 +1046,15 @@
         "id": "R6OIVX7M8kMhlp9EI3nYs",
         "value": "RecipeBlock types:\n- subtitle: { type, text }\n- text: { type, text }\n- list: { type, items[] }\n- image: { type, url }",
         "ui": {
-          "x": 1150,
-          "y": 169,
+          "x": 1516.2237,
+          "y": 386.7264,
           "zIndex": 215,
           "width": 300,
           "height": 150,
           "color": ""
         },
         "meta": {
-          "updateAt": 1753270000000,
+          "updateAt": 1767008554478,
           "createAt": 1753259560020
         }
       }
