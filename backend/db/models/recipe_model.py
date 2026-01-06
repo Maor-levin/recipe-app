@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import TYPE_CHECKING, List, Literal, Optional, Union
-from pydantic import field_validator, HttpUrl
-from sqlmodel import Column, DateTime, Field, Relationship, SQLModel, func, String, Text
+from pydantic import field_validator, HttpUrl, BaseModel
+from sqlmodel import Column, DateTime, Field, Relationship, SQLModel, func, String, Text, ForeignKey
 from sqlalchemy.dialects.postgresql import JSONB
 
 
@@ -93,13 +93,13 @@ class RecipeOut(RecipeBase):
     
 class Recipe(RecipeBase, table=True):
     id: int = Field(default=None, primary_key=True)
-    author_id: int = Field(foreign_key="user.id", ondelete="CASCADE")
+    author_id: int = Field(sa_column=Column(ForeignKey("user.id", ondelete="CASCADE"), nullable=False))
     title: str = Field(min_length=3, max_length=200, sa_column=Column(String(200)))
     description: str = Field(default="", max_length=1000, sa_column=Column(String(1000)))
     thumbnail_image_url: Optional[str] = Field(default=None, max_length=2048, sa_column=Column(String(2048), nullable=True))
     created_at: datetime = Field(sa_column=Column(DateTime(timezone=True),nullable=False,server_default=func.now()))
     updated_at: datetime = Field(sa_column=Column(DateTime(timezone=True),nullable=False,server_default=func.now(),onupdate=func.now()))
     author: "User" = Relationship(back_populates="recipes")
-    comments: List["Comment"] = Relationship(back_populates="recipe")
-    notes: List["Note"] = Relationship(back_populates="recipe")
-    favorited_by: List["Favorite"] = Relationship(back_populates="recipe")
+    comments: List["Comment"] = Relationship(back_populates="recipe", sa_relationship_kwargs={"passive_deletes": True})
+    notes: List["Note"] = Relationship(back_populates="recipe", sa_relationship_kwargs={"passive_deletes": True})
+    favorited_by: List["Favorite"] = Relationship(back_populates="recipe", sa_relationship_kwargs={"passive_deletes": True})

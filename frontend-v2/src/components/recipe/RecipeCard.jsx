@@ -1,23 +1,11 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import FavoriteButton from './FavoriteButton'
-import AuthModal from './AuthModal'
+import FavoriteButton from '../FavoriteButton'
+import AuthModal from '../modals/AuthModal'
+import { formatDateShort } from '../../utils/dateUtils'
 
 function RecipeCard({ recipe }) {
   const [showAuthModal, setShowAuthModal] = useState(false)
-
-  // Format date
-  const formatDate = (dateString) => {
-    try {
-      return new Date(dateString).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric'
-      })
-    } catch {
-      return ''
-    }
-  }
 
   return (
     <>
@@ -25,8 +13,8 @@ function RecipeCard({ recipe }) {
         <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 relative">
           {/* Favorite Button */}
           <div className="absolute top-3 right-3 z-10 bg-white rounded-full p-1 shadow-md">
-            <FavoriteButton 
-              recipeId={recipe.id} 
+            <FavoriteButton
+              recipeId={recipe.id}
               onAuthRequired={() => setShowAuthModal(true)}
               size="medium"
             />
@@ -61,7 +49,7 @@ function RecipeCard({ recipe }) {
               </span>
               <span className="text-gray-300 mx-2">|</span>
               <span className="whitespace-nowrap">
-                {recipe.created_at ? formatDate(recipe.created_at) : 'Unknown date'}
+                {formatDateShort(recipe.created_at)}
               </span>
             </div>
 

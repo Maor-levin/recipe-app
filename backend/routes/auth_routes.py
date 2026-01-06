@@ -2,19 +2,9 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import Session, select
 from auth.auth_utils import hash_password, verify_password, create_access_token, get_current_user
 from db.connection import get_session
-from db.models.user_model import User, UserCreate, UserOut
-from pydantic import BaseModel
+from db.models.user_model import User, UserCreate, UserOut, LoginRequest, LoginResponse
 
 router = APIRouter(prefix="/auth", tags=["authentication"])
-
-class LoginRequest(BaseModel):
-    username_or_email: str
-    password: str
-
-class LoginResponse(BaseModel):
-    access_token: str
-    token_type: str
-    user: UserOut
 
 @router.post("/register", response_model=UserOut, status_code=status.HTTP_201_CREATED)
 def register(user: UserCreate, db: Session = Depends(get_session)):

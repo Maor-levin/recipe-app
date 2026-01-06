@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import AuthModal from './AuthModal'
+import AuthModal from '../modals/AuthModal'
 
 function Navbar() {
     const [showAuthModal, setShowAuthModal] = useState(false)

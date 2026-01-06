@@ -1,0 +1,780 @@
+[
+  {
+    "title": "Classic Margherita Pizza",
+    "description": "A timeless Italian classic with fresh tomatoes, mozzarella, and basil. Perfect for a cozy dinner or entertaining guests.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "This authentic Margherita pizza recipe brings the flavors of Naples to your kitchen. The secret is in the simplicity - fresh ingredients and a hot oven create magic."
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 pizza dough (store-bought or homemade)",
+          "1/2 cup tomato sauce",
+          "8 oz fresh mozzarella, sliced",
+          "Fresh basil leaves",
+          "2 tbsp olive oil",
+          "Salt and pepper to taste"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Preheat your oven to 475°F (245°C). If you have a pizza stone, place it in the oven while preheating.\n\n2. Roll out your pizza dough on a floured surface to your desired thickness.\n\n3. Transfer the dough to a pizza pan or parchment paper.\n\n4. Spread the tomato sauce evenly over the dough, leaving a border for the crust.\n\n5. Arrange the mozzarella slices on top of the sauce.\n\n6. Drizzle with olive oil and season with salt and pepper.\n\n7. Bake for 12-15 minutes until the crust is golden and cheese is bubbly.\n\n8. Remove from oven and immediately top with fresh basil leaves.\n\n9. Slice and serve hot!"
+      }
+    ]
+  },
+  {
+    "title": "Creamy Chicken Alfredo Pasta",
+    "description": "Rich and creamy pasta dish that's surprisingly easy to make. A family favorite that comes together in under 30 minutes.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "This creamy Alfredo pasta is comfort food at its finest. The combination of tender chicken, al dente pasta, and rich sauce makes for a satisfying meal."
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 lb fettuccine pasta",
+          "2 chicken breasts, cut into strips",
+          "1 cup heavy cream",
+          "1/2 cup grated Parmesan cheese",
+          "4 cloves garlic, minced",
+          "3 tbsp butter",
+          "Salt and pepper",
+          "Fresh parsley for garnish"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Cook pasta according to package directions until al dente. Reserve 1/2 cup pasta water.\n\n2. Season chicken strips with salt and pepper. Cook in a large skillet over medium-high heat until golden and cooked through (about 6-8 minutes). Remove and set aside.\n\n3. In the same skillet, melt butter over medium heat. Add garlic and cook for 1 minute until fragrant.\n\n4. Pour in heavy cream and bring to a gentle simmer. Stir in Parmesan cheese until melted and smooth.\n\n5. Add cooked pasta and chicken to the sauce. Toss everything together, adding pasta water if needed to thin the sauce.\n\n6. Season with additional salt and pepper to taste.\n\n7. Serve hot, garnished with fresh parsley and extra Parmesan."
+      }
+    ]
+  },
+  {
+    "title": "Chocolate Chip Cookies",
+    "description": "The perfect chocolate chip cookie - crispy edges, chewy center, and loaded with chocolate chips. A classic that never goes out of style.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "These cookies are the perfect balance of crispy and chewy. The secret is slightly underbaking them so they stay soft in the center. Great for sharing or keeping all to yourself!"
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "2 1/4 cups all-purpose flour",
+          "1 tsp baking soda",
+          "1 tsp salt",
+          "1 cup butter, softened",
+          "3/4 cup granulated sugar",
+          "3/4 cup brown sugar",
+          "2 large eggs",
+          "2 tsp vanilla extract",
+          "2 cups chocolate chips"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Preheat oven to 375°F (190°C). Line baking sheets with parchment paper.\n\n2. In a medium bowl, whisk together flour, baking soda, and salt. Set aside.\n\n3. In a large bowl, cream together butter and both sugars until light and fluffy (about 3-4 minutes).\n\n4. Beat in eggs one at a time, then add vanilla extract.\n\n5. Gradually mix in the flour mixture until just combined.\n\n6. Stir in chocolate chips.\n\n7. Drop rounded tablespoons of dough onto prepared baking sheets, spacing them about 2 inches apart.\n\n8. Bake for 9-11 minutes until edges are golden but centers are still soft.\n\n9. Let cool on baking sheet for 5 minutes before transferring to wire rack.\n\n10. Enjoy warm with a glass of milk!"
+      }
+    ]
+  },
+  {
+    "title": "Vegetarian Buddha Bowl",
+    "description": "A colorful, nutritious bowl packed with roasted vegetables, grains, and a delicious tahini dressing. Perfect for meal prep!",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "This Buddha bowl is not only beautiful but also incredibly nutritious. Feel free to customize with your favorite vegetables and grains!"
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 cup quinoa, cooked",
+          "1 sweet potato, cubed",
+          "1 cup broccoli florets",
+          "1 red bell pepper, sliced",
+          "1 can chickpeas, drained and rinsed",
+          "2 cups baby spinach",
+          "1 avocado, sliced",
+          "2 tbsp olive oil",
+          "Salt, pepper, and paprika"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Tahini Dressing"
+      },
+      {
+        "type": "list",
+        "items": [
+          "3 tbsp tahini",
+          "2 tbsp lemon juice",
+          "2 tbsp water",
+          "1 clove garlic, minced",
+          "Salt to taste"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Preheat oven to 400°F (200°C).\n\n2. Toss sweet potato, broccoli, bell pepper, and chickpeas with olive oil, salt, pepper, and paprika.\n\n3. Spread vegetables on a baking sheet and roast for 20-25 minutes until tender and slightly charred.\n\n4. While vegetables roast, prepare the tahini dressing by whisking together all dressing ingredients until smooth.\n\n5. To assemble: Start with a base of quinoa, add roasted vegetables, top with fresh spinach and avocado slices.\n\n6. Drizzle with tahini dressing and enjoy!"
+      }
+    ]
+  },
+  {
+    "title": "Beef Tacos with Fresh Salsa",
+    "description": "Tender, flavorful beef tacos topped with fresh homemade salsa and all your favorite fixings. A crowd-pleaser for any occasion!",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1565299585323-38174c0c0e8c?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "These tacos are bursting with flavor! The key is seasoning the beef well and making fresh salsa. Customize with your favorite toppings!"
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 lb ground beef",
+          "8-10 taco shells or tortillas",
+          "1 packet taco seasoning",
+          "1 cup shredded lettuce",
+          "1 cup shredded cheese",
+          "Sour cream",
+          "Lime wedges"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Fresh Salsa"
+      },
+      {
+        "type": "list",
+        "items": [
+          "2 large tomatoes, diced",
+          "1/2 red onion, diced",
+          "1 jalapeño, seeded and minced",
+          "1/4 cup cilantro, chopped",
+          "1 lime, juiced",
+          "Salt to taste"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Heat a large skillet over medium-high heat. Add ground beef and cook until browned, breaking it up as it cooks.\n\n2. Drain excess fat, then add taco seasoning and follow package directions (usually add water and simmer).\n\n3. While beef cooks, prepare the salsa by combining all salsa ingredients in a bowl. Let sit for flavors to meld.\n\n4. Warm taco shells according to package directions.\n\n5. Fill each shell with seasoned beef, then top with lettuce, cheese, salsa, and a dollop of sour cream.\n\n6. Serve immediately with lime wedges on the side."
+      }
+    ]
+  },
+  {
+    "title": "Homemade Mac and Cheese",
+    "description": "Creamy, cheesy comfort food that's perfect for any day. This recipe uses three types of cheese for maximum flavor.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1543339494-b4cd4f7ba686?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "Nothing beats homemade mac and cheese! This version is extra creamy and cheesy, perfect for kids and adults alike."
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 lb elbow macaroni",
+          "4 tbsp butter",
+          "1/4 cup all-purpose flour",
+          "3 cups whole milk",
+          "2 cups shredded cheddar cheese",
+          "1 cup shredded mozzarella",
+          "1/2 cup grated Parmesan",
+          "Salt and pepper to taste",
+          "1/2 cup breadcrumbs (optional)"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Cook macaroni according to package directions until al dente. Drain and set aside.\n\n2. In a large pot, melt butter over medium heat. Whisk in flour and cook for 1 minute.\n\n3. Gradually whisk in milk until smooth. Bring to a simmer and cook until thickened, about 5 minutes.\n\n4. Remove from heat and stir in all cheeses until melted and smooth.\n\n5. Season with salt and pepper.\n\n6. Add cooked macaroni and stir until well coated.\n\n7. Optional: Transfer to a baking dish, top with breadcrumbs, and broil for 2-3 minutes until golden.\n\n8. Serve hot!"
+      }
+    ]
+  },
+  {
+    "title": "Grilled Salmon with Lemon Butter",
+    "description": "Perfectly grilled salmon with a simple lemon butter sauce. Healthy, delicious, and ready in under 20 minutes.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "This grilled salmon recipe is simple yet elegant. The lemon butter sauce adds brightness and richness without overpowering the fish."
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "4 salmon fillets (6 oz each)",
+          "2 tbsp olive oil",
+          "Salt and pepper",
+          "4 tbsp butter",
+          "2 cloves garlic, minced",
+          "Juice of 1 lemon",
+          "2 tbsp fresh parsley, chopped",
+          "Lemon wedges for serving"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Preheat grill to medium-high heat.\n\n2. Pat salmon fillets dry and brush with olive oil. Season generously with salt and pepper.\n\n3. Grill salmon skin-side down for 4-5 minutes, then flip and grill for another 3-4 minutes until cooked through.\n\n4. While salmon grills, melt butter in a small saucepan. Add garlic and cook for 30 seconds.\n\n5. Remove from heat and stir in lemon juice and parsley.\n\n6. Serve salmon hot with lemon butter sauce drizzled over top and lemon wedges on the side."
+      }
+    ]
+  },
+  {
+    "title": "Classic Caesar Salad",
+    "description": "Crisp romaine lettuce with homemade Caesar dressing, croutons, and Parmesan. A timeless salad recipe.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "This classic Caesar salad features a rich, creamy dressing that's made from scratch. The key is using quality anchovies and fresh lemon juice."
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "2 heads romaine lettuce, chopped",
+          "1/2 cup Parmesan cheese, grated",
+          "1 cup croutons",
+          "2 anchovy fillets",
+          "2 cloves garlic",
+          "1/4 cup mayonnaise",
+          "2 tbsp lemon juice",
+          "1 tsp Dijon mustard",
+          "1/4 cup olive oil",
+          "Salt and pepper"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. In a food processor or blender, combine anchovies, garlic, mayonnaise, lemon juice, and Dijon mustard.\n\n2. While blending, slowly drizzle in olive oil until dressing is smooth and creamy.\n\n3. Season with salt and pepper to taste.\n\n4. In a large bowl, toss romaine lettuce with dressing until well coated.\n\n5. Add croutons and Parmesan cheese, then toss again.\n\n6. Serve immediately."
+      }
+    ]
+  },
+  {
+    "title": "Beef Stir Fry",
+    "description": "Quick and easy beef stir fry with colorful vegetables in a savory sauce. Perfect for busy weeknights.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "This stir fry comes together in minutes and is packed with flavor. Feel free to use whatever vegetables you have on hand!"
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 lb beef sirloin, sliced thin",
+          "2 tbsp vegetable oil",
+          "1 bell pepper, sliced",
+          "1 onion, sliced",
+          "1 cup broccoli florets",
+          "1 carrot, julienned",
+          "2 cloves garlic, minced",
+          "1 tbsp ginger, grated",
+          "1/4 cup soy sauce",
+          "2 tbsp hoisin sauce",
+          "1 tbsp cornstarch",
+          "2 tbsp water",
+          "Green onions for garnish"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Heat 1 tbsp oil in a large wok or skillet over high heat.\n\n2. Add beef and cook for 2-3 minutes until browned. Remove and set aside.\n\n3. Add remaining oil to the pan. Add vegetables and stir fry for 3-4 minutes until crisp-tender.\n\n4. Add garlic and ginger, cook for 30 seconds.\n\n5. Return beef to the pan. Add soy sauce and hoisin sauce.\n\n6. Mix cornstarch with water and add to the pan. Cook until sauce thickens.\n\n7. Garnish with green onions and serve over rice."
+      }
+    ]
+  },
+  {
+    "title": "Banana Bread",
+    "description": "Moist and tender banana bread that's perfect for breakfast or a snack. Uses overripe bananas for the best flavor.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "This banana bread is incredibly moist and flavorful. The secret is using very ripe bananas - the blacker, the better!"
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "3 ripe bananas, mashed",
+          "1/3 cup melted butter",
+          "1 tsp baking soda",
+          "Pinch of salt",
+          "3/4 cup sugar",
+          "1 large egg, beaten",
+          "1 tsp vanilla extract",
+          "1 1/2 cups all-purpose flour",
+          "1/2 cup chopped walnuts (optional)"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Preheat oven to 350°F (175°C). Grease a 9x5 inch loaf pan.\n\n2. In a mixing bowl, mash the ripe bananas with a fork until smooth.\n\n3. Stir melted butter into the mashed bananas.\n\n4. Mix in baking soda and salt. Stir in sugar, beaten egg, and vanilla extract.\n\n5. Mix in the flour until just combined. Fold in walnuts if using.\n\n6. Pour batter into prepared loaf pan.\n\n7. Bake for 50-60 minutes, until a toothpick inserted into center comes out clean.\n\n8. Let cool in pan for 10 minutes, then remove and cool completely on wire rack."
+      }
+    ]
+  },
+  {
+    "title": "Chicken Curry",
+    "description": "Aromatic and flavorful chicken curry with a rich, creamy sauce. Serve with rice or naan bread.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "This chicken curry is packed with warm spices and has a beautiful depth of flavor. Adjust the spice level to your preference!"
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "2 lbs chicken thighs, cut into pieces",
+          "2 tbsp vegetable oil",
+          "1 large onion, diced",
+          "3 cloves garlic, minced",
+          "1 tbsp ginger, grated",
+          "2 tbsp curry powder",
+          "1 tsp turmeric",
+          "1 tsp cumin",
+          "1 can (14 oz) coconut milk",
+          "1 can (14 oz) diced tomatoes",
+          "Salt to taste",
+          "Fresh cilantro for garnish"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Heat oil in a large pot over medium-high heat.\n\n2. Add chicken and cook until browned on all sides, about 5-6 minutes. Remove and set aside.\n\n3. In the same pot, add onion and cook until softened, about 5 minutes.\n\n4. Add garlic and ginger, cook for 1 minute.\n\n5. Add curry powder, turmeric, and cumin. Stir for 30 seconds until fragrant.\n\n6. Add coconut milk and diced tomatoes. Bring to a simmer.\n\n7. Return chicken to the pot. Cover and simmer for 25-30 minutes until chicken is cooked through.\n\n8. Season with salt. Garnish with cilantro and serve over rice."
+      }
+    ]
+  },
+  {
+    "title": "French Onion Soup",
+    "description": "Rich and savory French onion soup topped with melted Gruyère cheese. A classic comfort food.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "This French onion soup takes time but is worth every minute. The key is slowly caramelizing the onions to develop deep, sweet flavors."
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "4 large yellow onions, thinly sliced",
+          "4 tbsp butter",
+          "2 tbsp olive oil",
+          "1 tsp sugar",
+          "Salt and pepper",
+          "4 cups beef broth",
+          "1/2 cup dry white wine",
+          "2 sprigs fresh thyme",
+          "1 bay leaf",
+          "French bread, sliced",
+          "1 cup Gruyère cheese, grated"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. In a large pot, melt butter and olive oil over medium-low heat.\n\n2. Add onions and cook slowly for 45-60 minutes, stirring occasionally, until deeply caramelized.\n\n3. Add sugar, salt, and pepper. Continue cooking for 10 more minutes.\n\n4. Add wine and scrape up any browned bits. Simmer until wine is reduced by half.\n\n5. Add broth, thyme, and bay leaf. Bring to a boil, then reduce heat and simmer for 30 minutes.\n\n6. Preheat broiler. Ladle soup into oven-safe bowls.\n\n7. Top each bowl with a slice of bread and sprinkle with cheese.\n\n8. Broil until cheese is bubbly and golden, about 2-3 minutes.\n\n9. Serve immediately."
+      }
+    ]
+  },
+  {
+    "title": "Chocolate Brownies",
+    "description": "Fudgy, rich chocolate brownies with a crackly top. The perfect dessert for chocolate lovers.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "These brownies are dense, fudgy, and incredibly chocolatey. The secret is using both cocoa powder and melted chocolate."
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 cup butter",
+          "2 cups sugar",
+          "4 large eggs",
+          "1 tsp vanilla extract",
+          "1 cup all-purpose flour",
+          "1/2 cup cocoa powder",
+          "1/2 tsp salt",
+          "1 cup chocolate chips"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Preheat oven to 350°F (175°C). Grease a 9x13 inch baking pan.\n\n2. Melt butter in a large saucepan over low heat.\n\n3. Remove from heat and stir in sugar until well combined.\n\n4. Beat in eggs one at a time, then add vanilla.\n\n5. In a separate bowl, whisk together flour, cocoa powder, and salt.\n\n6. Gradually stir dry ingredients into wet ingredients until just combined.\n\n7. Fold in chocolate chips.\n\n8. Pour batter into prepared pan and spread evenly.\n\n9. Bake for 25-30 minutes until a toothpick inserted comes out with a few moist crumbs.\n\n10. Let cool completely before cutting into squares."
+      }
+    ]
+  },
+  {
+    "title": "Shrimp Scampi",
+    "description": "Garlicky shrimp scampi with pasta. Elegant yet simple, perfect for a date night or special dinner.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "This shrimp scampi is restaurant-quality but easy enough for a weeknight. The key is not overcooking the shrimp!"
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 lb large shrimp, peeled and deveined",
+          "8 oz linguine pasta",
+          "4 tbsp butter",
+          "4 cloves garlic, minced",
+          "1/2 cup white wine",
+          "Juice of 1 lemon",
+          "1/4 cup fresh parsley, chopped",
+          "Salt and pepper",
+          "Red pepper flakes (optional)",
+          "Grated Parmesan cheese"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Cook pasta according to package directions until al dente. Reserve 1/2 cup pasta water.\n\n2. Pat shrimp dry and season with salt and pepper.\n\n3. Heat butter in a large skillet over medium-high heat.\n\n4. Add shrimp and cook for 1-2 minutes per side until pink and opaque. Remove and set aside.\n\n5. Add garlic to the same pan and cook for 30 seconds.\n\n6. Add wine and lemon juice. Simmer for 2 minutes.\n\n7. Add cooked pasta and shrimp back to the pan. Toss with sauce, adding pasta water if needed.\n\n8. Stir in parsley and red pepper flakes if using.\n\n9. Serve immediately with grated Parmesan."
+      }
+    ]
+  },
+  {
+    "title": "Vegetable Lasagna",
+    "description": "Layered lasagna with roasted vegetables and three types of cheese. A vegetarian comfort food classic.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "This vegetable lasagna is hearty and satisfying, packed with layers of roasted vegetables, ricotta, mozzarella, and marinara sauce."
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "12 lasagna noodles",
+          "2 cups ricotta cheese",
+          "2 cups shredded mozzarella",
+          "1/2 cup grated Parmesan",
+          "2 cups marinara sauce",
+          "1 zucchini, sliced",
+          "1 yellow squash, sliced",
+          "1 bell pepper, sliced",
+          "1 onion, sliced",
+          "2 cups spinach",
+          "2 cloves garlic, minced",
+          "2 tbsp olive oil",
+          "Salt and pepper"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Preheat oven to 400°F (200°C).\n\n2. Toss vegetables with olive oil, salt, and pepper. Roast for 20 minutes until tender.\n\n3. Cook lasagna noodles according to package directions until al dente.\n\n4. In a bowl, mix ricotta with garlic, salt, and pepper.\n\n5. Reduce oven to 375°F (190°C).\n\n6. In a 9x13 inch baking dish, spread 1/2 cup marinara sauce.\n\n7. Layer: 4 noodles, 1/3 ricotta mixture, 1/3 roasted vegetables, 1/3 mozzarella, 1/3 marinara. Repeat twice.\n\n8. Top with remaining Parmesan.\n\n9. Cover with foil and bake for 30 minutes. Remove foil and bake 15 more minutes until bubbly.\n\n10. Let rest 10 minutes before serving."
+      }
+    ]
+  },
+  {
+    "title": "Pancakes",
+    "description": "Fluffy, golden pancakes perfect for weekend breakfasts. Serve with maple syrup and butter.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1528207779346-2212fe4f8b0a?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "These pancakes are light, fluffy, and golden brown. The secret is not overmixing the batter - a few lumps are fine!"
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 1/2 cups all-purpose flour",
+          "3 1/2 tsp baking powder",
+          "1 tsp salt",
+          "1 tbsp sugar",
+          "1 1/4 cups milk",
+          "1 egg",
+          "3 tbsp butter, melted",
+          "Maple syrup and butter for serving"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. In a large bowl, sift together flour, baking powder, salt, and sugar.\n\n2. Make a well in the center and add milk, egg, and melted butter.\n\n3. Mix until just combined - batter should be slightly lumpy.\n\n4. Heat a lightly oiled griddle or frying pan over medium-high heat.\n\n5. Pour or scoop batter onto the griddle, using approximately 1/4 cup for each pancake.\n\n6. Brown on both sides, flipping when bubbles form on the surface.\n\n7. Serve hot with butter and maple syrup."
+      }
+    ]
+  },
+  {
+    "title": "Beef Burgers",
+    "description": "Juicy, flavorful homemade beef burgers. Top with your favorite fixings for the perfect burger.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "These burgers are juicy and packed with flavor. The key is using good quality ground beef and not overworking the meat."
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 1/2 lbs ground beef (80/20)",
+          "1 tsp Worcestershire sauce",
+          "1 tsp garlic powder",
+          "Salt and pepper",
+          "4 burger buns",
+          "Lettuce, tomato, onion",
+          "Cheese slices",
+          "Condiments of choice"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. In a bowl, gently mix ground beef with Worcestershire sauce, garlic powder, salt, and pepper.\n\n2. Form into 4 equal patties, being careful not to overwork the meat.\n\n3. Make a slight indentation in the center of each patty with your thumb.\n\n4. Heat grill or skillet to medium-high heat.\n\n5. Cook burgers for 4-5 minutes per side for medium-rare, or longer for desired doneness.\n\n6. Add cheese during the last minute of cooking if desired.\n\n7. Toast buns lightly.\n\n8. Assemble burgers with your favorite toppings and condiments.\n\n9. Serve immediately."
+      }
+    ]
+  },
+  {
+    "title": "Mushroom Risotto",
+    "description": "Creamy, rich risotto with earthy mushrooms. A labor of love that's worth every stir.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "Risotto requires patience and constant stirring, but the result is a creamy, luxurious dish that's worth the effort."
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 1/2 cups Arborio rice",
+          "4 cups warm chicken or vegetable broth",
+          "1 lb mixed mushrooms, sliced",
+          "1 onion, diced",
+          "3 cloves garlic, minced",
+          "1/2 cup white wine",
+          "4 tbsp butter",
+          "1/2 cup grated Parmesan",
+          "2 tbsp olive oil",
+          "Salt and pepper",
+          "Fresh thyme"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Heat broth in a saucepan and keep warm over low heat.\n\n2. Heat olive oil in a large pan. Add mushrooms and cook until golden. Remove and set aside.\n\n3. Add 2 tbsp butter to the same pan. Add onion and cook until translucent.\n\n4. Add rice and stir for 2 minutes until grains are coated.\n\n5. Add wine and stir until absorbed.\n\n6. Add broth one ladle at a time, stirring constantly until each addition is absorbed before adding more.\n\n7. Continue until rice is creamy and al dente (about 20 minutes).\n\n8. Stir in remaining butter, Parmesan, and cooked mushrooms.\n\n9. Season with salt and pepper. Garnish with fresh thyme.\n\n10. Serve immediately."
+      }
+    ]
+  },
+  {
+    "title": "Chicken Noodle Soup",
+    "description": "Classic homemade chicken noodle soup. Comforting, nourishing, and perfect for cold days.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "This chicken noodle soup is the ultimate comfort food. Homemade stock makes all the difference, but store-bought works too!"
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "2 lbs chicken thighs or breasts",
+          "8 cups chicken broth",
+          "2 carrots, diced",
+          "2 celery stalks, diced",
+          "1 onion, diced",
+          "3 cloves garlic, minced",
+          "2 cups egg noodles",
+          "1 tsp dried thyme",
+          "2 bay leaves",
+          "Salt and pepper",
+          "Fresh parsley"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. In a large pot, bring broth to a boil. Add chicken and simmer for 20 minutes until cooked through.\n\n2. Remove chicken and let cool. Shred when cool enough to handle.\n\n3. Add carrots, celery, and onion to the broth. Simmer for 10 minutes.\n\n4. Add garlic, thyme, and bay leaves. Simmer for 5 more minutes.\n\n5. Add noodles and cook according to package directions.\n\n6. Return shredded chicken to the pot.\n\n7. Season with salt and pepper to taste.\n\n8. Remove bay leaves. Garnish with fresh parsley.\n\n9. Serve hot."
+      }
+    ]
+  },
+  {
+    "title": "Tiramisu",
+    "description": "Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream. Elegant and delicious.",
+    "thumbnail_image_url": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "Tiramisu is a no-bake dessert that's surprisingly easy to make. The key is using quality ingredients - good espresso and real mascarpone."
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 1/2 cups strong espresso, cooled",
+          "3 tbsp coffee liqueur (optional)",
+          "24 ladyfinger cookies",
+          "1 lb mascarpone cheese",
+          "1 cup heavy cream",
+          "1/2 cup sugar",
+          "4 egg yolks",
+          "Cocoa powder for dusting"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Mix espresso with coffee liqueur if using.\n\n2. In a bowl, beat egg yolks with sugar until pale and thick.\n\n3. Add mascarpone and mix until smooth.\n\n4. In a separate bowl, whip heavy cream until stiff peaks form.\n\n5. Fold whipped cream into mascarpone mixture.\n\n6. Quickly dip ladyfingers in espresso mixture (don't soak).\n\n7. Arrange a layer of dipped ladyfingers in a 9x13 inch dish.\n\n8. Spread half of mascarpone mixture over ladyfingers.\n\n9. Repeat with another layer of ladyfingers and remaining mascarpone.\n\n10. Cover and refrigerate for at least 4 hours or overnight.\n\n11. Dust with cocoa powder before serving."
+      }
+    ]
+  }
+]
+

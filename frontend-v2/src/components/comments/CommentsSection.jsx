@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { commentAPI } from '../utils/api'
+import { commentAPI } from '../../utils/api'
 import CommentForm from './CommentForm'
 import CommentList from './CommentList'
 

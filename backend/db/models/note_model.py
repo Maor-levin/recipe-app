@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import TYPE_CHECKING
-from sqlmodel import Column, DateTime, Field, Relationship, SQLModel, func, UniqueConstraint, Text
+from sqlmodel import Column, DateTime, Field, Relationship, SQLModel, func, UniqueConstraint, Text, ForeignKey
 
 if TYPE_CHECKING:
     from .user_model import User
@@ -32,8 +32,8 @@ class Note(NoteBase, table=True):
     created_at: datetime = Field(sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now()))
     updated_at: datetime = Field(sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now(), onupdate=func.now()))
     
-    user_id: int = Field(foreign_key="user.id", ondelete="CASCADE")
-    recipe_id: int = Field(foreign_key="recipe.id", ondelete="CASCADE")
+    user_id: int = Field(sa_column=Column(ForeignKey("user.id", ondelete="CASCADE"), nullable=False))
+    recipe_id: int = Field(sa_column=Column(ForeignKey("recipe.id", ondelete="CASCADE"), nullable=False))
     
     owner: "User" = Relationship(back_populates="notes")
     recipe: "Recipe" = Relationship(back_populates="notes")

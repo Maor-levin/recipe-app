@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Header from './components/Header'
-import Navbar from './components/Navbar'
+import Header from './components/layout/Header'
+import Navbar from './components/layout/Navbar'
 import Home from './pages/Home'
 import RecipeDetail from './pages/RecipeDetail'
 import CreateRecipe from './pages/CreateRecipe'
@@ -17,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/recipes/:id" element={<RecipeDetail />} />
+          <Route path="/recipes/:id/edit" element={<CreateRecipe />} />
           <Route path="/create" element={<CreateRecipe />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/profile" element={<Profile />} />

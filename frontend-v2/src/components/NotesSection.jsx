@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
-import { noteAPI, favoriteAPI } from '../utils/api'
+import { useState, useEffect, useCallback, useRef } from 'react'
+import { noteAPI } from '../utils/api'
 
-function NotesSection({ recipeId, onAuthRequired, refreshTrigger }) {
+function NotesSection({ recipeId, onAuthRequired, isFavorited }) {
     const [note, setNote] = useState(null)
     const [content, setContent] = useState('')
     const [originalContent, setOriginalContent] = useState('')
@@ -9,39 +9,11 @@ function NotesSection({ recipeId, onAuthRequired, refreshTrigger }) {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState('')
     const [currentUser, setCurrentUser] = useState(null)
-    const [isFavorited, setIsFavorited] = useState(false)
-    const [checkingFavorite, setCheckingFavorite] = useState(true)
+    const saveTimeoutRef = useRef(null)
 
     const maxLength = 5000
 
-    // Check if content has changed
-    const hasChanges = content.trim() !== originalContent.trim()
-
-    useEffect(() => {
-        const username = localStorage.getItem('username')
-        setCurrentUser(username)
-
-        if (username) {
-            checkIfFavorited()
-            fetchNote()
-        } else {
-            setLoading(false)
-            setCheckingFavorite(false)
-        }
-    }, [recipeId, refreshTrigger])
-
-    const checkIfFavorited = async () => {
-        try {
-            const response = await favoriteAPI.check(recipeId)
-            setIsFavorited(response.data.is_favorited)
-        } catch (err) {
-            console.error('Error checking favorite:', err)
-        } finally {
-            setCheckingFavorite(false)
-        }
-    }
-
-    const fetchNote = async () => {
+    const fetchNote = useCallback(async () => {
         try {
             setLoading(true)
             const response = await noteAPI.getForRecipe(recipeId)
@@ -63,24 +35,42 @@ function NotesSection({ recipeId, onAuthRequired, refreshTrigger }) {
         } finally {
             setLoading(false)
         }
-    }
+    }, [recipeId])
 
-    const handleSave = async () => {
+    useEffect(() => {
+        const username = localStorage.getItem('username')
+        setCurrentUser(username)
+
+        if (username) {
+            fetchNote()
+        } else {
+            setLoading(false)
+        }
+    }, [recipeId, fetchNote])
+
+    // Refetch note when favorited status changes to true
+    useEffect(() => {
+        if (currentUser && isFavorited) {
+            fetchNote()
+        }
+    }, [isFavorited, currentUser, fetchNote])
+
+    const saveNote = async (noteContent) => {
         setSaving(true)
         setError('')
 
         try {
-            if (!content.trim()) {
+            if (!noteContent.trim()) {
                 // Delete note if content is empty
-                await noteAPI.delete(recipeId)
-                setNote(null)
-                setContent('')
-                setOriginalContent('')
+                if (note) {
+                    await noteAPI.delete(recipeId)
+                    setNote(null)
+                    setOriginalContent('')
+                }
             } else {
                 // Save or update note
-                const response = await noteAPI.saveOrUpdate(recipeId, content.trim())
+                const response = await noteAPI.saveOrUpdate(recipeId, noteContent.trim())
                 setNote(response.data)
-                setContent(response.data.content)
                 setOriginalContent(response.data.content)
             }
         } catch (err) {
@@ -91,7 +81,34 @@ function NotesSection({ recipeId, onAuthRequired, refreshTrigger }) {
         }
     }
 
-    if (loading || checkingFavorite) {
+    // Auto-save with debounce
+    useEffect(() => {
+        if (!isFavorited || !currentUser) return
+
+        // Clear existing timeout
+        if (saveTimeoutRef.current) {
+            clearTimeout(saveTimeoutRef.current)
+        }
+
+        // Don't save if content hasn't changed
+        if (content.trim() === originalContent.trim()) {
+            return
+        }
+
+        // Set new timeout to save after 1.5 seconds of inactivity
+        saveTimeoutRef.current = setTimeout(() => {
+            saveNote(content)
+        }, 1500)
+
+        // Cleanup timeout on unmount
+        return () => {
+            if (saveTimeoutRef.current) {
+                clearTimeout(saveTimeoutRef.current)
+            }
+        }
+    }, [content, isFavorited, currentUser])
+
+    if (loading) {
         return null // Don't show anything while loading
     }
 
@@ -159,14 +176,9 @@ function NotesSection({ recipeId, onAuthRequired, refreshTrigger }) {
                                     <span className={`text-xs ${content.length > maxLength * 0.9 ? 'text-red-600' : 'text-gray-600'}`}>
                                         {content.length}/{maxLength}
                                     </span>
-                                    <button
-                                        onClick={handleSave}
-                                        disabled={saving || !hasChanges}
-                                        className="px-3 py-1 text-xs bg-yellow-700 text-white rounded hover:bg-yellow-800 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
-                                        style={{ fontFamily: 'Georgia, serif' }}
-                                    >
-                                        {saving ? 'Saving...' : 'Save'}
-                                    </button>
+                                    <span className="text-xs text-gray-500" style={{ fontFamily: 'Georgia, serif' }}>
+                                        {saving ? '💾 Saving...' : content.trim() === originalContent.trim() ? '✓ Saved' : '✎ Editing...'}
+                                    </span>
                                 </div>
                                 {error && (
                                     <p className="text-red-600 text-xs mt-1">{error}</p>

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { authAPI } from '../utils/api'
+import { authAPI } from '../../utils/api'
 
 function AuthModal({ isOpen, onClose }) {
     const [isLogin, setIsLogin] = useState(true)

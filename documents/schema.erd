@@ -4,9 +4,9 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": -306.575,
-    "scrollLeft": 0,
-    "zoomLevel": 0.85,
+    "scrollTop": -305.3991,
+    "scrollLeft": -744.1075,
+    "zoomLevel": 0.73,
     "show": 493,
     "database": 16,
     "databaseName": "",
@@ -76,15 +76,15 @@
           "w-g_11Ry-E7iU2bTpKP_9"
         ],
         "ui": {
-          "x": 245.6266,
-          "y": 169.0002,
+          "x": 486.7223,
+          "y": 297.7675,
           "zIndex": 2,
           "widthName": 60,
           "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1767008515733,
+          "updateAt": 1767698411768,
           "createAt": 1753172869858
         }
       },
@@ -113,15 +113,15 @@
           "recipe_updated_at_col"
         ],
         "ui": {
-          "x": 1092.8358,
-          "y": 189.8955,
+          "x": 1191.4659,
+          "y": 289.8955,
           "zIndex": 65,
           "widthName": 60,
           "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1767008512053,
+          "updateAt": 1767698406136,
           "createAt": 1753173068097
         }
       },
@@ -144,15 +144,15 @@
           "1-llSPE7UQX83PLm3Xw-l"
         ],
         "ui": {
-          "x": 139.5136,
-          "y": 537.1703,
+          "x": 891.5682,
+          "y": 72.7868,
           "zIndex": 96,
           "widthName": 60,
           "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1767008540630,
+          "updateAt": 1767698416556,
           "createAt": 1753256468022
         }
       },
@@ -177,15 +177,15 @@
           "notes_updated_at_col"
         ],
         "ui": {
-          "x": 1124.8541,
-          "y": 613.3924,
+          "x": 1172.7993,
+          "y": 672.2965,
           "zIndex": 100,
           "widthName": 60,
           "widthComment": 163,
           "color": ""
         },
         "meta": {
-          "updateAt": 1767008551022,
+          "updateAt": 1767698392805,
           "createAt": 1753270000000
         }
       },
@@ -206,15 +206,15 @@
           "favorites_created_at_col"
         ],
         "ui": {
-          "x": 572.0015,
-          "y": 647.5732,
+          "x": 674.7412,
+          "y": 709.2172,
           "zIndex": 101,
           "widthName": 60,
           "widthComment": 110,
           "color": ""
         },
         "meta": {
-          "updateAt": 1767008546072,
+          "updateAt": 1767698394362,
           "createAt": 1753270000000
         }
       }
@@ -852,8 +852,8 @@
           "columnIds": [
             "8cecix6JCMHudRH9QJlQ8"
           ],
-          "x": 614.6266,
-          "y": 231.0002,
+          "x": 855.7223,
+          "y": 359.7675,
           "direction": 2
         },
         "end": {
@@ -861,8 +861,8 @@
           "columnIds": [
             "xuuec_nTStgb9uNhxoR5S"
           ],
-          "x": 1092.8358,
-          "y": 231.22883333333334,
+          "x": 1191.4659,
+          "y": 351.8955,
           "direction": 1
         },
         "meta": {
@@ -880,17 +880,17 @@
           "columnIds": [
             "e8DI6spgcWtiNbw_oHADZ"
           ],
-          "x": 1092.8358,
-          "y": 313.8955,
-          "direction": 1
+          "x": 1387.9659,
+          "y": 289.8955,
+          "direction": 4
         },
         "end": {
           "tableId": "v68FPlSmSY-HsTpLo05mh",
           "columnIds": [
             "RPwiyTa-IsaIxghPh5xx9"
           ],
-          "x": 466.5136,
-          "y": 625.1703,
+          "x": 1218.5682000000002,
+          "y": 160.7868,
           "direction": 2
         },
         "meta": {
@@ -908,18 +908,18 @@
           "columnIds": [
             "8cecix6JCMHudRH9QJlQ8"
           ],
-          "x": 337.8766,
-          "y": 417.0002,
-          "direction": 8
+          "x": 671.2223,
+          "y": 297.7675,
+          "direction": 4
         },
         "end": {
           "tableId": "v68FPlSmSY-HsTpLo05mh",
           "columnIds": [
             "yr__VQcakyXj_UzmAPDLN"
           ],
-          "x": 303.0136,
-          "y": 537.1703,
-          "direction": 4
+          "x": 891.5682,
+          "y": 160.7868,
+          "direction": 1
         },
         "meta": {
           "updateAt": 1753256623083,
@@ -936,8 +936,8 @@
           "columnIds": [
             "8cecix6JCMHudRH9QJlQ8"
           ],
-          "x": 614.6266,
-          "y": 355.0002,
+          "x": 855.7223,
+          "y": 483.7675,
           "direction": 2
         },
         "end": {
@@ -945,8 +945,8 @@
           "columnIds": [
             "notes_user_id_col"
           ],
-          "x": 1124.8541,
-          "y": 713.3924,
+          "x": 1172.7993,
+          "y": 772.2965,
           "direction": 1
         },
         "meta": {
@@ -964,8 +964,8 @@
           "columnIds": [
             "e8DI6spgcWtiNbw_oHADZ"
           ],
-          "x": 1289.3358,
-          "y": 437.89549999999997,
+          "x": 1387.9659,
+          "y": 537.8955000000001,
           "direction": 8
         },
         "end": {
@@ -973,8 +973,8 @@
           "columnIds": [
             "notes_recipe_id_col"
           ],
-          "x": 1289.3541,
-          "y": 613.3924,
+          "x": 1337.2993,
+          "y": 672.2965,
           "direction": 4
         },
         "meta": {
@@ -992,8 +992,8 @@
           "columnIds": [
             "8cecix6JCMHudRH9QJlQ8"
           ],
-          "x": 522.3766,
-          "y": 417.0002,
+          "x": 671.2223,
+          "y": 545.7674999999999,
           "direction": 8
         },
         "end": {
@@ -1001,9 +1001,9 @@
           "columnIds": [
             "favorites_user_id_col"
           ],
-          "x": 572.0015,
-          "y": 723.5732,
-          "direction": 1
+          "x": 838.2412,
+          "y": 709.2172,
+          "direction": 4
         },
         "meta": {
           "updateAt": 1753270000000,
@@ -1020,8 +1020,8 @@
           "columnIds": [
             "e8DI6spgcWtiNbw_oHADZ"
           ],
-          "x": 1092.8358,
-          "y": 396.5621666666667,
+          "x": 1191.4659,
+          "y": 475.8955,
           "direction": 1
         },
         "end": {
@@ -1029,8 +1029,8 @@
           "columnIds": [
             "favorites_recipe_id_col"
           ],
-          "x": 899.0015,
-          "y": 723.5732,
+          "x": 1001.7412,
+          "y": 785.2172,
           "direction": 2
         },
         "meta": {
@@ -1041,23 +1041,6 @@
     },
     "indexEntities": {},
     "indexColumnEntities": {},
-    "memoEntities": {
-      "R6OIVX7M8kMhlp9EI3nYs": {
-        "id": "R6OIVX7M8kMhlp9EI3nYs",
-        "value": "RecipeBlock types:\n- subtitle: { type, text }\n- text: { type, text }\n- list: { type, items[] }\n- image: { type, url }",
-        "ui": {
-          "x": 1516.2237,
-          "y": 386.7264,
-          "zIndex": 215,
-          "width": 300,
-          "height": 150,
-          "color": ""
-        },
-        "meta": {
-          "updateAt": 1767008554478,
-          "createAt": 1753259560020
-        }
-      }
-    }
+    "memoEntities": {}
   }
 }

@@ -19,11 +19,14 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    // Check if it's a 401 error and not a login/register endpoint
+    // Check if it's a 401 error and not a login/register/delete endpoint
     if (error.response?.status === 401) {
       const url = error.config?.url || "";
-      // Don't logout on login/register failures
-      if (!url.includes("/auth/login") && !url.includes("/auth/register")) {
+      // Don't logout on login/register/delete account/delete recipe password failures
+      if (!url.includes("/auth/login") && 
+          !url.includes("/auth/register") && 
+          !url.includes("/users/me") &&
+          !(url.includes("/recipes/") && error.config?.method === "delete")) {
         // Token expired or invalid - clear auth and redirect
         localStorage.removeItem("token");
         localStorage.removeItem("username");
@@ -63,7 +66,7 @@ export const recipeAPI = {
   getByUser: (userId) => api.get(`/recipes/by-user/${userId}`),
   create: (recipeData) => api.post("/recipes/", recipeData),
   update: (id, recipeData) => api.put(`/recipes/${id}`, recipeData),
-  delete: (id) => api.delete(`/recipes/${id}`),
+  delete: (id, password) => api.delete(`/recipes/${id}`, { data: { password } }),
 };
 
 // Comment API

@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import TYPE_CHECKING, List, Optional
-from pydantic import EmailStr, field_validator
+from pydantic import EmailStr, field_validator, BaseModel
 from sqlmodel import Column, DateTime, Relationship, SQLModel, Field, String, func
 
 if TYPE_CHECKING:
@@ -30,9 +30,27 @@ class UserBase(SQLModel):
 
 class UserCreate(UserBase):
     password: str = Field(repr=False)
-  
-    
-class UserOut(UserBase): 
+
+
+class PasswordConfirmation(BaseModel):
+    """Reusable model for password confirmation on sensitive operations"""
+    password: str
+
+
+class LoginRequest(BaseModel):
+    """Login credentials"""
+    username_or_email: str
+    password: str
+
+
+class LoginResponse(BaseModel):
+    """Login response with token and user data"""
+    access_token: str
+    token_type: str
+    user: "UserOut"
+
+
+class UserOut(UserBase):
     id: int
     created_at: datetime
     
@@ -45,7 +63,7 @@ class User(UserBase, table=True):
     id: int | None = Field(default=None, primary_key=True)
     hashed_password: str = Field(repr=False)
     
-    recipes: List["Recipe"] = Relationship(back_populates="author")
-    comments: List["Comment"] = Relationship(back_populates="author")
-    notes: List["Note"] = Relationship(back_populates="owner")
-    favorites: List["Favorite"] = Relationship(back_populates="user")
+    recipes: List["Recipe"] = Relationship(back_populates="author", sa_relationship_kwargs={"passive_deletes": True})
+    comments: List["Comment"] = Relationship(back_populates="author", sa_relationship_kwargs={"passive_deletes": True})
+    notes: List["Note"] = Relationship(back_populates="owner", sa_relationship_kwargs={"passive_deletes": True})
+    favorites: List["Favorite"] = Relationship(back_populates="user", sa_relationship_kwargs={"passive_deletes": True})

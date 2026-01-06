@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import ConfirmModal from './ConfirmModal'
-import { commentAPI } from '../utils/api'
+import ConfirmModal from '../modals/ConfirmModal'
+import { commentAPI } from '../../utils/api'
+import { formatDateTime } from '../../utils/dateUtils'
 
 function CommentItem({ comment, currentUser, onDelete, onUpdate }) {
     const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
@@ -11,20 +12,6 @@ function CommentItem({ comment, currentUser, onDelete, onUpdate }) {
     const [error, setError] = useState('')
 
     const maxLength = 2000
-
-    const formatDate = (dateString) => {
-        try {
-            return new Date(dateString).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-            })
-        } catch {
-            return ''
-        }
-    }
 
     const handleDeleteClick = () => {
         setShowDeleteConfirm(true)
@@ -37,6 +24,8 @@ function CommentItem({ comment, currentUser, onDelete, onUpdate }) {
             setShowDeleteConfirm(false)
         } catch (err) {
             console.error('Error deleting comment:', err)
+            // Error state will be handled by parent component
+        } finally {
             setDeleting(false)
         }
     }
@@ -90,6 +79,9 @@ function CommentItem({ comment, currentUser, onDelete, onUpdate }) {
                 message="Are you sure you want to delete this comment? This action cannot be undone."
                 onConfirm={handleConfirmDelete}
                 onCancel={() => setShowDeleteConfirm(false)}
+                confirmButtonText="Delete"
+                confirmButtonColor="red"
+                isDanger={true}
             />
 
             <div className="border-b border-gray-200 py-4 last:border-b-0">
@@ -100,7 +92,7 @@ function CommentItem({ comment, currentUser, onDelete, onUpdate }) {
                         </span>
                         <span className="text-gray-400">•</span>
                         <span className="text-sm text-gray-500">
-                            {formatDate(comment.created_at)}
+                            {formatDateTime(comment.created_at)}
                         </span>
                     </div>
 

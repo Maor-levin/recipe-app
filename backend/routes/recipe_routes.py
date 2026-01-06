@@ -1,10 +1,10 @@
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import Session, select
-from db.models.user_model import User
+from db.models.user_model import User, PasswordConfirmation
 from db.connection import get_session
 from db.models.recipe_model import Recipe, RecipeCreate, RecipeOut, RecipeUpdate
-from auth.auth_utils import get_current_user
+from auth.auth_utils import get_current_user, verify_password
 
 
 router = APIRouter(prefix="/recipes", tags=["recipes"])
@@ -79,7 +79,8 @@ def update_recipe(
 
 @router.delete('/{recipe_id}')
 def delete_recipe(
-    recipe_id: int, 
+    recipe_id: int,
+    password_data: PasswordConfirmation,
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_session)
 ):
@@ -92,6 +93,13 @@ def delete_recipe(
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN, 
             detail="You can only delete your own recipes"
+        )
+    
+    # Verify password before deletion
+    if not verify_password(password_data.password, current_user.hashed_password):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Incorrect password"
         )
     
     db.delete(recipe)

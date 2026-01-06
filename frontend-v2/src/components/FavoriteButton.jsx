@@ -1,35 +1,34 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { favoriteAPI, noteAPI } from '../utils/api'
-import ConfirmModal from './ConfirmModal'
+import ConfirmModal from './modals/ConfirmModal'
 
-function FavoriteButton({ recipeId, onAuthRequired, size = 'medium', onUnfavorite }) {
-  const [isFavorited, setIsFavorited] = useState(false)
+function FavoriteButton({ recipeId, onAuthRequired, size = 'medium', onUnfavorite, isFavorited: controlledIsFavorited, onFavoriteChange }) {
+  // Support both controlled and uncontrolled modes
+  const isControlled = controlledIsFavorited !== undefined
+  const [internalIsFavorited, setInternalIsFavorited] = useState(false)
+  const isFavorited = isControlled ? controlledIsFavorited : internalIsFavorited
+  
   const [loading, setLoading] = useState(false)
   const [currentUser, setCurrentUser] = useState(null)
   const [showConfirm, setShowConfirm] = useState(false)
   const [hasNote, setHasNote] = useState(false)
 
-  useEffect(() => {
-    const username = localStorage.getItem('username')
-    setCurrentUser(username)
-
-    if (username) {
-      checkIfFavorited()
-      checkIfHasNote()
-    }
-  }, [recipeId])
-
-  const checkIfFavorited = async () => {
+  const checkIfFavorited = useCallback(async () => {
     try {
       const response = await favoriteAPI.check(recipeId)
-      setIsFavorited(response.data.is_favorited)
+      const favorited = response.data.is_favorited
+      if (isControlled) {
+        if (onFavoriteChange) onFavoriteChange(favorited)
+      } else {
+        setInternalIsFavorited(favorited)
+      }
     } catch (err) {
       // If not authenticated, that's okay
       console.error('Error checking favorite:', err)
     }
-  }
+  }, [recipeId, isControlled, onFavoriteChange])
 
-  const checkIfHasNote = async () => {
+  const checkIfHasNote = useCallback(async () => {
     try {
       const response = await noteAPI.getForRecipe(recipeId)
       setHasNote(!!response.data)
@@ -37,7 +36,20 @@ function FavoriteButton({ recipeId, onAuthRequired, size = 'medium', onUnfavorit
       // 404 means no note exists
       setHasNote(false)
     }
-  }
+  }, [recipeId])
+
+  useEffect(() => {
+    const username = localStorage.getItem('username')
+    setCurrentUser(username)
+
+    if (username) {
+      // Only check favorite status if uncontrolled
+      if (!isControlled) {
+        checkIfFavorited()
+      }
+      checkIfHasNote()
+    }
+  }, [recipeId, isControlled, checkIfFavorited, checkIfHasNote])
 
   const handleClick = async (e) => {
     e.preventDefault()
@@ -52,18 +64,40 @@ function FavoriteButton({ recipeId, onAuthRequired, size = 'medium', onUnfavorit
 
     try {
       if (isFavorited) {
-        // Check if there's a note before unfavoriting
-        if (hasNote) {
+        // Always check fresh if there's a note before unfavoriting
+        // This ensures we have the latest state, even if NotesSection saved a note
+        let noteExists = false
+        try {
+          const response = await noteAPI.getForRecipe(recipeId)
+          noteExists = !!response.data
+          setHasNote(noteExists)
+        } catch (err) {
+          // 404 means no note exists
+          noteExists = false
+          setHasNote(false)
+        }
+        
+        if (noteExists) {
           setShowConfirm(true)
           setLoading(false)
         } else {
           await favoriteAPI.remove(recipeId)
-          setIsFavorited(false)
+          const newValue = false
+          if (isControlled) {
+            if (onFavoriteChange) onFavoriteChange(newValue)
+          } else {
+            setInternalIsFavorited(newValue)
+          }
           if (onUnfavorite) onUnfavorite()
         }
       } else {
         await favoriteAPI.add(recipeId)
-        setIsFavorited(true)
+        const newValue = true
+        if (isControlled) {
+          if (onFavoriteChange) onFavoriteChange(newValue)
+        } else {
+          setInternalIsFavorited(newValue)
+        }
       }
     } catch (err) {
       console.error('Error toggling favorite:', err)
@@ -83,7 +117,12 @@ function FavoriteButton({ recipeId, onAuthRequired, size = 'medium', onUnfavorit
       await noteAPI.delete(recipeId)
       // Then remove from favorites
       await favoriteAPI.remove(recipeId)
-      setIsFavorited(false)
+      const newValue = false
+      if (isControlled) {
+        if (onFavoriteChange) onFavoriteChange(newValue)
+      } else {
+        setInternalIsFavorited(newValue)
+      }
       setHasNote(false)
       setShowConfirm(false)
       if (onUnfavorite) onUnfavorite()
@@ -111,6 +150,8 @@ function FavoriteButton({ recipeId, onAuthRequired, size = 'medium', onUnfavorit
           setShowConfirm(false)
           setLoading(false)
         }}
+        confirmButtonText="Remove"
+        confirmButtonColor="orange"
       />
 
       <button
