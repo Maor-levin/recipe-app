@@ -9,8 +9,8 @@ function RecipeCard({ recipe }) {
 
   return (
     <>
-      <Link to={`/recipes/${recipe.id}`} className="block">
-        <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 relative">
+      <Link to={`/recipes/${recipe.id}`} className="block h-full">
+        <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 relative h-full flex flex-col">
           {/* Favorite Button */}
           <div className="absolute top-3 right-3 z-10 bg-white rounded-full p-1 shadow-md">
             <FavoriteButton
@@ -21,7 +21,7 @@ function RecipeCard({ recipe }) {
           </div>
 
           {/* Recipe Image */}
-          <div className="h-56 bg-gray-200 overflow-hidden">
+          <div className="h-56 bg-gray-200 overflow-hidden flex-shrink-0">
             {recipe.thumbnail_image_url ? (
               <img
                 src={recipe.thumbnail_image_url}
@@ -36,7 +36,7 @@ function RecipeCard({ recipe }) {
           </div>
 
           {/* Recipe Info */}
-          <div className="p-5">
+          <div className="p-5 flex-1 flex flex-col">
             {/* Title */}
             <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2 text-center">
               {recipe.title || 'Untitled Recipe'}
@@ -54,11 +54,9 @@ function RecipeCard({ recipe }) {
             </div>
 
             {/* Description */}
-            {recipe.description && (
-              <p className="text-gray-600 text-sm line-clamp-3 text-center">
-                {recipe.description}
-              </p>
-            )}
+            <p className="text-gray-600 text-sm line-clamp-3 text-center">
+              {recipe.description || ''}
+            </p>
           </div>
         </div>
       </Link>

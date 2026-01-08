@@ -9,6 +9,7 @@
  * @param {string} confirmButtonColor - Button color (default: "orange")
  * @param {boolean} isDanger - Whether this is a dangerous action (default: false)
  */
+
 function ConfirmModal({
   isOpen,
   title,
