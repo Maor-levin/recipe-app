@@ -1,6 +1,6 @@
 
 from fastapi import APIRouter, Depends, HTTPException, status
-from sqlmodel import Session, select
+from sqlmodel import Session, select, or_
 from db.models.user_model import User, PasswordConfirmation
 from db.connection import get_session
 from db.models.recipe_model import Recipe, RecipeCreate, RecipeOut, RecipeUpdate
@@ -9,13 +9,42 @@ from auth.auth_utils import get_current_user, verify_password
 
 router = APIRouter(prefix="/recipes", tags=["recipes"])
 
-@router.get('/all', response_model=list[RecipeOut])
-def get_all_recipes(db: Session = Depends(get_session)):
-    query = select(Recipe)
-    recipes = db.exec(query).all()
-    # Explicitly load author for each recipe
+@router.get('/', response_model=list[RecipeOut])
+def get_recipes(q: str = "", db: Session = Depends(get_session)):
+    """
+    Get all recipes or search with a query
+    - If query (q) is empty: returns all recipes
+    - If query provided: searches by title, description, or author username
+    """
+    
+    # Empty query - return all recipes
+    if not q or not q.strip():
+        query = select(Recipe)
+        recipes = db.exec(query).all()
+    
+    # Search query provided - filter recipes
+    else:
+        search_term = f"%{q.lower()}%"
+        
+        # Join Recipe with User (author) and search across multiple fields
+        query = (
+            select(Recipe)
+            .join(User, Recipe.author_id == User.id)
+            .where(
+                or_(
+                    Recipe.title.ilike(search_term),
+                    Recipe.description.ilike(search_term),
+                    User.user_name.ilike(search_term)
+                )
+            )
+        )
+        
+        recipes = db.exec(query).all()
+    
+    # Load author relationship for each recipe
     for recipe in recipes:
         db.refresh(recipe, ["author"])
+    
     return recipes
 
 @router.post('/', response_model=RecipeOut, status_code=status.HTTP_201_CREATED)

@@ -1,4 +1,12 @@
-function SearchBar({ value, onChange, placeholder = "Search...", resultCount = null }) {
+function SearchBar({ value, onChange, placeholder = "Search...", resultCount = null, onKeyDown, onClear }) {
+  const handleClear = () => {
+    if (onClear) {
+      onClear()
+    } else {
+      onChange('')
+    }
+  }
+
   return (
     <div>
       <div className="relative">
@@ -6,6 +14,7 @@ function SearchBar({ value, onChange, placeholder = "Search...", resultCount = n
           type="text"
           value={value}
           onChange={(e) => onChange(e.target.value)}
+          onKeyDown={onKeyDown}
           placeholder={placeholder}
           className="w-full px-5 py-3 pl-12 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-yellow-500 focus:border-transparent text-base"
         />
@@ -24,7 +33,7 @@ function SearchBar({ value, onChange, placeholder = "Search...", resultCount = n
         </svg>
         {value && (
           <button
-            onClick={() => onChange('')}
+            onClick={handleClear}
             className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
             aria-label="Clear search"
           >

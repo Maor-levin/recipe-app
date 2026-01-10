@@ -160,4 +160,4 @@ docker-compose up --build
 
 ---
 
-© 2025 - All Rights Reserved
+© 2025 - All Rights Reserved Maor Levin

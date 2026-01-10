@@ -7,24 +7,45 @@ import BulkUploadRecipes from '../components/recipe/BulkUploadRecipes'
 import LoadingSpinner from '../components/ui/LoadingSpinner'
 import ErrorAlert from '../components/ui/ErrorAlert'
 import RecipeFormBasicInfo from '../components/recipe/RecipeFormBasicInfo'
+import { useRecipeBlocks } from '../hooks/useRecipeBlocks'
 
 function CreateRecipe() {
   const navigate = useNavigate()
   const { id } = useParams()
   const isEditMode = !!id
 
+  // Form state
   const [formData, setFormData] = useState({
     title: '',
     description: '',
     thumbnail_image_url: ''
   })
-  const [blocks, setBlocks] = useState([])
+
+  // Block management using custom hook
+  const {
+    blocks,
+    setBlocks,
+    addBlock,
+    updateBlock,
+    removeBlock,
+    moveBlockUp,
+    moveBlockDown,
+    updateListItem,
+    addListItem,
+    removeListItem
+  } = useRecipeBlocks([])
+
+  // UI state
   const [loading, setLoading] = useState(false)
   const [loadingRecipe, setLoadingRecipe] = useState(isEditMode)
   const [error, setError] = useState('')
   const [showConfirm, setShowConfirm] = useState(false)
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
   const [confirmAction, setConfirmAction] = useState(null)
+
+  // ============================================
+  // LOAD RECIPE (EDIT MODE)
+  // ============================================
 
   // Load recipe data if in edit mode
   useEffect(() => {
@@ -98,6 +119,10 @@ function CreateRecipe() {
     }
   }
 
+  // ============================================
+  // FORM HANDLERS
+  // ============================================
+
   const handleFormChange = (e) => {
     setFormData({
       ...formData,
@@ -105,37 +130,9 @@ function CreateRecipe() {
     })
   }
 
-  const addBlock = (type) => {
-    const newBlock = {
-      id: Date.now(),
-      type: type
-    }
-
-    switch (type) {
-      case 'subtitle':
-        newBlock.text = ''
-        break
-      case 'text':
-        newBlock.text = ''
-        break
-      case 'list':
-        newBlock.items = ['', '']
-        break
-      case 'image':
-        newBlock.url = ''
-        break
-      default:
-        break
-    }
-
-    setBlocks([...blocks, newBlock])
-  }
-
-  const updateBlock = (id, field, value) => {
-    setBlocks(blocks.map(block =>
-      block.id === id ? { ...block, [field]: value } : block
-    ))
-  }
+  // ============================================
+  // TEXTAREA AUTO-RESIZE HANDLER
+  // ============================================
 
   const handleTextareaResize = (e) => {
     const textarea = e.target
@@ -149,61 +146,9 @@ function CreateRecipe() {
     window.scrollTo(0, scrollPos)
   }
 
-  const updateListItem = (blockId, itemIndex, value) => {
-    setBlocks(blocks.map(block => {
-      if (block.id === blockId) {
-        const newItems = [...block.items]
-        newItems[itemIndex] = value
-        return { ...block, items: newItems }
-      }
-      return block
-    }))
-  }
-
-  const addListItem = (blockId) => {
-    setBlocks(blocks.map(block => {
-      if (block.id === blockId) {
-        return { ...block, items: [...block.items, ''] }
-      }
-      return block
-    }))
-  }
-
-  const removeListItem = (blockId, itemIndex) => {
-    setBlocks(blocks.map(block => {
-      if (block.id === blockId) {
-        const newItems = block.items.filter((_, index) => index !== itemIndex)
-        // If no items left, remove the entire block
-        if (newItems.length === 0) {
-          return null
-        }
-        return { ...block, items: newItems }
-      }
-      return block
-    }).filter(block => block !== null)) // Remove null blocks
-  }
-
-  const removeBlock = (id) => {
-    setBlocks(blocks.filter(block => block.id !== id))
-  }
-
-  const moveBlockUp = (id) => {
-    const index = blocks.findIndex(block => block.id === id)
-    if (index > 0) {
-      const newBlocks = [...blocks]
-        ;[newBlocks[index - 1], newBlocks[index]] = [newBlocks[index], newBlocks[index - 1]]
-      setBlocks(newBlocks)
-    }
-  }
-
-  const moveBlockDown = (id) => {
-    const index = blocks.findIndex(block => block.id === id)
-    if (index < blocks.length - 1) {
-      const newBlocks = [...blocks]
-        ;[newBlocks[index], newBlocks[index + 1]] = [newBlocks[index + 1], newBlocks[index]]
-      setBlocks(newBlocks)
-    }
-  }
+  // ============================================
+  // TEMPLATE HANDLERS
+  // ============================================
 
   const applyDefaultTemplate = () => {
     const defaultBlocks = [
@@ -291,6 +236,10 @@ function CreateRecipe() {
     setConfirmAction(null)
   }
 
+  // ============================================
+  // DELETE HANDLERS
+  // ============================================
+
   const handleDeleteClick = () => {
     setShowDeleteConfirm(true)
   }
@@ -299,6 +248,10 @@ function CreateRecipe() {
     await recipeAPI.delete(id, password)
     navigate('/profile')
   }
+
+  // ============================================
+  // SUBMIT HANDLER
+  // ============================================
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -377,7 +330,7 @@ function CreateRecipe() {
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Basic Info */}
-                <RecipeFormBasicInfo 
+                <RecipeFormBasicInfo
                   formData={formData}
                   onChange={handleFormChange}
                 />

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -23,10 +23,12 @@ api.interceptors.response.use(
     if (error.response?.status === 401) {
       const url = error.config?.url || "";
       // Don't logout on login/register/delete account/delete recipe password failures
-      if (!url.includes("/auth/login") && 
-          !url.includes("/auth/register") && 
-          !url.includes("/users/me") &&
-          !(url.includes("/recipes/") && error.config?.method === "delete")) {
+      if (
+        !url.includes("/auth/login") &&
+        !url.includes("/auth/register") &&
+        !url.includes("/users/me") &&
+        !(url.includes("/recipes/") && error.config?.method === "delete")
+      ) {
         // Token expired or invalid - clear auth and redirect
         localStorage.removeItem("token");
         localStorage.removeItem("username");
@@ -61,12 +63,13 @@ export const userAPI = {
 
 // Recipe API
 export const recipeAPI = {
-  getAll: () => api.get("/recipes/all"),
+  search: (query = "") => api.get("/recipes/", { params: { q: query } }),
   getById: (id) => api.get(`/recipes/${id}`),
   getByUser: (userId) => api.get(`/recipes/by-user/${userId}`),
   create: (recipeData) => api.post("/recipes/", recipeData),
   update: (id, recipeData) => api.put(`/recipes/${id}`, recipeData),
-  delete: (id, password) => api.delete(`/recipes/${id}`, { data: { password } }),
+  delete: (id, password) =>
+    api.delete(`/recipes/${id}`, { data: { password } }),
 };
 
 // Comment API

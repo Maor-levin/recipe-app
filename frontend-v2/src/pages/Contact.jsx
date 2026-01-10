@@ -12,7 +12,7 @@ function Contact() {
           <div className="space-y-4">
             <div>
               <h2 className="text-xl font-semibold text-gray-900 mb-2">Email</h2>
-              <p className="text-gray-600">contact@recipeapp.com</p>
+              <p className="text-gray-600">Levinmaorlh@gmail.com</p>
             </div>
             
             <div>

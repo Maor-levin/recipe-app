@@ -42,15 +42,16 @@ function Favorites() {
     }
   }
 
-  // Filter favorites based on search query
+  // Filter favorites based on search query (client-side for small personal dataset)
   const filteredFavorites = favorites.filter(recipe => {
     if (!searchQuery.trim()) return true
     const query = searchQuery.toLowerCase()
-    return (
-      recipe.title?.toLowerCase()?.includes(query) ||
-      recipe.description?.toLowerCase()?.includes(query) ||
-      recipe.author?.username?.toLowerCase()?.includes(query)
-    )
+
+    return [
+      recipe.title,
+      recipe.description,
+      recipe.author?.username
+    ].some(field => field?.toLowerCase().includes(query))
   })
 
   if (loading) {

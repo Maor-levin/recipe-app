@@ -9,23 +9,13 @@ function Home() {
   const [recipes, setRecipes] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [logoutMessage, setLogoutMessage] = useState(null)
   const [searchQuery, setSearchQuery] = useState('')
 
-  useEffect(() => {
-    // Check for logout message from session expiration
-    const message = sessionStorage.getItem("logoutMessage");
-    if (message) {
-      setLogoutMessage(message);
-      sessionStorage.removeItem("logoutMessage"); // Clear after reading
-    }
-    fetchRecipes()
-  }, [])
-
-  const fetchRecipes = async () => {
+  // Fetch recipes (all or filtered by search)
+  const fetchRecipes = async (query = '') => {
     try {
       setLoading(true)
-      const response = await recipeAPI.getAll()
+      const response = await recipeAPI.search(query)
       setRecipes(response.data)
       setError(null)
     } catch (err) {
@@ -36,26 +26,18 @@ function Home() {
     }
   }
 
-  // Filter recipes based on search query
-  const filteredRecipes = recipes.filter(recipe => {
-    if (!searchQuery.trim()) return true
-    const query = searchQuery.toLowerCase()
-    return (
-      recipe.title?.toLowerCase()?.includes(query) ||
-      recipe.description?.toLowerCase()?.includes(query) ||
-      recipe.author?.username?.toLowerCase()?.includes(query)
-    )
-  })
+  // Fetch all recipes on component mount
+  useEffect(() => {
+    fetchRecipes()
+  }, [])
+
+  // Handle search button click
+  const handleSearch = () => {
+    fetchRecipes(searchQuery)
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* Logout Message */}
-      {logoutMessage && (
-        <div className="bg-yellow-50 border border-yellow-200 text-yellow-800 px-4 py-3 rounded-lg mb-6">
-          {logoutMessage}
-        </div>
-      )}
-
       {/* Welcome Section */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-3">
@@ -68,12 +50,32 @@ function Home() {
 
       {/* Search Bar */}
       <div className="max-w-2xl mx-auto mb-8">
-        <SearchBar
-          value={searchQuery}
-          onChange={setSearchQuery}
-          placeholder="Search recipes by title, description, or author..."
-          resultCount={searchQuery ? filteredRecipes.length : null}
-        />
+        <div className="flex gap-3">
+          <div className="flex-1">
+            <SearchBar
+              value={searchQuery}
+              onChange={setSearchQuery}
+              placeholder="Search recipes by title, description, or author..."
+              resultCount={null}
+              onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+              onClear={() => {
+                setSearchQuery('')
+                fetchRecipes('')
+              }}
+            />
+          </div>
+          <button
+            onClick={handleSearch}
+            className="px-6 py-2 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors duration-200"
+          >
+            Search
+          </button>
+        </div>
+        {searchQuery && (
+          <div className="mt-2 text-sm text-gray-600 text-center">
+            {recipes.length} {recipes.length === 1 ? 'result' : 'results'}
+          </div>
+        )}
       </div>
 
       {/* Recipes Grid */}
@@ -83,26 +85,29 @@ function Home() {
         </h2>
 
         {loading ? (
-          <LoadingSpinner message="Loading recipes..." />
+          <LoadingSpinner message={searchQuery ? "Searching..." : "Loading recipes..."} />
         ) : error ? (
           <ErrorAlert message={error} className="text-center py-6" />
         ) : recipes.length === 0 ? (
-          <div className="text-center py-12 bg-white rounded-lg shadow">
-            <p className="text-gray-500 text-lg">No recipes yet. Be the first to create one!</p>
-          </div>
-        ) : filteredRecipes.length === 0 ? (
           <div className="text-center py-12 bg-gray-50 rounded-lg">
-            <p className="text-gray-500 text-lg">No recipes found matching "{searchQuery}"</p>
-            <button
-              onClick={() => setSearchQuery('')}
-              className="mt-4 text-yellow-700 hover:text-yellow-800 font-medium"
-            >
-              Clear search
-            </button>
+            <p className="text-gray-500 text-lg">
+              {searchQuery ? `No recipes found matching "${searchQuery}"` : 'No recipes yet. Be the first to create one!'}
+            </p>
+            {searchQuery && (
+              <button
+                onClick={() => {
+                  setSearchQuery('')
+                  fetchRecipes('')
+                }}
+                className="mt-4 text-yellow-700 hover:text-yellow-800 font-medium"
+              >
+                Clear search
+              </button>
+            )}
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredRecipes.map((recipe) => (
+            {recipes.map((recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe} />
             ))}
           </div>
