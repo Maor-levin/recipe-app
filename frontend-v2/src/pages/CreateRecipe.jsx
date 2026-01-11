@@ -7,6 +7,7 @@ import BulkUploadRecipes from '../components/recipe/BulkUploadRecipes'
 import LoadingSpinner from '../components/ui/LoadingSpinner'
 import ErrorAlert from '../components/ui/ErrorAlert'
 import RecipeFormBasicInfo from '../components/recipe/RecipeFormBasicInfo'
+import ImageUploader from '../components/ui/ImageUploader'
 import { useRecipeBlocks } from '../hooks/useRecipeBlocks'
 
 function CreateRecipe() {
@@ -42,6 +43,37 @@ function CreateRecipe() {
   const [showConfirm, setShowConfirm] = useState(false)
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
   const [confirmAction, setConfirmAction] = useState(null)
+  const [imageUploadError, setImageUploadError] = useState('')
+
+  // ============================================
+  // HELPER: Group consecutive image blocks
+  // ============================================
+  
+  const groupBlocks = (blocks) => {
+    const grouped = []
+    let imageGroup = []
+    
+    blocks.forEach((block, index) => {
+      if (block.type === 'image') {
+        imageGroup.push({ ...block, originalIndex: index })
+      } else {
+        // If we have accumulated images, add them as a group
+        if (imageGroup.length > 0) {
+          grouped.push({ type: 'image-group', blocks: imageGroup })
+          imageGroup = []
+        }
+        // Add the non-image block
+        grouped.push({ ...block, originalIndex: index })
+      }
+    })
+    
+    // Don't forget remaining images
+    if (imageGroup.length > 0) {
+      grouped.push({ type: 'image-group', blocks: imageGroup })
+    }
+    
+    return grouped
+  }
 
   // ============================================
   // LOAD RECIPE (EDIT MODE)
@@ -259,12 +291,37 @@ function CreateRecipe() {
     setError('')
 
     try {
-      // Format blocks for API (remove id field)
-      const formattedBlocks = blocks.map(({ id, ...block }) => block)
+      // Clean and format blocks for API
+      const cleanedBlocks = blocks
+        .map(({ id, ...block }) => block) // Remove id field
+        .filter(block => {
+          // Remove empty image blocks
+          if (block.type === 'image' && (!block.url || block.url.trim() === '')) {
+            return false
+          }
+          // Remove empty text blocks
+          if (block.type === 'text' && (!block.text || block.text.trim() === '')) {
+            return false
+          }
+          // Remove empty subtitle blocks
+          if (block.type === 'subtitle' && (!block.text || block.text.trim() === '')) {
+            return false
+          }
+          // Remove empty list blocks or lists with no valid items
+          if (block.type === 'list') {
+            const validItems = block.items.filter(item => item && item.trim() !== '')
+            if (validItems.length === 0) {
+              return false
+            }
+            // Update block with only valid items
+            block.items = validItems
+          }
+          return true
+        })
 
       const recipeData = {
         ...formData,
-        recipe: formattedBlocks
+        recipe: cleanedBlocks
       }
 
       if (isEditMode) {
@@ -364,113 +421,175 @@ function CreateRecipe() {
 
                   {/* Render Blocks */}
                   <div className="space-y-4 mb-6">
-                    {blocks.map((block, index) => (
-                      <div key={block.id} className="border border-gray-200 rounded-lg p-4 relative">
-                        {/* Move and Remove buttons */}
-                        <div className="absolute top-2 right-2 flex gap-1">
-                          <button
-                            type="button"
-                            onClick={() => moveBlockUp(block.id)}
-                            disabled={index === 0}
-                            className="text-gray-500 hover:text-gray-700 disabled:text-gray-300 disabled:cursor-not-allowed"
-                            title="Move up"
-                          >
-                            ↑
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => moveBlockDown(block.id)}
-                            disabled={index === blocks.length - 1}
-                            className="text-gray-500 hover:text-gray-700 disabled:text-gray-300 disabled:cursor-not-allowed"
-                            title="Move down"
-                          >
-                            ↓
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => removeBlock(block.id)}
-                            className="text-red-500 hover:text-red-700"
-                            title="Remove"
-                          >
-                            ✕
-                          </button>
-                        </div>
-
-                        <div className="mb-2">
-                          <span className="inline-block px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded font-medium">
-                            {block.type.toUpperCase()}
-                          </span>
-                        </div>
-
-                        {/* Subtitle Block */}
-                        {block.type === 'subtitle' && (
-                          <input
-                            type="text"
-                            value={block.text}
-                            onChange={(e) => updateBlock(block.id, 'text', e.target.value)}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none font-semibold"
-                            placeholder="Enter subtitle..."
-                          />
-                        )}
-
-                        {/* Text Block */}
-                        {block.type === 'text' && (
-                          <textarea
-                            value={block.text}
-                            onChange={(e) => updateBlock(block.id, 'text', e.target.value)}
-                            onInput={handleTextareaResize}
-                            rows={3}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none resize-none overflow-hidden"
-                            placeholder="Enter text content..."
-                            style={{ minHeight: '80px' }}
-                          />
-                        )}
-
-                        {/* List Block */}
-                        {block.type === 'list' && (
-                          <div className="space-y-2">
-                            {block.items.map((item, itemIndex) => (
-                              <div key={itemIndex} className="flex items-center space-x-2">
-                                <span className="text-gray-500">•</span>
-                                <input
-                                  type="text"
-                                  value={item}
-                                  onChange={(e) => updateListItem(block.id, itemIndex, e.target.value)}
-                                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
-                                  placeholder={`Item ${itemIndex + 1}`}
-                                />
-                                <button
-                                  type="button"
-                                  onClick={() => removeListItem(block.id, itemIndex)}
-                                  className="text-red-500 hover:text-red-700 px-2"
-                                  title="Remove item"
-                                >
-                                  ✕
-                                </button>
-                              </div>
-                            ))}
+                    {groupBlocks(blocks).map((group, groupIndex) => {
+                      // Image Group - Grid Display
+                      if (group.type === 'image-group') {
+                        return (
+                          <div key={`group-${groupIndex}`} className="border border-gray-200 rounded-lg p-4">
+                            <div className="mb-3 flex items-center justify-between">
+                              <span className="inline-block px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded font-medium">
+                                IMAGES
+                              </span>
+                            </div>
+                            
+                            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                              {group.blocks.map((block) => (
+                                <div key={block.id} className="relative group">
+                                  {/* Image uploader with smaller height */}
+                                  <div>
+                                    {imageUploadError && (
+                                      <div className="mb-2 p-2 bg-red-50 border border-red-200 rounded text-red-700 text-xs">
+                                        {imageUploadError}
+                                      </div>
+                                    )}
+                                    <ImageUploader
+                                      value={block.url}
+                                      onChange={(url) => updateBlock(block.id, 'url', url)}
+                                      onError={(err) => {
+                                        setImageUploadError(err)
+                                        setTimeout(() => setImageUploadError(''), 5000)
+                                      }}
+                                      height="h-48"
+                                    />
+                                  </div>
+                                  
+                                  {/* Control buttons */}
+                                  <div className="absolute -top-2 -right-2 flex flex-col bg-white rounded shadow-md z-10">
+                                    <button
+                                      type="button"
+                                      onClick={() => moveBlockUp(block.id)}
+                                      disabled={block.originalIndex === 0}
+                                      className="px-1.5 py-0.5 text-gray-500 hover:text-gray-700 disabled:text-gray-300 disabled:cursor-not-allowed text-xs border-b border-gray-200"
+                                      title="Move up"
+                                    >
+                                      ↑
+                                    </button>
+                                    <button
+                                      type="button"
+                                      onClick={() => moveBlockDown(block.id)}
+                                      disabled={block.originalIndex === blocks.length - 1}
+                                      className="px-1.5 py-0.5 text-gray-500 hover:text-gray-700 disabled:text-gray-300 disabled:cursor-not-allowed text-xs border-b border-gray-200"
+                                      title="Move down"
+                                    >
+                                      ↓
+                                    </button>
+                                    <button
+                                      type="button"
+                                      onClick={() => removeBlock(block.id)}
+                                      className="px-1.5 py-0.5 text-red-500 hover:text-red-700 text-xs"
+                                      title="Remove"
+                                    >
+                                      ✕
+                                    </button>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )
+                      }
+                      
+                      // Non-image blocks (subtitle, text, list)
+                      const block = group
+                      const index = block.originalIndex
+                      
+                      return (
+                        <div key={block.id} className="border border-gray-200 rounded-lg p-4 relative">
+                          {/* Move and Remove buttons */}
+                          <div className="absolute top-2 right-2 flex gap-1">
                             <button
                               type="button"
-                              onClick={() => addListItem(block.id)}
-                              className="text-purple-500 hover:text-purple-700 text-sm font-medium"
+                              onClick={() => moveBlockUp(block.id)}
+                              disabled={index === 0}
+                              className="text-gray-500 hover:text-gray-700 disabled:text-gray-300 disabled:cursor-not-allowed"
+                              title="Move up"
                             >
-                              + Add Item
+                              ↑
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => moveBlockDown(block.id)}
+                              disabled={index === blocks.length - 1}
+                              className="text-gray-500 hover:text-gray-700 disabled:text-gray-300 disabled:cursor-not-allowed"
+                              title="Move down"
+                            >
+                              ↓
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => removeBlock(block.id)}
+                              className="text-red-500 hover:text-red-700"
+                              title="Remove"
+                            >
+                              ✕
                             </button>
                           </div>
-                        )}
 
-                        {/* Image Block */}
-                        {block.type === 'image' && (
-                          <input
-                            type="url"
-                            value={block.url}
-                            onChange={(e) => updateBlock(block.id, 'url', e.target.value)}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none"
-                            placeholder="Enter image URL..."
-                          />
-                        )}
-                      </div>
-                    ))}
+                          <div className="mb-2">
+                            <span className="inline-block px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded font-medium">
+                              {block.type.toUpperCase()}
+                            </span>
+                          </div>
+
+                          {/* Subtitle Block */}
+                          {block.type === 'subtitle' && (
+                            <input
+                              type="text"
+                              value={block.text}
+                              onChange={(e) => updateBlock(block.id, 'text', e.target.value)}
+                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none font-semibold"
+                              placeholder="Enter subtitle..."
+                            />
+                          )}
+
+                          {/* Text Block */}
+                          {block.type === 'text' && (
+                            <textarea
+                              value={block.text}
+                              onChange={(e) => updateBlock(block.id, 'text', e.target.value)}
+                              onInput={handleTextareaResize}
+                              rows={3}
+                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none resize-none overflow-hidden"
+                              placeholder="Enter text content..."
+                              style={{ minHeight: '80px' }}
+                            />
+                          )}
+
+                          {/* List Block */}
+                          {block.type === 'list' && (
+                            <div className="space-y-2">
+                              {block.items.map((item, itemIndex) => (
+                                <div key={itemIndex} className="flex items-center space-x-2">
+                                  <span className="text-gray-500">•</span>
+                                  <input
+                                    type="text"
+                                    value={item}
+                                    onChange={(e) => updateListItem(block.id, itemIndex, e.target.value)}
+                                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                                    placeholder={`Item ${itemIndex + 1}`}
+                                  />
+                                  <button
+                                    type="button"
+                                    onClick={() => removeListItem(block.id, itemIndex)}
+                                    className="text-red-500 hover:text-red-700 px-2"
+                                    title="Remove item"
+                                  >
+                                    ✕
+                                  </button>
+                                </div>
+                              ))}
+                              <button
+                                type="button"
+                                onClick={() => addListItem(block.id)}
+                                className="text-purple-500 hover:text-purple-700 text-sm font-medium"
+                              >
+                                + Add Item
+                              </button>
+                            </div>
+                          )}
+                        </div>
+                      )
+                    })}
 
                     {blocks.length === 0 && (
                       <p className="text-gray-500 text-center py-8">

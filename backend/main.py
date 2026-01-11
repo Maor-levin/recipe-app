@@ -7,6 +7,7 @@ from routes.auth_routes import router as auth_routes
 from routes.comment_routes import router as comment_routes
 from routes.note_routes import router as note_routes
 from routes.favorite_routes import router as favorite_routes
+from routes.upload_routes import router as upload_routes
 from fastapi.middleware.cors import CORSMiddleware
 from core.config import settings
 
@@ -34,4 +35,5 @@ app.include_router(recipe_routes)
 app.include_router(comment_routes)
 app.include_router(note_routes)
 app.include_router(favorite_routes)
+app.include_router(upload_routes)
 

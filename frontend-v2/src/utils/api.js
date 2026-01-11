@@ -99,4 +99,14 @@ export const noteAPI = {
   delete: (recipeId) => api.delete(`/notes/recipe/${recipeId}`),
 };
 
+// Upload API
+export const uploadAPI = {
+  uploadImage: (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    return api.post("/api/upload/image", formData);
+  },
+  deleteImage: (publicId) => api.delete(`/api/upload/image/${publicId}`),
+};
+
 export default api;

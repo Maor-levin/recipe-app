@@ -3,6 +3,7 @@ from sqlmodel import Session, select
 from db.connection import get_session
 from db.models.user_model import User, UserOut, PasswordConfirmation
 from auth.auth_utils import get_current_user, verify_password
+from routes.upload_routes import delete_user_folder
 
 router = APIRouter(prefix="/users", tags=["users"])
 
@@ -26,6 +27,9 @@ def delete_my_account(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Incorrect password"
         )
+    
+    # Delete user's Cloudinary folder (all uploaded images)
+    delete_user_folder(current_user.id)
     
     db.delete(current_user)
     db.commit()

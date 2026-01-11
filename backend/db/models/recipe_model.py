@@ -44,7 +44,8 @@ class ImageBlock(SQLModel):
     @field_validator('url')
     @classmethod
     def validate_url(cls, v: str) -> str:
-        if not v.startswith(('http://', 'https://')):
+        # Allow empty URLs (user might not have uploaded yet)
+        if v and not v.startswith(('http://', 'https://')):
             raise ValueError('Image URL must start with http:// or https://')
         return v
 
