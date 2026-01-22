@@ -110,10 +110,6 @@ function NotesSection({ recipeId, onAuthRequired, isFavorited }) {
         return null // Don't show anything while loading
     }
 
-    if (!isAuthenticated) {
-        return null // Don't show notes section for non-logged-in users
-    }
-
     return (
         <div className="h-full">
             <div
@@ -148,7 +144,13 @@ function NotesSection({ recipeId, onAuthRequired, isFavorited }) {
                     </div>
 
                     <div className="flex-1 flex flex-col">
-                        {!isFavorited ? (
+                        {!isAuthenticated ? (
+                            <div className="text-center py-6 flex-1 flex items-center justify-center">
+                                <p className="text-gray-600 text-sm" style={{ fontFamily: 'Georgia, serif' }}>
+                                    Please register to use notes
+                                </p>
+                            </div>
+                        ) : !isFavorited ? (
                             <div className="text-center py-6 flex-1 flex items-center justify-center">
                                 <p className="text-gray-600 mb-2 text-sm" style={{ fontFamily: 'Georgia, serif' }}>
                                     ⭐ Favorite to add notes
