@@ -5,6 +5,13 @@ from db.models.user_model import User, PasswordConfirmation
 from db.connection import get_session
 from db.models.recipe_model import Recipe, RecipeCreate, RecipeOut, RecipeUpdate
 from auth.auth_utils import get_current_user, verify_password
+from services.ai_service import generate_recipe_variant
+from pydantic import BaseModel
+from typing import List
+
+
+class VariantRequest(BaseModel):
+    adjustments: List[str]
 
 
 router = APIRouter(prefix="/recipes", tags=["recipes"])
@@ -134,3 +141,61 @@ def delete_recipe(
     db.delete(recipe)
     db.commit()
     return {"detail": "Recipe deleted"}
+
+
+@router.post('/{recipe_id}/variants')
+async def generate_variant(
+    recipe_id: int,
+    variant_request: VariantRequest,
+    db: Session = Depends(get_session)
+):
+    """
+    Generate an AI-powered recipe variant
+    
+    - Takes a recipe and applies adjustments (vegan, gluten-free, etc.)
+    - Returns modified recipe without saving to database
+    """
+    
+    # Get the recipe
+    recipe = db.get(Recipe, recipe_id)
+    if not recipe:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Recipe not found"
+        )
+    
+    # Validate adjustments
+    if not variant_request.adjustments or len(variant_request.adjustments) == 0:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="At least one adjustment is required"
+        )
+    
+    # Prepare recipe data for AI
+    recipe_data = {
+        'title': recipe.title,
+        'description': recipe.description,
+        'recipe': recipe.recipe
+    }
+    
+    try:
+        # Generate variant using AI
+        result = await generate_recipe_variant(
+            recipe_data,
+            variant_request.adjustments
+        )
+        
+        return {
+            "original_recipe_id": recipe_id,
+            "adjustments": variant_request.adjustments,
+            "modified_title": result['modified_title'],
+            "modified_description": result['modified_description'],
+            "modified_blocks": result['modified_blocks'],
+            "changes_made": result['changes_made']
+        }
+        
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to generate variant: {str(e)}"
+        )

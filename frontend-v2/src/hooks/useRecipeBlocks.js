@@ -2,7 +2,7 @@ import { useState } from "react";
 
 /**
  * Custom hook for managing recipe content blocks
- * Handles all block operations: add, update, remove, move, and list item management
+ * Handles creating, updating, removing, and reordering blocks
  *
  * @param {Array} initialBlocks - Initial blocks to load (for edit mode)
  * @returns {Object} Block state and operations
@@ -11,33 +11,23 @@ export function useRecipeBlocks(initialBlocks = []) {
   const [blocks, setBlocks] = useState(initialBlocks);
 
   // ============================================
-  // BASIC BLOCK OPERATIONS
+  // BLOCK OPERATIONS
   // ============================================
 
   /**
    * Add a new block of specified type
-   * Each block type has different default properties
+   * @param {string} type - Block type: 'subtitle' | 'text' | 'list' | 'image'
    */
   const addBlock = (type) => {
-    const newBlock = {
-      id: Date.now(), // Unique ID for React keys
-      type: type,
-    };
+    const newBlock = { id: Date.now(), type };
 
-    // Set default properties based on block type
-    switch (type) {
-      case "subtitle":
-      case "text":
-        newBlock.text = "";
-        break;
-      case "list":
-        newBlock.items = ["", ""]; // Start with 2 empty items
-        break;
-      case "image":
-        newBlock.url = "";
-        break;
-      default:
-        break;
+    // Set default properties based on type
+    if (type === "subtitle" || type === "text") {
+      newBlock.text = "";
+    } else if (type === "list") {
+      newBlock.items = ["", ""];
+    } else if (type === "image") {
+      newBlock.url = "";
     }
 
     setBlocks([...blocks, newBlock]);
@@ -46,19 +36,15 @@ export function useRecipeBlocks(initialBlocks = []) {
   /**
    * Update a single field in a block
    * @param {number} id - Block ID
-   * @param {string} field - Field name to update (e.g., 'text', 'url')
-   * @param {any} value - New value for the field
+   * @param {string} field - Field name to update
+   * @param {any} value - New value
    */
   const updateBlock = (id, field, value) => {
-    setBlocks(
-      blocks.map((block) =>
-        block.id === id ? { ...block, [field]: value } : block
-      )
-    );
+    setBlocks(blocks.map((block) => (block.id === id ? { ...block, [field]: value } : block)));
   };
 
   /**
-   * Remove a block completely
+   * Remove a block
    * @param {number} id - Block ID to remove
    */
   const removeBlock = (id) => {
@@ -66,56 +52,44 @@ export function useRecipeBlocks(initialBlocks = []) {
   };
 
   // ============================================
-  // BLOCK MOVEMENT OPERATIONS
+  // REORDERING
   // ============================================
 
   /**
-   * Move a block up in the list (swap with previous block)
+   * Move a block up in the list
    * @param {number} id - Block ID to move
    */
   const moveBlockUp = (id) => {
     const index = blocks.findIndex((block) => block.id === id);
+    if (index <= 0) return;
 
-    // Can't move up if already at the top
-    if (index > 0) {
-      const newBlocks = [...blocks];
-      // Swap current block with previous block
-      [newBlocks[index - 1], newBlocks[index]] = [
-        newBlocks[index],
-        newBlocks[index - 1],
-      ];
-      setBlocks(newBlocks);
-    }
+    const copy = [...blocks];
+    [copy[index - 1], copy[index]] = [copy[index], copy[index - 1]];
+    setBlocks(copy);
   };
 
   /**
-   * Move a block down in the list (swap with next block)
+   * Move a block down in the list
    * @param {number} id - Block ID to move
    */
   const moveBlockDown = (id) => {
     const index = blocks.findIndex((block) => block.id === id);
+    if (index >= blocks.length - 1) return;
 
-    // Can't move down if already at the bottom
-    if (index < blocks.length - 1) {
-      const newBlocks = [...blocks];
-      // Swap current block with next block
-      [newBlocks[index], newBlocks[index + 1]] = [
-        newBlocks[index + 1],
-        newBlocks[index],
-      ];
-      setBlocks(newBlocks);
-    }
+    const copy = [...blocks];
+    [copy[index], copy[index + 1]] = [copy[index + 1], copy[index]];
+    setBlocks(copy);
   };
 
   // ============================================
-  // LIST BLOCK OPERATIONS
+  // LIST ITEMS
   // ============================================
 
   /**
    * Update a specific item in a list block
    * @param {number} blockId - List block ID
    * @param {number} itemIndex - Index of item to update
-   * @param {string} value - New value for the item
+   * @param {string} value - New value
    */
   const updateListItem = (blockId, itemIndex, value) => {
     setBlocks(
@@ -135,19 +109,11 @@ export function useRecipeBlocks(initialBlocks = []) {
    * @param {number} blockId - List block ID
    */
   const addListItem = (blockId) => {
-    setBlocks(
-      blocks.map((block) => {
-        if (block.id === blockId) {
-          return { ...block, items: [...block.items, ""] };
-        }
-        return block;
-      })
-    );
+    setBlocks(blocks.map((block) => (block.id === blockId ? { ...block, items: [...block.items, ""] } : block)));
   };
 
   /**
    * Remove an item from a list block
-   * If last item is removed, the entire block is deleted
    * @param {number} blockId - List block ID
    * @param {number} itemIndex - Index of item to remove
    */
@@ -156,42 +122,24 @@ export function useRecipeBlocks(initialBlocks = []) {
       blocks
         .map((block) => {
           if (block.id === blockId) {
-            const newItems = block.items.filter(
-              (_, index) => index !== itemIndex
-            );
-
-            // If no items left, mark block for removal
-            if (newItems.length === 0) {
-              return null;
-            }
-
-            return { ...block, items: newItems };
+            const newItems = block.items.filter((_, i) => i !== itemIndex);
+            // Remove block if no items left
+            return newItems.length === 0 ? null : { ...block, items: newItems };
           }
           return block;
         })
-        .filter((block) => block !== null)
-    ); // Remove null blocks
+        .filter(Boolean)
+    );
   };
 
-  // ============================================
-  // RETURN ALL OPERATIONS
-  // ============================================
-
   return {
-    // State
     blocks,
     setBlocks,
-
-    // Basic operations
     addBlock,
     updateBlock,
     removeBlock,
-
-    // Movement operations
     moveBlockUp,
     moveBlockDown,
-
-    // List operations
     updateListItem,
     addListItem,
     removeListItem,

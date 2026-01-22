@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useAuth } from '../contexts/AuthContext'
 import { favoriteAPI } from '../utils/api'
 import RecipeCard from '../components/recipe/RecipeCard'
 import SearchBar from '../components/ui/SearchBar'
@@ -8,25 +9,25 @@ import ErrorAlert from '../components/ui/ErrorAlert'
 import { useNavigate } from 'react-router-dom'
 
 function Favorites() {
+  const { user, isAuthenticated, loading: authLoading } = useAuth()
   const [favorites, setFavorites] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [currentUser, setCurrentUser] = useState(null)
   const [searchQuery, setSearchQuery] = useState('')
   const navigate = useNavigate()
 
   useEffect(() => {
-    const username = localStorage.getItem('username')
-    setCurrentUser(username)
+    // Wait for auth to load before checking
+    if (authLoading) return
 
-    if (!username) {
+    if (!isAuthenticated) {
       // Redirect to home if not logged in
       navigate('/')
       return
     }
 
     fetchFavorites()
-  }, [])
+  }, [isAuthenticated, authLoading])
 
   const fetchFavorites = async () => {
     try {

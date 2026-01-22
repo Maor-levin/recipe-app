@@ -1,19 +1,16 @@
 import { useState, useEffect } from 'react'
+import { useAuth } from '../../contexts/AuthContext'
 import { commentAPI } from '../../utils/api'
 import CommentForm from './CommentForm'
 import CommentList from './CommentList'
 
 function CommentsSection({ recipeId, onAuthRequired }) {
+    const { user } = useAuth()
     const [comments, setComments] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
-    const [currentUser, setCurrentUser] = useState(null)
 
     useEffect(() => {
-        // Get current user from localStorage
-        const username = localStorage.getItem('username')
-        setCurrentUser(username)
-
         // Fetch comments
         fetchComments()
     }, [recipeId])
@@ -75,7 +72,7 @@ function CommentsSection({ recipeId, onAuthRequired }) {
             ) : (
                 <CommentList
                     comments={comments}
-                    currentUser={currentUser}
+                    currentUser={user?.username}
                     onDelete={handleCommentDeleted}
                     onUpdate={handleCommentUpdated}
                 />
@@ -87,7 +84,7 @@ function CommentsSection({ recipeId, onAuthRequired }) {
             {/* Comment Form */}
             <CommentForm
                 recipeId={recipeId}
-                currentUser={currentUser}
+                currentUser={user?.username}
                 onCommentAdded={handleCommentAdded}
                 onAuthRequired={onAuthRequired}
             />

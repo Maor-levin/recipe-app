@@ -70,6 +70,8 @@ export const recipeAPI = {
   update: (id, recipeData) => api.put(`/recipes/${id}`, recipeData),
   delete: (id, password) =>
     api.delete(`/recipes/${id}`, { data: { password } }),
+  generateVariant: (id, adjustments) =>
+    api.post(`/recipes/${id}/variants`, { adjustments }),
 };
 
 // Comment API

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../contexts/AuthContext'
 import { userAPI, recipeAPI, favoriteAPI, noteAPI } from '../utils/api'
 import RecipeCard from '../components/recipe/RecipeCard'
 import ConfirmModalPassword from '../components/modals/ConfirmModalPassword'
@@ -10,6 +11,7 @@ import ErrorAlert from '../components/ui/ErrorAlert'
 import { formatDate } from '../utils/dateUtils'
 
 function Profile() {
+  const { isAuthenticated, logout, loading: authLoading } = useAuth()
   const navigate = useNavigate()
   const [user, setUser] = useState(null)
   const [recipes, setRecipes] = useState([])
@@ -21,13 +23,15 @@ function Profile() {
   const [showDeleteModal, setShowDeleteModal] = useState(false)
 
   useEffect(() => {
-    const username = localStorage.getItem('username')
-    if (!username) {
+    // Wait for auth to load before checking
+    if (authLoading) return
+
+    if (!isAuthenticated) {
       navigate('/')
       return
     }
     fetchProfileData()
-  }, [])
+  }, [isAuthenticated, authLoading])
 
   const fetchProfileData = async () => {
     try {
@@ -198,11 +202,10 @@ function Profile() {
         }
         onConfirm={async (password) => {
           await userAPI.deleteAccount(password)
-          // Clear auth and redirect
-          localStorage.removeItem('token')
-          localStorage.removeItem('username')
+          // Clear auth and redirect using centralized logout
+          logout()
           navigate('/')
-          window.location.reload()
+          // No reload needed - AuthContext clears state automatically! ✅
         }}
         onCancel={() => setShowDeleteModal(false)}
         confirmButtonText="Delete Account"

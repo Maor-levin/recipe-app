@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { useAuth } from '../../contexts/AuthContext'
 import { authAPI } from '../../utils/api'
 
 function AuthModal({ isOpen, onClose }) {
+    const { login: authLogin } = useAuth()
     const [isLogin, setIsLogin] = useState(true)
     const [formData, setFormData] = useState({
         username: '',
@@ -29,16 +31,16 @@ function AuthModal({ isOpen, onClose }) {
                     password: formData.password
                 })
 
-                // Store token and username from response (capitalized)
-                localStorage.setItem('token', response.data.access_token)
-                localStorage.setItem('username', response.data.user.user_name)
+                // Use centralized login function
+                authLogin(response.data.access_token, {
+                    username: response.data.user.user_name
+                })
 
                 // Close modal and reset form
                 setFormData({ username: '', email: '', password: '' })
                 onClose()
-
-                // Reload to update UI
-                window.location.reload()
+                
+                // No reload needed - AuthContext updates all components automatically! ✅
             } else {
                 // Register
                 await authAPI.register({
@@ -56,16 +58,16 @@ function AuthModal({ isOpen, onClose }) {
                     password: formData.password
                 })
 
-                // Store token and username from response (capitalized)
-                localStorage.setItem('token', loginResponse.data.access_token)
-                localStorage.setItem('username', loginResponse.data.user.user_name)
+                // Use centralized login function
+                authLogin(loginResponse.data.access_token, {
+                    username: loginResponse.data.user.user_name
+                })
 
                 // Close modal and reset form
                 setFormData({ username: '', email: '', password: '', first_name: '', last_name: '', country: '' })
                 onClose()
-
-                // Reload to update UI
-                window.location.reload()
+                
+                // No reload needed - AuthContext updates all components automatically! ✅
             }
         } catch (err) {
             console.error('Auth error:', err)

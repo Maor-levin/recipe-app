@@ -13,12 +13,16 @@ class Settings(BaseSettings):
     # CORS origins
     # Example: ["http://localhost:5173"]  # Vite dev
     # Example: ["https://your-frontend.com", "https://www.your-frontend.com"]  # prod
-    CORS_ORIGINS_LIST: List[str] = ["http://localhost:5173"]
+    CORS_ORIGINS_LIST: List[str] = ["http://localhost:5173", "http://arkatony.duckdns.org:5173"]
     
     # Cloudinary credentials for image uploads
     CLOUDINARY_CLOUD_NAME: str
     CLOUDINARY_API_KEY: str
     CLOUDINARY_API_SECRET: str
+    
+    # OpenRouter API for AI recipe variants
+    OPENROUTER_API_KEY: str
+    OPENROUTER_MODEL: str = "meta-llama/llama-3.3-70b-instruct:free"
 
     class Config:
         env_file = ".env"

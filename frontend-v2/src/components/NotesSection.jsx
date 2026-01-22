@@ -1,14 +1,15 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
+import { useAuth } from '../contexts/AuthContext'
 import { noteAPI } from '../utils/api'
 
 function NotesSection({ recipeId, onAuthRequired, isFavorited }) {
+    const { isAuthenticated } = useAuth()
     const [note, setNote] = useState(null)
     const [content, setContent] = useState('')
     const [originalContent, setOriginalContent] = useState('')
     const [saving, setSaving] = useState(false)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState('')
-    const [currentUser, setCurrentUser] = useState(null)
     const saveTimeoutRef = useRef(null)
 
     const maxLength = 5000
@@ -38,22 +39,19 @@ function NotesSection({ recipeId, onAuthRequired, isFavorited }) {
     }, [recipeId])
 
     useEffect(() => {
-        const username = localStorage.getItem('username')
-        setCurrentUser(username)
-
-        if (username) {
+        if (isAuthenticated) {
             fetchNote()
         } else {
             setLoading(false)
         }
-    }, [recipeId, fetchNote])
+    }, [recipeId, isAuthenticated, fetchNote])
 
     // Refetch note when favorited status changes to true
     useEffect(() => {
-        if (currentUser && isFavorited) {
+        if (isAuthenticated && isFavorited) {
             fetchNote()
         }
-    }, [isFavorited, currentUser, fetchNote])
+    }, [isFavorited, isAuthenticated, fetchNote])
 
     const saveNote = async (noteContent) => {
         setSaving(true)
@@ -83,7 +81,7 @@ function NotesSection({ recipeId, onAuthRequired, isFavorited }) {
 
     // Auto-save with debounce
     useEffect(() => {
-        if (!isFavorited || !currentUser) return
+        if (!isFavorited || !isAuthenticated) return
 
         // Clear existing timeout
         if (saveTimeoutRef.current) {
@@ -106,13 +104,13 @@ function NotesSection({ recipeId, onAuthRequired, isFavorited }) {
                 clearTimeout(saveTimeoutRef.current)
             }
         }
-    }, [content, isFavorited, currentUser])
+    }, [content, isFavorited, isAuthenticated])
 
     if (loading) {
         return null // Don't show anything while loading
     }
 
-    if (!currentUser) {
+    if (!isAuthenticated) {
         return null // Don't show notes section for non-logged-in users
     }
 

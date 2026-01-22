@@ -20,7 +20,32 @@ function Home() {
       setError(null)
     } catch (err) {
       console.error('Error fetching recipes:', err)
-      setError('Failed to load recipes. Please try again later.')
+      console.error('Error details:', {
+        message: err.message,
+        response: err.response?.data,
+        status: err.response?.status,
+        url: err.config?.url,
+        baseURL: err.config?.baseURL
+      })
+
+      // Show detailed error message
+      let errorMsg = 'Failed to load recipes.'
+      if (err.response) {
+        errorMsg += ` Status: ${err.response.status}. `
+        if (err.response.status === 0) {
+          errorMsg += 'CORS or network error - check if backend is accessible.'
+        } else if (err.response.data?.detail) {
+          errorMsg += err.response.data.detail
+        }
+      } else if (err.request) {
+        errorMsg += ' Network error - backend may be unreachable. Check console for API URL.'
+      } else {
+        errorMsg += ` Error: ${err.message}`
+      }
+      // Also log the full URL being used
+      const apiUrl = err.config?.baseURL || 'unknown'
+      errorMsg += ` (API: ${apiUrl})`
+      setError(errorMsg)
     } finally {
       setLoading(false)
     }

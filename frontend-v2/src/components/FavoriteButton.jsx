@@ -1,15 +1,16 @@
 import { useState, useEffect, useCallback } from 'react'
+import { useAuth } from '../contexts/AuthContext'
 import { favoriteAPI, noteAPI } from '../utils/api'
 import ConfirmModal from './modals/ConfirmModal'
 
 function FavoriteButton({ recipeId, onAuthRequired, size = 'medium', onUnfavorite, isFavorited: controlledIsFavorited, onFavoriteChange }) {
+  const { isAuthenticated, loading: authLoading } = useAuth()
   // Support both controlled and uncontrolled modes
   const isControlled = controlledIsFavorited !== undefined
   const [internalIsFavorited, setInternalIsFavorited] = useState(false)
   const isFavorited = isControlled ? controlledIsFavorited : internalIsFavorited
-  
+
   const [loading, setLoading] = useState(false)
-  const [currentUser, setCurrentUser] = useState(null)
   const [showConfirm, setShowConfirm] = useState(false)
   const [hasNote, setHasNote] = useState(false)
 
@@ -39,23 +40,23 @@ function FavoriteButton({ recipeId, onAuthRequired, size = 'medium', onUnfavorit
   }, [recipeId])
 
   useEffect(() => {
-    const username = localStorage.getItem('username')
-    setCurrentUser(username)
+    // Wait for auth to load before checking
+    if (authLoading) return
 
-    if (username) {
+    if (isAuthenticated) {
       // Only check favorite status if uncontrolled
       if (!isControlled) {
         checkIfFavorited()
       }
       checkIfHasNote()
     }
-  }, [recipeId, isControlled, checkIfFavorited, checkIfHasNote])
+  }, [recipeId, isAuthenticated, authLoading, isControlled, checkIfFavorited, checkIfHasNote])
 
   const handleClick = async (e) => {
     e.preventDefault()
     e.stopPropagation()
 
-    if (!currentUser) {
+    if (!isAuthenticated) {
       onAuthRequired()
       return
     }
@@ -76,7 +77,7 @@ function FavoriteButton({ recipeId, onAuthRequired, size = 'medium', onUnfavorit
           noteExists = false
           setHasNote(false)
         }
-        
+
         if (noteExists) {
           setShowConfirm(true)
           setLoading(false)

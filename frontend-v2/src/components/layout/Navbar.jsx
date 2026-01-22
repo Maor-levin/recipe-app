@@ -1,18 +1,13 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { useAuth } from '../../contexts/AuthContext'
 import AuthModal from '../modals/AuthModal'
 
 function Navbar() {
+    const { user, logout } = useAuth()
     const [showAuthModal, setShowAuthModal] = useState(false)
-    const [username, setUsername] = useState(null)
     const [showUserMenu, setShowUserMenu] = useState(false)
     const navigate = useNavigate()
-
-    useEffect(() => {
-        // Check if user is logged in
-        const storedUsername = localStorage.getItem('username')
-        setUsername(storedUsername)
-    }, [])
 
     useEffect(() => {
         // Close menu when clicking outside
@@ -26,16 +21,14 @@ function Navbar() {
     }, [showUserMenu])
 
     const handleLogout = () => {
-        localStorage.removeItem('token')
-        localStorage.removeItem('username')
-        setUsername(null)
+        logout()
         setShowUserMenu(false)
-        window.location.reload()
+        // No reload needed - AuthContext updates all components automatically! ✅
     }
 
     const handleCreateRecipeClick = (e) => {
         e.preventDefault()
-        if (!username) {
+        if (!user) {
             // Not logged in, show auth modal
             setShowAuthModal(true)
         } else {
@@ -72,7 +65,7 @@ function Navbar() {
                             >
                                 Create Recipe
                             </a>
-                            {username && (
+                            {user && (
                                 <Link
                                     to="/favorites"
                                     className="text-gray-600 hover:text-orange-500 transition flex items-center space-x-1"
@@ -88,13 +81,13 @@ function Navbar() {
                                 Contact
                             </Link>
 
-                            {username ? (
+                            {user ? (
                                 <div className="relative user-menu-container">
                                     <button
                                         onClick={() => setShowUserMenu(!showUserMenu)}
                                         className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition flex items-center space-x-2"
                                     >
-                                        <span>{username}</span>
+                                        <span>{user.username}</span>
                                         <svg
                                             className={`w-4 h-4 transition-transform ${showUserMenu ? 'rotate-180' : ''}`}
                                             fill="none"
