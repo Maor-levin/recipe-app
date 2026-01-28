@@ -5,7 +5,9 @@ A modern, full-stack recipe sharing platform with clean architecture, organized 
 ## ✨ Key Features
 
 - 🔐 **JWT Authentication** - Secure user registration and login
+- 🤖 **AI-Powered Recipe Variants** - Transform recipes (vegan, gluten-free, etc.) using OpenRouter API
 - 📝 **Block-Based Recipe Editor** - Flexible content blocks (text, lists, images, subtitles)
+- 🖼️ **Image Upload** - Cloudinary integration for recipe images with automatic optimization
 - 🔍 **Real-time Search** - Instant filtering across recipes
 - ⭐ **Favorites System** - Bookmark recipes with personal notes
 - 📓 **Auto-Save Notes** - Private note-taking with automatic persistence
@@ -26,6 +28,8 @@ A modern, full-stack recipe sharing platform with clean architecture, organized 
 - **SQLModel** - Type-safe ORM with Pydantic validation
 - **JWT** - Secure token-based authentication
 - **Bcrypt** - Password hashing
+- **OpenRouter API** - AI integration for recipe variant generation (Llama 3.3 70B)
+- **Cloudinary** - Cloud-based image storage and optimization
 
 ### Frontend
 
@@ -57,7 +61,8 @@ backend/
 ├── core/           # Configuration
 ├── db/
 │   └── models/     # SQLModel entities
-└── routes/         # API endpoints
+├── routes/         # API endpoints
+└── services/       # Business logic (AI service, etc.)
 
 frontend-v2/
 ├── components/
@@ -97,6 +102,8 @@ cd recipe-app
 cp postgres.env.example postgres.env
 cp backend/env.example backend/.env
 # Edit .env files with your values
+# Required: CLOUDINARY_* (for image uploads)
+# Required: OPENROUTER_API_KEY (for AI recipe variants)
 ```
 
 2. **Launch application:**
@@ -111,12 +118,33 @@ docker-compose up --build
 - 📚 API Docs: http://localhost:8000/docs
 - 🗄️ Database Admin: http://localhost:8080
 
+### Required Environment Variables
+
+**Backend (`backend/.env`):**
+- `DATABASE_URL` - PostgreSQL connection string (format: `postgresql://user:password@db:5432/dbname`)
+- `SECRET_KEY` - JWT secret key (generate with: `python3 -c 'import secrets; print(secrets.token_hex(32))'`)
+- `ACCESS_TOKEN_EXPIRE_MINUTES` - JWT token expiration time (default: 30)
+- `CLOUDINARY_CLOUD_NAME` - Your Cloudinary cloud name
+- `CLOUDINARY_API_KEY` - Cloudinary API key
+- `CLOUDINARY_API_SECRET` - Cloudinary API secret
+- `OPENROUTER_API_KEY` - OpenRouter API key for AI recipe variants
+- `OPENROUTER_MODEL` - (Optional) LLM model to use (default: `meta-llama/llama-3.3-70b-instruct:free`)
+- `CORS_ORIGINS_LIST` - (Optional) Comma-separated list of allowed origins (default: localhost)
+
+**PostgreSQL (`postgres.env`):**
+- `POSTGRES_USER` - Database username
+- `POSTGRES_PASSWORD` - Database password
+- `POSTGRES_DB` - Database name
+
 ## 🔑 Key Technical Decisions
 
 - **SQLModel over raw SQLAlchemy** - Type safety and Pydantic validation
 - **Component organization** - Scalable folder structure by feature
 - **Auto-save with debounce** - Better UX without performance overhead
 - **Axios interceptors** - Centralized auth and error handling
+- **React Context API** - Centralized authentication state without prop drilling
+- **OpenRouter for AI** - Flexible LLM access with multiple model options
+- **Cloudinary for images** - Automatic optimization and CDN delivery
 - **Docker Compose** - Simplified deployment and development consistency
 
 ## 🧪 Development
@@ -152,8 +180,8 @@ docker-compose up --build
 
 ## 🎯 Future Enhancements
 
-- [ ] AI-powered recipe variants (vegan, gluten-free, etc.)
-- [ ] Image upload with cloud storage
+- [x] ~~AI-powered recipe variants~~ ✅ Implemented
+- [x] ~~Image upload with cloud storage~~ ✅ Implemented
 - [ ] Recipe ratings and reviews
 - [ ] Advanced search with filters
 - [ ] Social features (follow users)
