@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import Session, select
+from loguru import logger
 from db.connection import get_session
 from db.models.user_model import User, UserOut, PasswordConfirmation
 from auth.auth_utils import get_current_user, verify_password
@@ -23,6 +24,7 @@ def delete_my_account(
     """Delete current user's account (requires password confirmation)"""
     # Verify password before deletion
     if not verify_password(password_data.password, current_user.hashed_password):
+        logger.warning(f"User {current_user.id} provided incorrect password for account deletion")
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Incorrect password"

@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import Session, select
+from loguru import logger
 from db.connection import get_session
 from db.models.user_model import User
 from db.models.recipe_model import Recipe
@@ -18,6 +19,7 @@ def get_my_note_for_recipe(
     """Get my personal note for a specific recipe"""
     recipe = db.get(Recipe, recipe_id)
     if not recipe:
+        logger.debug(f"Recipe {recipe_id} not found when fetching note")
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Recipe not found")
     
     query = select(Note).where(
@@ -48,6 +50,7 @@ def create_or_update_note(
     """Create or update my personal note for a recipe"""
     recipe = db.get(Recipe, recipe_id)
     if not recipe:
+        logger.debug(f"Recipe {recipe_id} not found when creating/updating note")
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Recipe not found")
     
     # Check if note already exists
@@ -98,6 +101,7 @@ def delete_my_note(
     note = db.exec(query).first()
     
     if not note:
+        logger.debug(f"Note for recipe {recipe_id} not found for user {current_user.id}")
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Note not found")
     
     db.delete(note)

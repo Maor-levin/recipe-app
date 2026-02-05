@@ -1,10 +1,21 @@
 from datetime import datetime
 from typing import TYPE_CHECKING
-from sqlmodel import Column, DateTime, Field, Relationship, SQLModel, func, UniqueConstraint, Text, ForeignKey
+
+from sqlmodel import (
+    Column,
+    DateTime,
+    Field,
+    ForeignKey,
+    Relationship,
+    SQLModel,
+    Text,
+    UniqueConstraint,
+    func,
+)
 
 if TYPE_CHECKING:
-    from .user_model import User
     from .recipe_model import Recipe
+    from .user_model import User
 
 
 class NoteBase(SQLModel):
@@ -26,15 +37,42 @@ class Note(NoteBase, table=True):
     __table_args__ = (
         UniqueConstraint("user_id", "recipe_id", name="unique_user_recipe_note"),
     )
-    
+
     id: int | None = Field(default=None, primary_key=True)
-    content: str = Field(min_length=1, max_length=5000, sa_column=Column(Text))
-    created_at: datetime = Field(sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now()))
-    updated_at: datetime = Field(sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now(), onupdate=func.now()))
-    
-    user_id: int = Field(sa_column=Column(ForeignKey("user.id", ondelete="CASCADE"), nullable=False))
-    recipe_id: int = Field(sa_column=Column(ForeignKey("recipe.id", ondelete="CASCADE"), nullable=False))
-    
+
+    content: str = Field(
+        min_length=1,
+        max_length=5000,
+        sa_column=Column(Text),
+    )
+    created_at: datetime = Field(
+        sa_column=Column(
+            DateTime(timezone=True),
+            nullable=False,
+            server_default=func.now(),
+        )
+    )
+    updated_at: datetime = Field(
+        sa_column=Column(
+            DateTime(timezone=True),
+            nullable=False,
+            server_default=func.now(),
+            onupdate=func.now(),
+        )
+    )
+
+    user_id: int = Field(
+        sa_column=Column(
+            ForeignKey("user.id", ondelete="CASCADE"),
+            nullable=False,
+        )
+    )
+    recipe_id: int = Field(
+        sa_column=Column(
+            ForeignKey("recipe.id", ondelete="CASCADE"),
+            nullable=False,
+        )
+    )
+
     owner: "User" = Relationship(back_populates="notes")
     recipe: "Recipe" = Relationship(back_populates="notes")
-

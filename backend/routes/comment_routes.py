@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import Session, select
+from loguru import logger
 from db.connection import get_session
 from db.models.user_model import User
 from db.models.recipe_model import Recipe
@@ -13,6 +14,7 @@ router = APIRouter(prefix="/comments", tags=["comments"])
 def get_comments_for_recipe(recipe_id: int, db: Session = Depends(get_session)):
     recipe = db.get(Recipe, recipe_id)
     if not recipe:
+        logger.debug(f"Recipe {recipe_id} not found when fetching comments")
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Recipe not found")
     
     # Use outerjoin to include comments from deleted users
@@ -45,6 +47,7 @@ def create_comment(
 ):
     recipe = db.get(Recipe, recipe_id)
     if not recipe:
+        logger.debug(f"Recipe {recipe_id} not found when creating comment")
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Recipe not found")
     
     new_comment = Comment(
@@ -74,9 +77,13 @@ def delete_comment(
 ):
     comment = db.get(Comment, comment_id)
     if not comment:
+        logger.debug(f"Comment {comment_id} not found")
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Comment not found")
     
     if comment.user_id != current_user.id:
+        logger.warning(
+            f"User {current_user.id} attempted to delete comment {comment_id} owned by {comment.user_id}"
+        )
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="You can only delete your own comments"
@@ -96,9 +103,13 @@ def update_comment(
 ):
     comment = db.get(Comment, comment_id)
     if not comment:
+        logger.debug(f"Comment {comment_id} not found")
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Comment not found")
     
     if comment.user_id != current_user.id:
+        logger.warning(
+            f"User {current_user.id} attempted to edit comment {comment_id} owned by {comment.user_id}"
+        )
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="You can only edit your own comments"

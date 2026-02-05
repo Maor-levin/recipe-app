@@ -1,17 +1,26 @@
 
 from fastapi import APIRouter, Depends, HTTPException, status
-from sqlmodel import Session, select, or_
-from db.models.user_model import User, PasswordConfirmation
+from pydantic import BaseModel, field_validator
+from sqlmodel import Session, or_, select
+from loguru import logger
+
+from auth.auth_utils import get_current_user, verify_password
 from db.connection import get_session
 from db.models.recipe_model import Recipe, RecipeCreate, RecipeOut, RecipeUpdate
-from auth.auth_utils import get_current_user, verify_password
-from services.ai_service import generate_recipe_variant
-from pydantic import BaseModel
+from db.models.user_model import PasswordConfirmation, User
+from services.variant_cache_service import get_or_create_variant
 from typing import List
 
 
 class VariantRequest(BaseModel):
     adjustments: List[str]
+    
+    @field_validator('adjustments')
+    @classmethod
+    def validate_adjustments(cls, v: List[str]) -> List[str]:
+        if not v or len(v) == 0:
+            raise ValueError("At least one adjustment is required")
+        return v
 
 
 router = APIRouter(prefix="/recipes", tags=["recipes"])
@@ -71,6 +80,7 @@ def create_new_recipe(
 def get_recipe_by_id(recipe_id: int, db: Session = Depends(get_session)):
     recipe = db.get(Recipe, recipe_id)
     if not recipe:
+        logger.debug(f"Recipe {recipe_id} not found")
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Recipe not found")
     return recipe
 
@@ -79,6 +89,7 @@ def get_recipe_by_id(recipe_id: int, db: Session = Depends(get_session)):
 def get_recipes_by_user(user_id: int, db: Session = Depends(get_session)):
     user = db.get(User, user_id)
     if not user:
+        logger.debug(f"User {user_id} not found")
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
     query = select(Recipe).where(Recipe.author_id == user_id)
     recipes = db.exec(query).all()
@@ -93,10 +104,14 @@ def update_recipe(
 ):
     recipe = db.get(Recipe, recipe_id)
     if not recipe:
+        logger.debug(f"Recipe {recipe_id} not found for update")
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Recipe not found")
     
     # Check if user owns this recipe
     if recipe.author_id != current_user.id:
+        logger.warning(
+            f"User {current_user.id} attempted to edit recipe {recipe_id} owned by {recipe.author_id}"
+        )
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN, 
             detail="You can only edit your own recipes"
@@ -122,10 +137,14 @@ def delete_recipe(
 ):
     recipe = db.get(Recipe, recipe_id)
     if not recipe:
+        logger.debug(f"Recipe {recipe_id} not found for deletion")
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Recipe not found")
     
     # Check if user owns this recipe
     if recipe.author_id != current_user.id:
+        logger.warning(
+            f"User {current_user.id} attempted to delete recipe {recipe_id} owned by {recipe.author_id}"
+        )
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN, 
             detail="You can only delete your own recipes"
@@ -133,6 +152,7 @@ def delete_recipe(
     
     # Verify password before deletion
     if not verify_password(password_data.password, current_user.hashed_password):
+        logger.warning(f"User {current_user.id} provided incorrect password for recipe deletion")
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Incorrect password"
@@ -150,52 +170,39 @@ async def generate_variant(
     db: Session = Depends(get_session)
 ):
     """
-    Generate an AI-powered recipe variant
-    
+    Generate or retrieve a cached AI-powered recipe variant.
+
     - Takes a recipe and applies adjustments (vegan, gluten-free, etc.)
-    - Returns modified recipe without saving to database
+    - First checks database for an existing variant with the same adjustments
+    - If not found, calls the AI service, caches the result, and returns it
     """
-    
     # Get the recipe
     recipe = db.get(Recipe, recipe_id)
     if not recipe:
+        logger.debug(f"Recipe {recipe_id} not found for variant generation")
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Recipe not found"
         )
     
-    # Validate adjustments
-    if not variant_request.adjustments or len(variant_request.adjustments) == 0:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="At least one adjustment is required"
-        )
-    
-    # Prepare recipe data for AI
-    recipe_data = {
-        'title': recipe.title,
-        'description': recipe.description,
-        'recipe': recipe.recipe
+    # Use cache-aside service to get or create variant
+    # Pydantic validator ensures adjustments is not empty
+    variant = await get_or_create_variant(
+        db=db,
+        recipe=recipe,
+        adjustments=variant_request.adjustments,
+    )
+
+    logger.info(
+        f"Variant generated for recipe {recipe_id}",
+        adjustments=variant_request.adjustments,
+    )
+
+    return {
+        "original_recipe_id": recipe_id,
+        "adjustments": variant_request.adjustments,
+        "modified_title": variant.modified_title,
+        "modified_description": variant.modified_description,
+        "modified_blocks": variant.modified_blocks,
+        "changes_made": variant.changes_made,
     }
-    
-    try:
-        # Generate variant using AI
-        result = await generate_recipe_variant(
-            recipe_data,
-            variant_request.adjustments
-        )
-        
-        return {
-            "original_recipe_id": recipe_id,
-            "adjustments": variant_request.adjustments,
-            "modified_title": result['modified_title'],
-            "modified_description": result['modified_description'],
-            "modified_blocks": result['modified_blocks'],
-            "changes_made": result['changes_made']
-        }
-        
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to generate variant: {str(e)}"
-        )

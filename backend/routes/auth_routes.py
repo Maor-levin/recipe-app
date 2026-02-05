@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import Session, select
+from loguru import logger
 from auth.auth_utils import hash_password, verify_password, create_access_token, get_current_user
 from db.connection import get_session
 from db.models.user_model import User, UserCreate, UserOut, LoginRequest, LoginResponse
@@ -11,6 +12,7 @@ def register(user: UserCreate, db: Session = Depends(get_session)):
     # Check if email already exists
     existing_user = db.exec(select(User).where(User.email == user.email)).first()
     if existing_user:
+        logger.warning(f"Registration attempt with existing email: {user.email}")
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Email already registered"
@@ -19,6 +21,7 @@ def register(user: UserCreate, db: Session = Depends(get_session)):
     # Check if username already exists (case insensitive)
     existing_user = db.exec(select(User).where(User.user_name.ilike(user.user_name))).first()
     if existing_user:
+        logger.warning(f"Registration attempt with existing username: {user.user_name}")
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Username already taken"
@@ -53,6 +56,7 @@ def login(credentials: LoginRequest, db: Session = Depends(get_session)):
     ).first()
     
     if not user or not verify_password(credentials.password, user.hashed_password):
+        logger.warning(f"Failed login attempt for: {credentials.username_or_email}")
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Incorrect username/email or password",
@@ -61,6 +65,7 @@ def login(credentials: LoginRequest, db: Session = Depends(get_session)):
     
     # Create access token
     access_token = create_access_token(data={"sub": str(user.id)})
+    logger.info(f"User {user.id} logged in successfully")
     
     return {
         "access_token": access_token,

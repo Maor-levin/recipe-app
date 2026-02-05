@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import Session, select
+from loguru import logger
 from db.connection import get_session
 from db.models.user_model import User
 from db.models.recipe_model import Recipe
@@ -52,6 +53,7 @@ def add_to_favorites(
     # Check if recipe exists
     recipe = db.get(Recipe, recipe_id)
     if not recipe:
+        logger.debug(f"Recipe {recipe_id} not found when adding to favorites")
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Recipe not found"
@@ -66,6 +68,7 @@ def add_to_favorites(
     ).first()
     
     if existing:
+        logger.debug(f"User {current_user.id} attempted to favorite already favorited recipe {recipe_id}")
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Recipe already in favorites"
@@ -95,6 +98,7 @@ def remove_from_favorites(
     ).first()
     
     if not favorite:
+        logger.debug(f"Favorite for recipe {recipe_id} not found for user {current_user.id}")
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Favorite not found"

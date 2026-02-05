@@ -1,6 +1,6 @@
 # 🍽️ Recipe App
 
-A modern, full-stack recipe sharing platform with clean architecture, organized codebase, and contemporary web development practices.
+A modern, full-stack recipe sharing platform that solves the challenge of discovering and adapting recipes for dietary needs. Combines AI-powered recipe transformation with a flexible block-based editor, enabling users to easily customize recipes (vegan, gluten-free, etc.) and share culinary creations with a community. Built with clean architecture, organized codebase, and contemporary web development practices.
 
 ## ✨ Key Features
 

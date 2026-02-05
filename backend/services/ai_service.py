@@ -1,10 +1,8 @@
 import json
-import logging
 from openai import OpenAI
+from loguru import logger
 from core.config import settings
 from typing import List, Dict
-
-logger = logging.getLogger(__name__)
 
 
 def get_client():
