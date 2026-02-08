@@ -1,191 +1,153 @@
-# 🍽️ Recipe App
+# Recipe App
 
-A modern, full-stack recipe sharing platform that solves the challenge of discovering and adapting recipes for dietary needs. Combines AI-powered recipe transformation with a flexible block-based editor, enabling users to easily customize recipes (vegan, gluten-free, etc.) and share culinary creations with a community. Built with clean architecture, organized codebase, and contemporary web development practices.
+> A full-stack recipe sharing platform with AI-powered dietary adaptations. Built with FastAPI, React 19, PostgreSQL, and Docker.
 
-## ✨ Key Features
+**[Live Demo](#) | [Documentation](./documents/INDEX.md) | [GitHub](https://github.com/Maor-levin/recipe-app)**
 
-- 🔐 **JWT Authentication** - Secure user registration and login
-- 🤖 **AI-Powered Recipe Variants** - Transform recipes (vegan, gluten-free, etc.) using OpenRouter API
-- 📝 **Block-Based Recipe Editor** - Flexible content blocks (text, lists, images, subtitles)
-- 🖼️ **Image Upload** - Cloudinary integration for recipe images with automatic optimization
-- 🔍 **Real-time Search** - Instant filtering across recipes
-- ⭐ **Favorites System** - Bookmark recipes with personal notes
-- 📓 **Auto-Save Notes** - Private note-taking with automatic persistence
-- 💬 **Interactive Comments** - Public discussion with edit/delete capabilities
-- 🎨 **Modern UI** - Clean interface with Tailwind CSS
-- 🐳 **Containerized Deployment** - Full Docker orchestration
+---
 
-## 🛠️ Tech Stack
+## Why This Exists
 
-### Backend
+Home cooks collect recipes from multiple platforms (Instagram, TikTok, websites) with no centralized way to organize them or adapt them for dietary needs. Manually modifying recipes often means repeatedly copying them into ChatGPT.
 
+This platform centralizes recipe management, adds personal notes, and uses AI-powered transformations for things like vegan or gluten-free versions—backed by intelligent caching that reduces API costs by ~90%.
+
+Built as a full-stack portfolio project showcasing production-ready architecture, scalability, and performance optimization.
+
+---
+
+## Technical Highlights
+
+**Performance & Scalability:**
+- **Cache-aside pattern** with normalized keys reducing AI API costs by ~90%
+- PostgreSQL with JSONB for flexible data storage
+
+**Architecture & Code Quality:**
+- **Service layer pattern** separating business logic from routes
+- **End-to-end type safety** using SQLModel with Pydantic validation
+- **Comprehensive error handling** with structured logging (Loguru)
+- **RESTful API** with 20+ endpoints and auto-generated documentation
+
+**Key Features:**
+- JWT authentication with bcrypt hashing
+- AI-powered recipe variants (OpenRouter API)
+- Block-based recipe editor
+- Real-time search and filtering
+- Image optimization via Cloudinary CDN
+- Community features (comments)
+- Personal organization (favorites, auto-saved notes per recipe)
+
+---
+
+## Tech Stack
+
+**Backend:**  
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
-- **FastAPI** - High-performance Python web framework
-- **PostgreSQL** - Relational database with CASCADE constraints
-- **SQLModel** - Type-safe ORM with Pydantic validation
-- **JWT** - Secure token-based authentication
-- **Bcrypt** - Password hashing
-- **OpenRouter API** - AI integration for recipe variant generation (Llama 3.3 70B)
-- **Cloudinary** - Cloud-based image storage and optimization
+FastAPI • PostgreSQL • SQLModel • OpenRouter AI • Cloudinary • Docker
 
-### Frontend
-
+**Frontend:**  
 ![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
 
-- **React 19** - Latest React with hooks
-- **Vite** - Lightning-fast build tool
-- **React Router** - Client-side routing
-- **Axios** - HTTP client with interceptors
-- **Tailwind CSS** - Utility-first styling
-
-### DevOps
-
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
-
-- **Docker Compose** - Multi-container orchestration
-- **Hot Reload** - Development with volume mounting
-- **Adminer** - Database management UI
-
-## 🏗️ Architecture Highlights
-
-### Clean Code Organization
-
-```
-backend/
-├── auth/           # Authentication utilities
-├── core/           # Configuration
-├── db/
-│   └── models/     # SQLModel entities
-├── routes/         # API endpoints
-└── services/       # Business logic (AI service, etc.)
-
-frontend-v2/
-├── components/
-│   ├── ui/         # Reusable UI components
-│   ├── modals/     # Modal dialogs
-│   ├── recipe/     # Recipe-specific components
-│   ├── comments/   # Comment system
-│   └── layout/     # App layout
-├── pages/          # Route components
-└── utils/          # Helpers & API client
-```
-
-### Database Design
-
-- Proper foreign key relationships with CASCADE/SET NULL
-- Pydantic validation at model level
-- Unique constraints for data integrity
-- Automatic timestamps
-
-### Frontend Patterns
-
-- Component-based architecture
-- Custom reusable UI components
-- Centralized API management
-- Protected routes & auth flow
-- Optimistic UI updates
-
-## 🚀 Quick Start
-
-**Prerequisites:** Docker & Docker Compose
-
-1. **Clone and setup environment:**
-
-```bash
-git clone <your-repo>
-cd recipe-app
-cp postgres.env.example postgres.env
-cp backend/env.example backend/.env
-# Edit .env files with your values
-# Required: CLOUDINARY_* (for image uploads)
-# Required: OPENROUTER_API_KEY (for AI recipe variants)
-```
-
-2. **Launch application:**
-
-```bash
-docker-compose up --build
-```
-
-3. **Access the application:**
-
-- 🌐 Frontend: http://localhost:5173
-- 📚 API Docs: http://localhost:8000/docs
-- 🗄️ Database Admin: http://localhost:8080
-
-### Required Environment Variables
-
-**Backend (`backend/.env`):**
-- `DATABASE_URL` - PostgreSQL connection string (format: `postgresql://user:password@db:5432/dbname`)
-- `SECRET_KEY` - JWT secret key (generate with: `python3 -c 'import secrets; print(secrets.token_hex(32))'`)
-- `ACCESS_TOKEN_EXPIRE_MINUTES` - JWT token expiration time (default: 30)
-- `CLOUDINARY_CLOUD_NAME` - Your Cloudinary cloud name
-- `CLOUDINARY_API_KEY` - Cloudinary API key
-- `CLOUDINARY_API_SECRET` - Cloudinary API secret
-- `OPENROUTER_API_KEY` - OpenRouter API key for AI recipe variants
-- `OPENROUTER_MODEL` - (Optional) LLM model to use (default: `meta-llama/llama-3.3-70b-instruct:free`)
-- `CORS_ORIGINS_LIST` - (Optional) Comma-separated list of allowed origins (default: localhost)
-
-**PostgreSQL (`postgres.env`):**
-- `POSTGRES_USER` - Database username
-- `POSTGRES_PASSWORD` - Database password
-- `POSTGRES_DB` - Database name
-
-## 🔑 Key Technical Decisions
-
-- **SQLModel over raw SQLAlchemy** - Type safety and Pydantic validation
-- **Component organization** - Scalable folder structure by feature
-- **Auto-save with debounce** - Better UX without performance overhead
-- **Axios interceptors** - Centralized auth and error handling
-- **React Context API** - Centralized authentication state without prop drilling
-- **OpenRouter for AI** - Flexible LLM access with multiple model options
-- **Cloudinary for images** - Automatic optimization and CDN delivery
-- **Docker Compose** - Simplified deployment and development consistency
-
-## 🧪 Development
-
-### Run Backend Only
-
-```bash
-docker-compose up backend db adminer
-```
-
-### Run Frontend Locally (faster dev)
-
-```bash
-cd frontend-v2
-npm install
-npm run dev
-```
-
-### Database Reset
-
-```bash
-docker-compose down -v  # Remove volumes
-docker-compose up --build
-```
-
-## 📊 Project Stats
-
-- **Lines of Code**: ~5,000+
-- **Components**: 20+
-- **API Endpoints**: 20+
-- **Database Tables**: 5
-- **Docker Services**: 4
-
-## 🎯 Future Enhancements
-
-- [x] ~~AI-powered recipe variants~~ ✅ Implemented
-- [x] ~~Image upload with cloud storage~~ ✅ Implemented
-- [ ] Recipe ratings and reviews
-- [ ] Advanced search with filters
-- [ ] Social features (follow users)
+React 19 • Vite • Tailwind CSS • Axios • React Router
 
 ---
 
-© 2025 - All Rights Reserved Maor Levin
+## Quick Start
+
+**Prerequisites:** Docker & Docker Compose
+
+```bash
+# Clone and setup
+git clone https://github.com/Maor-levin/recipe-app
+cd recipe-app
+
+# Configure environment
+cp backend/env.example backend/.env
+cp postgres.env.example postgres.env
+# Edit .env files with your API keys (Cloudinary, OpenRouter)
+
+# Launch
+docker-compose up --build
+
+# Access at http://localhost:5173
+```
+
+**Detailed Setup:** See [Installation Guide](./documents/INSTALL.md)
+
+---
+
+## Project Structure
+
+```
+backend/
+├── auth/          # JWT authentication
+├── services/      # Business logic (AI, caching)
+├── routes/        # API endpoints
+├── db/models/     # SQLModel entities
+└── core/          # Configuration
+
+frontend-v2/
+├── components/    # React components (UI, modals, recipe, comments)
+├── pages/         # Route pages
+└── utils/         # API client, helpers
+```
+
+**Architecture Details:** See [Architecture Overview](./documents/ARCHITECTURE.md)
+
+---
+
+## Key Metrics
+
+- **6 Database Tables** - Normalized schema with CASCADE relationships
+- **20+ API Endpoints** - RESTful design with Pydantic validation
+- **20+ React Components** - Reusable, well-structured UI
+- **~5,000 Lines of Code** - Clean, maintainable, production-ready
+
+---
+
+## What I Learned
+
+- Designing efficient caching strategies for external API calls
+- Implementing service-layer architecture for maintainable codebases
+- End-to-end type safety across database, API, and frontend
+- Production considerations: logging, error handling, security best practices
+- Docker orchestration for consistent development and deployment
+
+---
+
+## Documentation
+
+- **[Installation Guide](./documents/INSTALL.md)** - Detailed setup instructions
+- **[Architecture Overview](./documents/ARCHITECTURE.md)** - System design, database schema, and patterns
+- **[API Documentation](http://localhost:8000/docs)** - Interactive API docs (FastAPI auto-generated)
+
+---
+
+## Screenshots
+
+<!-- Add screenshots here when available -->
+<!-- Recommended: -->
+<!-- - Home page with recipe feed -->
+<!-- - Recipe editor with block-based interface -->
+<!-- - AI variant generation in action -->
+<!-- - Recipe detail page with comments -->
+
+---
+
+## About
+
+**Built by Maor Levin** | 2025
+
+Full-stack portfolio project demonstrating modern web development practices, clean architecture, and production-ready code.
+
+**[GitHub](https://github.com/Maor-levin/recipe-app)**
+
+---
+
+© 2025 Maor Levin. All Rights Reserved.

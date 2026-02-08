@@ -66,7 +66,7 @@ function Home() {
       {/* Welcome Section */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-3">
-          Welcome to Recipe App
+          Welcome to Foody Bubble
         </h1>
         <p className="text-lg text-gray-600">
           Discover and share amazing recipes

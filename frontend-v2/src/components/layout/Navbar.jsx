@@ -44,10 +44,12 @@ function Navbar() {
                     <div className="flex justify-between items-center h-16">
                         {/* Logo Section */}
                         <Link to="/" className="flex items-center space-x-2">
-                            <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
-                                <span className="text-white font-bold text-xl">R</span>
-                            </div>
-                            <span className="text-xl font-bold text-gray-800">RecipeApp</span>
+                            <img
+                                src="/foody_bubble_logo.png"
+                                alt="Foody Bubble Logo"
+                                className="h-12 w-auto object-contain"
+                            />
+                            <span className="text-xl font-bold text-gray-800">Foody Bubble</span>
                         </Link>
 
                         {/* Navigation Links */}

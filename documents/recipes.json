@@ -1,12 +1,16 @@
 [
   {
-    "title": "Classic Margherita Pizza",
-    "description": "A timeless Italian classic with fresh tomatoes, mozzarella, and basil. Perfect for a cozy dinner or entertaining guests.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800",
+    "title": "Classic Shakshuka",
+    "description": "North African eggs poached in spicy tomato sauce with peppers and onions. A beloved Israeli breakfast staple served with fresh bread for dipping.",
+    "thumbnail_image_url": "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2023/12/Shakshuka-main-1.jpg",
     "recipe": [
       {
         "type": "text",
-        "text": "This authentic Margherita pizza recipe brings the flavors of Naples to your kitchen. The secret is in the simplicity - fresh ingredients and a hot oven create magic."
+        "text": "Shakshuka is one of Israel's most iconic dishes. While its origins trace to North Africa, it has become a cornerstone of Israeli cuisine. The key is getting the sauce rich and flavorful before adding the eggs."
+      },
+      {
+        "type": "image",
+        "url": "https://bistrobadia.de/wp-content/uploads/2017/04/Fladenbrot-shakshuka3-web.jpg"
       },
       {
         "type": "subtitle",
@@ -15,48 +19,20 @@
       {
         "type": "list",
         "items": [
-          "1 pizza dough (store-bought or homemade)",
-          "1/2 cup tomato sauce",
-          "8 oz fresh mozzarella, sliced",
-          "Fresh basil leaves",
-          "2 tbsp olive oil",
-          "Salt and pepper to taste"
-        ]
-      },
-      {
-        "type": "subtitle",
-        "text": "Instructions"
-      },
-      {
-        "type": "text",
-        "text": "1. Preheat your oven to 475°F (245°C). If you have a pizza stone, place it in the oven while preheating.\n\n2. Roll out your pizza dough on a floured surface to your desired thickness.\n\n3. Transfer the dough to a pizza pan or parchment paper.\n\n4. Spread the tomato sauce evenly over the dough, leaving a border for the crust.\n\n5. Arrange the mozzarella slices on top of the sauce.\n\n6. Drizzle with olive oil and season with salt and pepper.\n\n7. Bake for 12-15 minutes until the crust is golden and cheese is bubbly.\n\n8. Remove from oven and immediately top with fresh basil leaves.\n\n9. Slice and serve hot!"
-      }
-    ]
-  },
-  {
-    "title": "Creamy Chicken Alfredo Pasta",
-    "description": "Rich and creamy pasta dish that's surprisingly easy to make. A family favorite that comes together in under 30 minutes.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800",
-    "recipe": [
-      {
-        "type": "text",
-        "text": "This creamy Alfredo pasta is comfort food at its finest. The combination of tender chicken, al dente pasta, and rich sauce makes for a satisfying meal."
-      },
-      {
-        "type": "subtitle",
-        "text": "Ingredients"
-      },
-      {
-        "type": "list",
-        "items": [
-          "1 lb fettuccine pasta",
-          "2 chicken breasts, cut into strips",
-          "1 cup heavy cream",
-          "1/2 cup grated Parmesan cheese",
+          "3 tbsp olive oil",
+          "1 large onion, diced",
+          "1 red bell pepper, diced",
           "4 cloves garlic, minced",
-          "3 tbsp butter",
-          "Salt and pepper",
-          "Fresh parsley for garnish"
+          "1 tsp cumin",
+          "1 tsp paprika",
+          "1/4 tsp cayenne pepper (adjust to taste)",
+          "1 can (28 oz) crushed tomatoes",
+          "1 tsp sugar",
+          "6 large eggs",
+          "Salt and black pepper to taste",
+          "Fresh cilantro or parsley, chopped",
+          "Crumbled feta cheese (optional)",
+          "Warm pita or challah for serving"
         ]
       },
       {
@@ -65,210 +41,97 @@
       },
       {
         "type": "text",
-        "text": "1. Cook pasta according to package directions until al dente. Reserve 1/2 cup pasta water.\n\n2. Season chicken strips with salt and pepper. Cook in a large skillet over medium-high heat until golden and cooked through (about 6-8 minutes). Remove and set aside.\n\n3. In the same skillet, melt butter over medium heat. Add garlic and cook for 1 minute until fragrant.\n\n4. Pour in heavy cream and bring to a gentle simmer. Stir in Parmesan cheese until melted and smooth.\n\n5. Add cooked pasta and chicken to the sauce. Toss everything together, adding pasta water if needed to thin the sauce.\n\n6. Season with additional salt and pepper to taste.\n\n7. Serve hot, garnished with fresh parsley and extra Parmesan."
+        "text": "1. Heat olive oil in a large deep skillet or cast iron pan over medium heat. Add the diced onion and bell pepper, cooking for about 8-10 minutes until softened and starting to caramelize."
+      },
+      {
+        "type": "text",
+        "text": "2. Add the minced garlic, cumin, paprika, and cayenne. Stir constantly for about 1 minute until fragrant. This step is crucial for developing deep flavor."
+      },
+      {
+        "type": "text",
+        "text": "3. Pour in the crushed tomatoes and add sugar, salt, and pepper. Stir well and let the sauce simmer for 15-20 minutes, stirring occasionally, until it thickens and becomes rich. Taste and adjust seasoning."
+      },
+      {
+        "type": "image",
+        "url": "https://www.tastingtable.com/img/gallery/elevate-your-shakshuka-with-fire-roasted-tomatoes/tips-for-making-your-own-fire-roasted-tomatoes-1709647288.jpg"
+      },
+      {
+        "type": "text",
+        "text": "4. Using a spoon, create 6 wells in the sauce. Carefully crack an egg into each well. Season the eggs with a pinch of salt and pepper."
+      },
+      {
+        "type": "text",
+        "text": "5. Cover the pan and cook for 5-8 minutes, depending on how you like your eggs. For runny yolks, check at 5 minutes. For fully set eggs, cook the full 8 minutes."
+      },
+      {
+        "type": "text",
+        "text": "6. Remove from heat and garnish generously with fresh herbs and feta if using. Serve immediately with warm bread for scooping up the sauce and eggs."
+      },
+      {
+        "type": "subtitle",
+        "text": "Pro Tips"
+      },
+      {
+        "type": "text",
+        "text": "• Make the sauce a day ahead for even deeper flavor\n• Add harissa paste for extra heat and complexity\n• Try adding spinach or kale in the last few minutes of cooking the sauce\n• Serve with labneh or tahini on the side"
       }
     ]
   },
   {
-    "title": "Chocolate Chip Cookies",
-    "description": "The perfect chocolate chip cookie - crispy edges, chewy center, and loaded with chocolate chips. A classic that never goes out of style.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=800",
+    "title": "Authentic Sabich",
+    "description": "Israeli street food sandwich with fried eggplant, hard-boiled eggs, Israeli salad, tahini, and amba in fresh pita. Originated from Iraqi Jewish immigrants.",
+    "thumbnail_image_url": "https://www.seriouseats.com/thmb/6CWQF8jU2Wdf8ayXnPN5BURTPKo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20160317-sabich-sandwich-vicky-wasik-reedit21-14e71a78db284615983447dfc3533eb7.jpg",
     "recipe": [
       {
         "type": "text",
-        "text": "These cookies are the perfect balance of crispy and chewy. The secret is slightly underbaking them so they stay soft in the center. Great for sharing or keeping all to yourself!"
+        "text": "Sabich is peak Israeli street food - a pita stuffed with fried eggplant, eggs, and salads. The combination of textures and the tangy amba (pickled mango sauce) make it unforgettable. Worth every minute of prep!"
       },
       {
         "type": "subtitle",
-        "text": "Ingredients"
+        "text": "For the Eggplant"
       },
       {
         "type": "list",
         "items": [
-          "2 1/4 cups all-purpose flour",
-          "1 tsp baking soda",
-          "1 tsp salt",
-          "1 cup butter, softened",
-          "3/4 cup granulated sugar",
-          "3/4 cup brown sugar",
-          "2 large eggs",
-          "2 tsp vanilla extract",
-          "2 cups chocolate chips"
+          "2 large Italian eggplants",
+          "Salt for sweating",
+          "Vegetable oil for frying",
+          "4 hard-boiled eggs, sliced"
         ]
       },
       {
         "type": "subtitle",
-        "text": "Instructions"
-      },
-      {
-        "type": "text",
-        "text": "1. Preheat oven to 375°F (190°C). Line baking sheets with parchment paper.\n\n2. In a medium bowl, whisk together flour, baking soda, and salt. Set aside.\n\n3. In a large bowl, cream together butter and both sugars until light and fluffy (about 3-4 minutes).\n\n4. Beat in eggs one at a time, then add vanilla extract.\n\n5. Gradually mix in the flour mixture until just combined.\n\n6. Stir in chocolate chips.\n\n7. Drop rounded tablespoons of dough onto prepared baking sheets, spacing them about 2 inches apart.\n\n8. Bake for 9-11 minutes until edges are golden but centers are still soft.\n\n9. Let cool on baking sheet for 5 minutes before transferring to wire rack.\n\n10. Enjoy warm with a glass of milk!"
-      }
-    ]
-  },
-  {
-    "title": "Vegetarian Buddha Bowl",
-    "description": "A colorful, nutritious bowl packed with roasted vegetables, grains, and a delicious tahini dressing. Perfect for meal prep!",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800",
-    "recipe": [
-      {
-        "type": "text",
-        "text": "This Buddha bowl is not only beautiful but also incredibly nutritious. Feel free to customize with your favorite vegetables and grains!"
-      },
-      {
-        "type": "subtitle",
-        "text": "Ingredients"
+        "text": "For Israeli Salad"
       },
       {
         "type": "list",
         "items": [
-          "1 cup quinoa, cooked",
-          "1 sweet potato, cubed",
-          "1 cup broccoli florets",
-          "1 red bell pepper, sliced",
-          "1 can chickpeas, drained and rinsed",
-          "2 cups baby spinach",
-          "1 avocado, sliced",
-          "2 tbsp olive oil",
-          "Salt, pepper, and paprika"
-        ]
-      },
-      {
-        "type": "subtitle",
-        "text": "Tahini Dressing"
-      },
-      {
-        "type": "list",
-        "items": [
-          "3 tbsp tahini",
-          "2 tbsp lemon juice",
-          "2 tbsp water",
-          "1 clove garlic, minced",
-          "Salt to taste"
-        ]
-      },
-      {
-        "type": "subtitle",
-        "text": "Instructions"
-      },
-      {
-        "type": "text",
-        "text": "1. Preheat oven to 400°F (200°C).\n\n2. Toss sweet potato, broccoli, bell pepper, and chickpeas with olive oil, salt, pepper, and paprika.\n\n3. Spread vegetables on a baking sheet and roast for 20-25 minutes until tender and slightly charred.\n\n4. While vegetables roast, prepare the tahini dressing by whisking together all dressing ingredients until smooth.\n\n5. To assemble: Start with a base of quinoa, add roasted vegetables, top with fresh spinach and avocado slices.\n\n6. Drizzle with tahini dressing and enjoy!"
-      }
-    ]
-  },
-  {
-    "title": "Beef Tacos with Fresh Salsa",
-    "description": "Tender, flavorful beef tacos topped with fresh homemade salsa and all your favorite fixings. A crowd-pleaser for any occasion!",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1565299585323-38174c0c0e8c?w=800",
-    "recipe": [
-      {
-        "type": "text",
-        "text": "These tacos are bursting with flavor! The key is seasoning the beef well and making fresh salsa. Customize with your favorite toppings!"
-      },
-      {
-        "type": "subtitle",
-        "text": "Ingredients"
-      },
-      {
-        "type": "list",
-        "items": [
-          "1 lb ground beef",
-          "8-10 taco shells or tortillas",
-          "1 packet taco seasoning",
-          "1 cup shredded lettuce",
-          "1 cup shredded cheese",
-          "Sour cream",
-          "Lime wedges"
-        ]
-      },
-      {
-        "type": "subtitle",
-        "text": "Fresh Salsa"
-      },
-      {
-        "type": "list",
-        "items": [
-          "2 large tomatoes, diced",
-          "1/2 red onion, diced",
-          "1 jalapeño, seeded and minced",
-          "1/4 cup cilantro, chopped",
-          "1 lime, juiced",
-          "Salt to taste"
-        ]
-      },
-      {
-        "type": "subtitle",
-        "text": "Instructions"
-      },
-      {
-        "type": "text",
-        "text": "1. Heat a large skillet over medium-high heat. Add ground beef and cook until browned, breaking it up as it cooks.\n\n2. Drain excess fat, then add taco seasoning and follow package directions (usually add water and simmer).\n\n3. While beef cooks, prepare the salsa by combining all salsa ingredients in a bowl. Let sit for flavors to meld.\n\n4. Warm taco shells according to package directions.\n\n5. Fill each shell with seasoned beef, then top with lettuce, cheese, salsa, and a dollop of sour cream.\n\n6. Serve immediately with lime wedges on the side."
-      }
-    ]
-  },
-  {
-    "title": "Homemade Mac and Cheese",
-    "description": "Creamy, cheesy comfort food that's perfect for any day. This recipe uses three types of cheese for maximum flavor.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1543339494-b4cd4f7ba686?w=800",
-    "recipe": [
-      {
-        "type": "text",
-        "text": "Nothing beats homemade mac and cheese! This version is extra creamy and cheesy, perfect for kids and adults alike."
-      },
-      {
-        "type": "subtitle",
-        "text": "Ingredients"
-      },
-      {
-        "type": "list",
-        "items": [
-          "1 lb elbow macaroni",
-          "4 tbsp butter",
-          "1/4 cup all-purpose flour",
-          "3 cups whole milk",
-          "2 cups shredded cheddar cheese",
-          "1 cup shredded mozzarella",
-          "1/2 cup grated Parmesan",
-          "Salt and pepper to taste",
-          "1/2 cup breadcrumbs (optional)"
-        ]
-      },
-      {
-        "type": "subtitle",
-        "text": "Instructions"
-      },
-      {
-        "type": "text",
-        "text": "1. Cook macaroni according to package directions until al dente. Drain and set aside.\n\n2. In a large pot, melt butter over medium heat. Whisk in flour and cook for 1 minute.\n\n3. Gradually whisk in milk until smooth. Bring to a simmer and cook until thickened, about 5 minutes.\n\n4. Remove from heat and stir in all cheeses until melted and smooth.\n\n5. Season with salt and pepper.\n\n6. Add cooked macaroni and stir until well coated.\n\n7. Optional: Transfer to a baking dish, top with breadcrumbs, and broil for 2-3 minutes until golden.\n\n8. Serve hot!"
-      }
-    ]
-  },
-  {
-    "title": "Grilled Salmon with Lemon Butter",
-    "description": "Perfectly grilled salmon with a simple lemon butter sauce. Healthy, delicious, and ready in under 20 minutes.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800",
-    "recipe": [
-      {
-        "type": "text",
-        "text": "This grilled salmon recipe is simple yet elegant. The lemon butter sauce adds brightness and richness without overpowering the fish."
-      },
-      {
-        "type": "subtitle",
-        "text": "Ingredients"
-      },
-      {
-        "type": "list",
-        "items": [
-          "4 salmon fillets (6 oz each)",
-          "2 tbsp olive oil",
-          "Salt and pepper",
-          "4 tbsp butter",
-          "2 cloves garlic, minced",
+          "4 small Persian cucumbers, finely diced",
+          "4 ripe tomatoes, finely diced",
+          "1/4 red onion, finely diced",
           "Juice of 1 lemon",
-          "2 tbsp fresh parsley, chopped",
-          "Lemon wedges for serving"
+          "2 tbsp olive oil",
+          "Salt and pepper",
+          "Fresh parsley, chopped"
         ]
+      },
+      {
+        "type": "subtitle",
+        "text": "For Assembly"
+      },
+      {
+        "type": "list",
+        "items": [
+          "6 fresh pita breads",
+          "Tahini sauce",
+          "Amba (pickled mango sauce)",
+          "Zhug (optional, spicy herb sauce)",
+          "Pickles and pickled vegetables"
+        ]
+      },
+      {
+        "type": "image",
+        "url": "https://vegetarianfoodesignsfromthelandofmilkandhoney.wordpress.com/wp-content/uploads/2013/12/img_8971.jpg"
       },
       {
         "type": "subtitle",
@@ -276,18 +139,38 @@
       },
       {
         "type": "text",
-        "text": "1. Preheat grill to medium-high heat.\n\n2. Pat salmon fillets dry and brush with olive oil. Season generously with salt and pepper.\n\n3. Grill salmon skin-side down for 4-5 minutes, then flip and grill for another 3-4 minutes until cooked through.\n\n4. While salmon grills, melt butter in a small saucepan. Add garlic and cook for 30 seconds.\n\n5. Remove from heat and stir in lemon juice and parsley.\n\n6. Serve salmon hot with lemon butter sauce drizzled over top and lemon wedges on the side."
+        "text": "1. Slice eggplants into 1/2-inch rounds. Sprinkle generously with salt on both sides and let sit in a colander for 30 minutes to draw out moisture and bitterness. Pat completely dry with paper towels."
+      },
+      {
+        "type": "text",
+        "text": "2. Heat about 1/2 inch of vegetable oil in a large skillet over medium-high heat. Fry eggplant slices in batches until golden brown on both sides, about 3-4 minutes per side. Drain on paper towels."
+      },
+      {
+        "type": "image",
+        "url": "https://contenthandler.azureedge.net/recp/665/2000/0/645.jpg"
+      },
+      {
+        "type": "text",
+        "text": "3. Make the Israeli salad: Combine all salad ingredients in a bowl and toss well. The key is very fine, uniform dice. Set aside to let flavors meld."
+      },
+      {
+        "type": "text",
+        "text": "4. To assemble: Warm pitas slightly. Cut open to create a pocket. Layer in: fried eggplant, sliced hard-boiled egg, generous Israeli salad, tahini drizzle, amba, zhug if using, and pickles."
+      },
+      {
+        "type": "text",
+        "text": "5. Don't be shy with the sauces - the tahini and amba are what make sabich special. Wrap tightly and eat immediately while the eggplant is still warm."
       }
     ]
   },
   {
-    "title": "Classic Caesar Salad",
-    "description": "Crisp romaine lettuce with homemade Caesar dressing, croutons, and Parmesan. A timeless salad recipe.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=800",
+    "title": "Jerusalem Mixed Grill (Me'orav Yerushalmi)",
+    "description": "A famous Jerusalem street food of mixed grilled chicken parts with onions, garlic, and Middle Eastern spices served in pita or laffa.",
+    "thumbnail_image_url": "https://www.gorme.co.il/wp-content/uploads/2025/02/%D7%9E%D7%A2%D7%95%D7%A8%D7%91-%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%9E%D7%99-%D7%9E%D7%A2%D7%95%D7%93%D7%9B%D7%9F-%D7%90%D7%99%D7%AA%D7%99-scaled-1200x900-cropped.jpg",
     "recipe": [
       {
         "type": "text",
-        "text": "This classic Caesar salad features a rich, creamy dressing that's made from scratch. The key is using quality anchovies and fresh lemon juice."
+        "text": "Me'orav Yerushalmi is Jerusalem's ultimate street food - a mix of grilled chicken hearts, spleens, and other parts, though this home version uses more accessible chicken thighs and livers while maintaining authentic flavors."
       },
       {
         "type": "subtitle",
@@ -296,36 +179,159 @@
       {
         "type": "list",
         "items": [
-          "2 heads romaine lettuce, chopped",
-          "1/2 cup Parmesan cheese, grated",
-          "1 cup croutons",
-          "2 anchovy fillets",
-          "2 cloves garlic",
-          "1/4 cup mayonnaise",
-          "2 tbsp lemon juice",
-          "1 tsp Dijon mustard",
-          "1/4 cup olive oil",
+          "1 lb chicken thighs, cut into small pieces",
+          "1/2 lb chicken livers, cleaned and halved",
+          "1/4 lb chicken hearts (optional)",
+          "3 large onions, roughly chopped",
+          "8 cloves garlic, minced",
+          "3 tbsp olive oil",
+          "2 tsp cumin",
+          "2 tsp baharat spice mix",
+          "1 tsp turmeric",
+          "1/2 tsp black pepper",
+          "Salt to taste",
+          "Juice of 1 lemon",
+          "Fresh parsley, chopped",
+          "Laffa or pita bread",
+          "Tahini and hot sauce for serving"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Heat a large cast iron skillet or flat griddle over high heat. Add olive oil and let it get very hot - this is key for proper charring."
+      },
+      {
+        "type": "text",
+        "text": "2. Add the onions first and cook for 5-6 minutes, stirring occasionally, until they start to char and soften. Push to the sides."
+      },
+      {
+        "type": "text",
+        "text": "3. Add chicken thighs to the center. Season with half the spices and salt. Cook without stirring for 3-4 minutes to get good browning."
+      },
+      {
+        "type": "image",
+        "url": "https://img.mako.co.il/2017/11/16/6R5A2171_i.jpg"
+      },
+      {
+        "type": "text",
+        "text": "4. Add chicken livers (and hearts if using). Add remaining spices and the minced garlic. Stir everything together and continue cooking for 4-5 minutes. The livers should be cooked through but still tender."
+      },
+      {
+        "type": "text",
+        "text": "5. Squeeze lemon juice over everything and toss. Taste and adjust salt. The mixture should be well-spiced and have nice charred bits."
+      },
+      {
+        "type": "text",
+        "text": "6. Serve immediately in warm laffa or pita with tahini, hot sauce, Israeli salad, and pickles. Garnish with fresh parsley."
+      }
+    ]
+  },
+  {
+    "title": "Israeli Schnitzel with Side Salads",
+    "description": "Crispy breaded chicken cutlets served with classic Israeli salads - cabbage slaw, Israeli salad, and pickles. A weeknight dinner staple.",
+    "thumbnail_image_url": "https://ynet-pic1.yit.co.il/cdn-cgi/image/f=auto,w=740,q=75/picserver5/crop_images/2021/08/19/rkSB11UujlK/rkSB11UujlK_0_0_1280_851_0_x-large.jpg",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "In Israel, schnitzel isn't just a dish - it's a way of life. Crispy, thin, and perfectly seasoned, served with vibrant salads. Every family has their technique for the crispiest coating."
+      },
+      {
+        "type": "subtitle",
+        "text": "For the Schnitzel"
+      },
+      {
+        "type": "list",
+        "items": [
+          "4 chicken breasts, butterflied and pounded thin",
+          "1 cup all-purpose flour",
+          "3 eggs, beaten",
+          "2 cups panko breadcrumbs",
+          "1 tsp garlic powder",
+          "1 tsp paprika",
+          "Salt and black pepper",
+          "Vegetable oil for frying",
+          "Lemon wedges"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Cabbage Slaw"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1/2 head green cabbage, finely shredded",
+          "2 carrots, julienned",
+          "3 tbsp lemon juice",
+          "2 tbsp olive oil",
+          "1 tsp sugar",
           "Salt and pepper"
         ]
       },
       {
         "type": "subtitle",
+        "text": "Israeli Salad"
+      },
+      {
+        "type": "list",
+        "items": [
+          "4 Persian cucumbers, diced",
+          "4 tomatoes, diced",
+          "1/4 red onion, finely diced",
+          "Lemon juice, olive oil, salt, pepper",
+          "Fresh parsley"
+        ]
+      },
+      {
+        "type": "image",
+        "url": "https://cdn.goodlifetv.co.il/wp-content/uploads/2021/12/09183819/AdobeStock_395599733.jpg"
+      },
+      {
+        "type": "subtitle",
         "text": "Instructions"
       },
       {
         "type": "text",
-        "text": "1. In a food processor or blender, combine anchovies, garlic, mayonnaise, lemon juice, and Dijon mustard.\n\n2. While blending, slowly drizzle in olive oil until dressing is smooth and creamy.\n\n3. Season with salt and pepper to taste.\n\n4. In a large bowl, toss romaine lettuce with dressing until well coated.\n\n5. Add croutons and Parmesan cheese, then toss again.\n\n6. Serve immediately."
+        "text": "1. Prepare the salads first so they can rest: For cabbage slaw, massage the shredded cabbage with salt for 5 minutes, then rinse and squeeze dry. Toss with carrots, lemon juice, oil, sugar, salt and pepper. For Israeli salad, simply combine all ingredients."
+      },
+      {
+        "type": "text",
+        "text": "2. Set up breading station: Place flour in one shallow dish, beaten eggs in another, and breadcrumbs mixed with garlic powder, paprika, salt, and pepper in a third."
+      },
+      {
+        "type": "text",
+        "text": "3. Pat chicken completely dry. Season both sides with salt and pepper. Dredge each piece: flour (shake off excess) → egg (let excess drip) → breadcrumbs (press firmly to adhere). Place on a wire rack."
+      },
+      {
+        "type": "text",
+        "text": "4. Heat 1/4 inch oil in a large skillet over medium-high heat. Oil is ready when a breadcrumb sizzles immediately when dropped in."
+      },
+      {
+        "type": "text",
+        "text": "5. Fry schnitzels 2 at a time, about 3-4 minutes per side until deep golden brown. Don't overcrowd the pan. Drain on paper towels and season with a pinch of salt immediately."
+      },
+      {
+        "type": "image",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8psE98G6JxV7wCRI9sKSMtJ0dugPpPDTAUQ&s"
+      },
+      {
+        "type": "text",
+        "text": "6. Serve hot with both salads, lemon wedges, and pita bread on the side. Squeeze fresh lemon over the schnitzel just before eating."
       }
     ]
   },
   {
-    "title": "Beef Stir Fry",
-    "description": "Quick and easy beef stir fry with colorful vegetables in a savory sauce. Perfect for busy weeknights.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800",
+    "title": "Yemenite Jachnun",
+    "description": "Slow-cooked overnight rolled pastry from Yemen, crispy on the outside, soft inside. Served with grated tomato, zhug, and hard-boiled eggs.",
+    "thumbnail_image_url": "https://d3o5sihylz93ps.cloudfront.net/wp-content/uploads/2024/08/07175920/KRT_6942-1-1100x733.jpg",
     "recipe": [
       {
         "type": "text",
-        "text": "This stir fry comes together in minutes and is packed with flavor. Feel free to use whatever vegetables you have on hand!"
+        "text": "Jachnun is the ultimate Shabbat breakfast. Yemenite Jews would prepare it Friday afternoon and let it slow-cook overnight, ready for Saturday morning. The result is buttery, caramelized layers of tender dough."
       },
       {
         "type": "subtitle",
@@ -334,19 +340,24 @@
       {
         "type": "list",
         "items": [
-          "1 lb beef sirloin, sliced thin",
-          "2 tbsp vegetable oil",
-          "1 bell pepper, sliced",
-          "1 onion, sliced",
-          "1 cup broccoli florets",
-          "1 carrot, julienned",
-          "2 cloves garlic, minced",
-          "1 tbsp ginger, grated",
-          "1/4 cup soy sauce",
-          "2 tbsp hoisin sauce",
-          "1 tbsp cornstarch",
-          "2 tbsp water",
-          "Green onions for garnish"
+          "4 cups all-purpose flour",
+          "1 1/2 cups warm water",
+          "2 tsp salt",
+          "1 tsp sugar",
+          "1 cup (2 sticks) butter, very soft or clarified",
+          "6-8 eggs in shell (for cooking alongside)"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "For Serving"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Fresh tomatoes, grated",
+          "Zhug (spicy Yemenite sauce)",
+          "Hard-boiled eggs from the pot"
         ]
       },
       {
@@ -355,18 +366,50 @@
       },
       {
         "type": "text",
-        "text": "1. Heat 1 tbsp oil in a large wok or skillet over high heat.\n\n2. Add beef and cook for 2-3 minutes until browned. Remove and set aside.\n\n3. Add remaining oil to the pan. Add vegetables and stir fry for 3-4 minutes until crisp-tender.\n\n4. Add garlic and ginger, cook for 30 seconds.\n\n5. Return beef to the pan. Add soy sauce and hoisin sauce.\n\n6. Mix cornstarch with water and add to the pan. Cook until sauce thickens.\n\n7. Garnish with green onions and serve over rice."
+        "text": "1. Make the dough: Mix flour, salt, and sugar in a large bowl. Gradually add warm water, kneading until smooth and elastic, about 10 minutes. The dough should be soft and pliable."
+      },
+      {
+        "type": "text",
+        "text": "2. Divide dough into 8 equal pieces and roll into balls. Coat each ball generously with soft butter, place on a tray, cover with plastic wrap, and rest for at least 3 hours (or overnight in fridge)."
+      },
+      {
+        "type": "image",
+        "url": "https://kerenagam.co.il/wp-content/uploads/2021/09/NofarZur-5-of-35.jpg"
+      },
+      {
+        "type": "text",
+        "text": "3. On a well-buttered surface, stretch each ball into a very thin rectangle (almost translucent). This takes practice - be patient and gentle. Spread more butter over the surface."
+      },
+      {
+        "type": "text",
+        "text": "4. Roll up tightly from one long side to form a log, then coil the log into a tight spiral. Place spirals upright in a deep, heavy pot (they should fit snugly). Add raw eggs in their shells to the gaps between rolls."
+      },
+      {
+        "type": "text",
+        "text": "5. Pour 1/2 cup water around the edges. Cover tightly with aluminum foil and then the lid. Place in 225°F (110°C) oven overnight (10-12 hours). Check once that there's still some liquid."
+      },
+      {
+        "type": "text",
+        "text": "6. In the morning, carefully remove jachnun (it will be very soft). Serve warm with grated fresh tomato, zhug, and peeled hard-boiled eggs. The eggs will have a creamy texture and slight caramel color from slow cooking."
+      },
+      {
+        "type": "subtitle",
+        "text": "Note"
+      },
+      {
+        "type": "text",
+        "text": "If you don't have 12 hours, you can cook at 250°F for 6-8 hours, though the traditional method yields better results."
       }
     ]
   },
   {
-    "title": "Banana Bread",
-    "description": "Moist and tender banana bread that's perfect for breakfast or a snack. Uses overripe bananas for the best flavor.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=800",
+    "title": "Malawach with Grated Tomato",
+    "description": "Flaky Yemenite flatbread, pan-fried until crispy and golden, served with fresh grated tomato and zhug. A beloved breakfast treat.",
+    "thumbnail_image_url": "https://d3o5sihylz93ps.cloudfront.net/wp-content/uploads/2025/12/07132242/WhatsApp-Image-2025-12-06-at-9.39.09-PM-1100x733.jpeg",
     "recipe": [
       {
         "type": "text",
-        "text": "This banana bread is incredibly moist and flavorful. The secret is using very ripe bananas - the blacker, the better!"
+        "text": "Malawach is flaky, buttery perfection. Unlike jachnun (which is baked), malawach is pan-fried, creating crispy, golden layers. It's often served for breakfast with grated tomato, but it's delicious any time."
       },
       {
         "type": "subtitle",
@@ -375,16 +418,98 @@
       {
         "type": "list",
         "items": [
-          "3 ripe bananas, mashed",
-          "1/3 cup melted butter",
+          "3 cups all-purpose flour",
+          "1 cup warm water",
+          "1 tsp salt",
+          "1 tsp sugar",
+          "3/4 cup butter or margarine, softened"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "For Serving"
+      },
+      {
+        "type": "list",
+        "items": [
+          "4-5 ripe tomatoes, grated on box grater",
+          "Salt to taste",
+          "Zhug (Yemenite hot sauce)",
+          "Hard-boiled eggs (optional)"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Mix flour, salt, and sugar in a bowl. Add warm water gradually and knead for 8-10 minutes until smooth and elastic. Cover and rest for 30 minutes."
+      },
+      {
+        "type": "text",
+        "text": "2. Divide dough into 6 pieces and roll into balls. Coat each generously with soft butter and place on a greased tray. Cover and refrigerate for at least 4 hours or overnight - this is crucial for flakiness."
+      },
+      {
+        "type": "text",
+        "text": "3. On a heavily buttered surface, use a rolling pin (or your hands) to stretch each ball into a very thin circle, about 12 inches in diameter. The thinner, the flakier!"
+      },
+      {
+        "type": "image",
+        "url": "https://www.bamixer.co.il/school/wp-content/uploads/malavach.jpg"
+      },
+      {
+        "type": "text",
+        "text": "4. Fold the circle in half, then in half again to form a triangle. Or fold it into a square. Either way works - you're creating layers."
+      },
+      {
+        "type": "text",
+        "text": "5. Heat a large skillet or griddle over medium heat. No need to add oil - there's enough butter in the dough. Cook each malawach for 3-4 minutes per side until golden brown with crispy edges."
+      },
+      {
+        "type": "image",
+        "url": "https://images1.ynet.co.il/PicServer5/2018/08/24/8734177/87341650100294980681no.jpg"
+      },
+      {
+        "type": "text",
+        "text": "6. While cooking, prepare grated tomato: Cut tomatoes in half and grate on the large holes of a box grater (discard skins). Season with salt."
+      },
+      {
+        "type": "text",
+        "text": "7. Serve malawach hot, torn into pieces for dipping in the grated tomato and zhug. Add hard-boiled eggs on the side for a complete breakfast."
+      }
+    ]
+  },
+  {
+    "title": "Authentic Hummus",
+    "description": "Creamy, smooth hummus made from scratch with dried chickpeas. Topped with olive oil, paprika, and pine nuts. Nothing beats homemade.",
+    "thumbnail_image_url": "https://d3o5sihylz93ps.cloudfront.net/wp-content/uploads/2015/10/27113628/NINJA3-75.jpg",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "True hummus in Israel is an art form - impossibly smooth, rich with tahini, and perfectly balanced. The secret is using dried chickpeas, cooking them until they almost fall apart, and blending with patience."
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 cup dried chickpeas (not canned)",
           "1 tsp baking soda",
-          "Pinch of salt",
-          "3/4 cup sugar",
-          "1 large egg, beaten",
-          "1 tsp vanilla extract",
-          "1 1/2 cups all-purpose flour",
-          "1/2 cup chopped walnuts (optional)"
+          "3/4 cup tahini (raw, not roasted)",
+          "3-4 cloves garlic",
+          "1/4 cup fresh lemon juice",
+          "1/2 cup ice water",
+          "1 tsp cumin",
+          "Salt to taste",
+          "For topping: olive oil, paprika, pine nuts, parsley"
         ]
+      },
+      {
+        "type": "image",
+        "url": "https://media3.reshet.tv/image/upload/t_image_article_800/t_image_article_800/v1638363002/uploads/2021/902737503.webp"
       },
       {
         "type": "subtitle",
@@ -392,18 +517,50 @@
       },
       {
         "type": "text",
-        "text": "1. Preheat oven to 350°F (175°C). Grease a 9x5 inch loaf pan.\n\n2. In a mixing bowl, mash the ripe bananas with a fork until smooth.\n\n3. Stir melted butter into the mashed bananas.\n\n4. Mix in baking soda and salt. Stir in sugar, beaten egg, and vanilla extract.\n\n5. Mix in the flour until just combined. Fold in walnuts if using.\n\n6. Pour batter into prepared loaf pan.\n\n7. Bake for 50-60 minutes, until a toothpick inserted into center comes out clean.\n\n8. Let cool in pan for 10 minutes, then remove and cool completely on wire rack."
+        "text": "1. Soak chickpeas overnight in plenty of water with the baking soda. They'll double in size. Drain and rinse the next day."
+      },
+      {
+        "type": "text",
+        "text": "2. Place chickpeas in a large pot with fresh water (about 3 times their volume). Bring to a boil, then reduce to a simmer. Cook for 1.5 to 2 hours until the chickpeas are extremely soft - they should squish easily between your fingers. Skim off any foam or skins that float up."
+      },
+      {
+        "type": "text",
+        "text": "3. Drain chickpeas but reserve the cooking liquid. Let chickpeas cool slightly - you want them warm but not burning hot."
+      },
+      {
+        "type": "text",
+        "text": "4. In a food processor, blend garlic first until minced. Add tahini, lemon juice, cumin, and salt. Process for 1-2 minutes - the mixture will seize up and become thick. This is normal!"
+      },
+      {
+        "type": "text",
+        "text": "5. With the processor running, slowly drizzle in the ice water. The mixture will become smooth and light in color. This step is key for creamy hummus."
+      },
+      {
+        "type": "text",
+        "text": "6. Add the warm chickpeas (reserve a few for garnish). Blend for 3-4 minutes, scraping down sides as needed. If too thick, add a little cooking liquid. Blend until completely smooth and almost fluffy."
+      },
+      {
+        "type": "text",
+        "text": "7. Taste and adjust salt, lemon, or tahini. Transfer to a wide, shallow bowl. Create a well in the center and fill with olive oil. Top with reserved whole chickpeas, paprika, pine nuts, and parsley."
+      },
+      {
+        "type": "image",
+        "url": "https://d3o5sihylz93ps.cloudfront.net/app/uploads/2018/09/14183732/%D7%97%D7%95%D7%9E%D7%95%D7%A1.jpg"
+      },
+      {
+        "type": "text",
+        "text": "8. Serve immediately with warm pita bread. Hummus is best enjoyed fresh, at room temperature."
       }
     ]
   },
   {
-    "title": "Chicken Curry",
-    "description": "Aromatic and flavorful chicken curry with a rich, creamy sauce. Serve with rice or naan bread.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800",
+    "title": "Crispy Falafel",
+    "description": "Deep-fried chickpea fritters with herbs and spices. Crispy outside, fluffy green inside. A Middle Eastern classic perfect in pita or over salad.",
+    "thumbnail_image_url": "https://st1.foodsd.co.il/Images/Recipes/xxxl/Recipe-13386-qarzx81w0qtirhv3.webp",
     "recipe": [
       {
         "type": "text",
-        "text": "This chicken curry is packed with warm spices and has a beautiful depth of flavor. Adjust the spice level to your preference!"
+        "text": "The key to perfect falafel is using dried chickpeas soaked overnight - never canned! This creates the right texture: crispy exterior with a fluffy, herb-flecked interior."
       },
       {
         "type": "subtitle",
@@ -412,209 +569,553 @@
       {
         "type": "list",
         "items": [
-          "2 lbs chicken thighs, cut into pieces",
+          "1 cup dried chickpeas (soaked overnight, not cooked)",
+          "1 small onion, roughly chopped",
+          "4 cloves garlic",
+          "1 cup fresh parsley",
+          "1/2 cup fresh cilantro",
+          "1 tsp cumin",
+          "1 tsp coriander",
+          "1/2 tsp cayenne pepper",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "1/2 tsp baking soda",
+          "2-3 tbsp flour or chickpea flour",
+          "2-3 tbsp sesame seeds",
+          "Vegetable oil for deep frying"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Drain soaked chickpeas very well and pat dry. They should be swollen and soft but still completely raw - do not cook them!"
+      },
+      {
+        "type": "text",
+        "text": "2. Add chickpeas, onion, garlic, herbs, and all spices to a food processor. Pulse until the mixture is finely ground but not pureed - it should look like coarse sand with visible green flecks."
+      },
+      {
+        "type": "image",
+        "url": "https://www.krutit.co.il/wp-content/uploads/2017/12/DSC_0833-600.jpg"
+      },
+      {
+        "type": "text",
+        "text": "3. Transfer to a bowl and refrigerate for at least 1 hour (or up to 24 hours). This helps the mixture firm up and makes shaping easier."
+      },
+      {
+        "type": "text",
+        "text": "4. After chilling, add baking soda, flour, and sesame seeds. Mix well. The mixture should hold together when squeezed. If too wet, add a bit more flour."
+      },
+      {
+        "type": "text",
+        "text": "5. Heat 3 inches of oil in a deep pot to 350°F (175°C). Use a thermometer - proper temperature is crucial for crispy falafel."
+      },
+      {
+        "type": "text",
+        "text": "6. Shape mixture into small patties or balls (about 1.5 inches). A falafel scoop makes this easy, or use two spoons. Don't make them too large or the inside won't cook."
+      },
+      {
+        "type": "text",
+        "text": "7. Carefully drop falafel into hot oil, frying 6-8 at a time. Fry for 3-4 minutes, turning once, until deep golden brown all over."
+      },
+      {
+        "type": "image",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4S53b0QE6naRPrvFYsIDkMmtqwo2W6qBwng&s"
+      },
+      {
+        "type": "text",
+        "text": "8. Drain on paper towels. Serve hot in pita with tahini, Israeli salad, pickles, and hot sauce. Or serve over hummus with salads for a bowl."
+      }
+    ]
+  },
+  {
+    "title": "Thai Green Curry",
+    "description": "Aromatic green curry with chicken, bamboo shoots, and Thai basil in coconut milk. Rich, creamy, and perfectly balanced heat.",
+    "thumbnail_image_url": "https://taldiskin.com/wp-content/uploads/2020/09/GreenCurry_1-600x410.jpg",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "Thai green curry is all about balancing flavors - spicy, sweet, salty, and herbal. Using quality curry paste and fish sauce makes all the difference. Don't skip the Thai basil!"
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
           "2 tbsp vegetable oil",
-          "1 large onion, diced",
-          "3 cloves garlic, minced",
-          "1 tbsp ginger, grated",
-          "2 tbsp curry powder",
+          "3-4 tbsp Thai green curry paste",
+          "1 lb chicken breast or thighs, thinly sliced",
+          "1 can (14 oz) coconut milk",
+          "1 cup chicken stock",
+          "1 tbsp fish sauce",
+          "1 tbsp palm sugar or brown sugar",
+          "2 Thai eggplants, quartered (or regular eggplant)",
+          "1 cup bamboo shoots, drained",
+          "3-4 kaffir lime leaves",
+          "1 red bell pepper, sliced",
+          "1 cup Thai basil leaves",
+          "2 Thai chilies, sliced (optional)",
+          "Juice of 1/2 lime"
+        ]
+      },
+      {
+        "type": "image",
+        "url": "https://d3o5sihylz93ps.cloudfront.net/wp-content/uploads/2019/08/22181044/shutterstock_180008057.jpg"
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Heat oil in a wok or large deep pan over medium-high heat. Add curry paste and fry for 1-2 minutes until fragrant and the oil begins to separate from the paste."
+      },
+      {
+        "type": "text",
+        "text": "2. Add chicken and stir-fry until just cooked through, about 3-4 minutes."
+      },
+      {
+        "type": "text",
+        "text": "3. Shake the coconut milk can well, then add it to the pan along with the chicken stock. Stir and bring to a simmer."
+      },
+      {
+        "type": "text",
+        "text": "4. Add fish sauce, sugar, eggplant, bamboo shoots, and kaffir lime leaves. Simmer for 10 minutes until vegetables are tender."
+      },
+      {
+        "type": "text",
+        "text": "5. Add bell pepper and cook for 2-3 more minutes. Taste and adjust seasoning - add more fish sauce for saltiness, sugar for sweetness, or curry paste for heat."
+      },
+      {
+        "type": "text",
+        "text": "6. Remove from heat and stir in Thai basil leaves and lime juice. Serve immediately over jasmine rice."
+      }
+    ]
+  },
+  {
+    "title": "Authentic Japanese Ramen",
+    "description": "Rich pork bone broth with springy noodles, tender chashu pork, soft-boiled eggs, and traditional toppings. A labor of love worth every hour.",
+    "thumbnail_image_url": "https://d3o5sihylz93ps.cloudfront.net/wp-content/uploads/2021/11/21112937/%D7%A8%D7%90%D7%9E%D7%9F-%D7%90%D7%94%D7%A8%D7%95%D7%A0%D7%99-3.jpg",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "Making ramen from scratch is a commitment, but the result is restaurant-quality tonkotsu (pork bone) ramen that will impress anyone. The broth takes time, but most of it is hands-off simmering."
+      },
+      {
+        "type": "subtitle",
+        "text": "For the Broth (Tonkotsu)"
+      },
+      {
+        "type": "list",
+        "items": [
+          "2 lbs pork neck bones",
+          "1 lb pork trotters",
+          "1 large onion, halved",
+          "1 head garlic, halved crosswise",
+          "3-inch piece ginger, sliced",
+          "2 green onions",
+          "Water to cover"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "For Chashu Pork"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 lb pork belly",
+          "1/2 cup soy sauce",
+          "1/2 cup mirin",
+          "1/4 cup sake",
+          "3 tbsp sugar",
+          "2 cloves garlic",
+          "1-inch ginger"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Toppings & Assembly"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Fresh ramen noodles (4 portions)",
+          "4 soft-boiled eggs (6-minute eggs)",
+          "Nori sheets",
+          "Menma (fermented bamboo shoots)",
+          "Green onions, sliced",
+          "Sesame seeds",
+          "Chili oil (rayu)"
+        ]
+      },
+      {
+        "type": "image",
+        "url": "https://pinchandswirl.com/wp-content/uploads/2024/10/Shoyu-Ramen-Ingredients.jpg"
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Blanch the bones: Bring a large pot of water to boil. Add pork bones and trotters, boil for 10 minutes. Drain and rinse bones thoroughly under cold water to remove scum. This step is crucial for clear, non-bitter broth."
+      },
+      {
+        "type": "text",
+        "text": "2. Make the broth: Place cleaned bones in a large pot and cover with cold water by 2 inches. Bring to a boil over high heat, then reduce to maintain a rolling boil. Add onion, garlic, ginger, and green onions. Boil for 8-12 hours, adding water as needed to keep bones covered. The longer it cooks, the richer and more milky-white the broth becomes."
+      },
+      {
+        "type": "text",
+        "text": "3. Make chashu: While broth simmers, roll pork belly tightly and tie with kitchen string. Brown all sides in a pot. Add soy sauce, mirin, sake, sugar, garlic, and ginger with just enough water to cover halfway. Simmer covered for 2 hours, turning occasionally. Let cool in liquid, then slice."
+      },
+      {
+        "type": "text",
+        "text": "4. Prepare soft-boiled eggs: Bring eggs to room temperature. Boil water, gently lower eggs in, and cook for exactly 6 minutes. Transfer to ice water immediately. Peel and marinate in diluted chashu braising liquid for at least 1 hour."
+      },
+      {
+        "type": "text",
+        "text": "5. Strain broth and season with salt to taste. Keep hot."
+      },
+      {
+        "type": "text",
+        "text": "6. Cook ramen noodles according to package instructions (usually 2-3 minutes in boiling water). Drain well."
+      },
+      {
+        "type": "text",
+        "text": "7. To assemble: Place noodles in a large bowl. Ladle hot broth over noodles. Top with chashu slices, halved soft-boiled egg, nori, menma, green onions, and sesame seeds. Add chili oil if desired."
+      },
+      {
+        "type": "image",
+        "url": "https://thecozycook.com/wp-content/uploads/2023/02/Homemade-Ramen-f.jpg"
+      },
+      {
+        "type": "text",
+        "text": "8. Serve immediately. The noodles will continue to absorb broth, so enjoy while hot!"
+      }
+    ]
+  },
+  {
+    "title": "Cacio e Pepe (Roman Cheese and Pepper Pasta)",
+    "description": "Deceptively simple Roman pasta with just pecorino cheese, black pepper, and pasta water creating a silky, creamy sauce. Technique is everything.",
+    "thumbnail_image_url": "https://assets.bonappetit.com/photos/65f995a6bb3f09a2cbbdbd01/3:2/w_5064,h_3376,c_limit/20240312_WEB_SOY_051_ret2.jpg",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "Cacio e Pepe is one of Rome's iconic pastas, and it's maddeningly simple yet easy to mess up. With only 3 ingredients, technique is everything. The key is creating a creamy emulsion without scrambling the cheese."
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 lb spaghetti or tonnarelli",
+          "2 cups finely grated Pecorino Romano cheese (use good quality)",
+          "2 tbsp whole black peppercorns, coarsely ground",
+          "Salt for pasta water",
+          "2-3 tbsp butter (optional, but helps emulsification)"
+        ]
+      },
+      {
+        "type": "image",
+        "url": "https://assets.bonappetit.com/photos/65f995a6bb3f09a2cbbdbd01/3:2/w_5064,h_3376,c_limit/20240312_WEB_SOY_051_ret2.jpg"
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Bring a large pot of water to boil and salt it well. Cook pasta until al dente (about 1-2 minutes less than package directions). Reserve 2 cups of starchy pasta water before draining."
+      },
+      {
+        "type": "text",
+        "text": "2. While pasta cooks, toast the coarsely ground black pepper in a large dry skillet over medium heat for about 1 minute until fragrant. Remove from heat temporarily."
+      },
+      {
+        "type": "text",
+        "text": "3. Place the grated Pecorino Romano in a large bowl. Add about 1/2 cup of the hot pasta water and whisk vigorously until you have a smooth, creamy paste. This step prevents clumping."
+      },
+      {
+        "type": "text",
+        "text": "4. Return the skillet with pepper to medium heat and add butter if using. Add about 1/2 cup pasta water and bring to a simmer."
+      },
+      {
+        "type": "text",
+        "text": "5. Add the drained pasta to the skillet and toss for 1 minute. Remove from heat (this is crucial - too much heat will make the cheese grainy)."
+      },
+      {
+        "type": "text",
+        "text": "6. Add the cheese-water mixture and toss vigorously, adding more pasta water as needed until you achieve a silky, glossy sauce that coats the pasta. The sauce should be creamy, not clumpy or watery."
+      },
+      {
+        "type": "text",
+        "text": "7. Serve immediately in warmed bowls with extra grated Pecorino and black pepper on top. Cacio e pepe waits for no one!"
+      },
+      {
+        "type": "subtitle",
+        "text": "Pro Tips"
+      },
+      {
+        "type": "text",
+        "text": "• Use the finest grater you have for the cheese - it melts more easily\n• Work quickly and off heat when adding cheese\n• If sauce breaks (gets grainy), add a splash of cold water and whisk vigorously\n• Practice makes perfect - this dish rewards repetition!"
+      }
+    ]
+  },
+  {
+    "title": "Mexican Street Tacos (Tacos al Pastor)",
+    "description": "Marinated pork with pineapple, cilantro, and onions on small corn tortillas. Inspired by Lebanese shawarma brought to Mexico.",
+    "thumbnail_image_url": "https://www.seriouseats.com/thmb/4kbwN13BlZnZ3EywrtG2AzCKuYs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20210712-tacos-al-pastor-melissa-hom-seriouseats-37-f72cdd02c9574bceb1eef1c8a23b76ed.jpg",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "Tacos al Pastor are a beautiful fusion of Lebanese and Mexican cuisine. Traditional versions use a vertical spit like shawarma, but this home version captures the essential flavors perfectly."
+      },
+      {
+        "type": "subtitle",
+        "text": "For the Marinade"
+      },
+      {
+        "type": "list",
+        "items": [
+          "3 dried guajillo chilies",
+          "2 dried ancho chilies",
+          "1/2 cup pineapple juice",
+          "1/4 cup white vinegar",
+          "4 cloves garlic",
+          "1 tbsp achiote paste",
+          "1 tsp cumin",
+          "1 tsp oregano",
+          "1/2 tsp cinnamon",
+          "Salt and pepper"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "For the Tacos"
+      },
+      {
+        "type": "list",
+        "items": [
+          "2 lbs boneless pork shoulder, thinly sliced",
+          "1 fresh pineapple, cut into chunks",
+          "Small corn tortillas",
+          "1 white onion, finely diced",
+          "1 cup fresh cilantro, chopped",
+          "Lime wedges",
+          "Salsa verde or your favorite salsa"
+        ]
+      },
+      {
+        "type": "image",
+        "url": "https://images.getrecipekit.com/20240719202231-srf-20pork-20collar-20tacos-20al-20pastor-2-35836-20-1.jpg?aspect_ratio=1:1&quality=90&"
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Make the marinade: Remove stems and seeds from dried chilies. Toast them briefly in a dry pan until fragrant, about 30 seconds per side. Soak in hot water for 15 minutes until soft."
+      },
+      {
+        "type": "text",
+        "text": "2. Blend softened chilies with pineapple juice, vinegar, garlic, achiote paste, and all spices until completely smooth. Season with salt and pepper."
+      },
+      {
+        "type": "text",
+        "text": "3. Toss pork slices with the marinade in a large bowl or zip-top bag. Refrigerate for at least 4 hours, preferably overnight."
+      },
+      {
+        "type": "text",
+        "text": "4. Heat a large cast iron skillet or griddle over high heat. Working in batches, cook marinated pork until charred and caramelized, about 2-3 minutes per side. The char is essential for authentic flavor!"
+      },
+      {
+        "type": "text",
+        "text": "5. In the same pan, grill pineapple chunks until caramelized and slightly charred. Chop into small pieces."
+      },
+      {
+        "type": "text",
+        "text": "6. Chop the cooked pork into small pieces for easier eating."
+      },
+      {
+        "type": "image",
+        "url": "https://cdn7.kiwilimon.com/recetaimagen/13996/960x640/6330.jpg.jpg"
+      },
+      {
+        "type": "text",
+        "text": "7. Warm corn tortillas directly over a gas flame or in a hot dry skillet until slightly charred and pliable."
+      },
+      {
+        "type": "text",
+        "text": "8. Assemble tacos: Stack 2 tortillas (authentic street taco style). Add chopped pork, grilled pineapple, diced onion, and cilantro. Squeeze fresh lime over top. Add salsa if desired."
+      },
+      {
+        "type": "text",
+        "text": "9. Eat immediately while hot. These are best enjoyed standing up, ideally on a street corner in Mexico City!"
+      }
+    ]
+  },
+  {
+    "title": "Indian Butter Chicken (Murgh Makhani)",
+    "description": "Tender chicken in a rich, creamy tomato-based sauce with butter and cream. The ultimate Indian comfort food.",
+    "thumbnail_image_url": "https://feelgoodfoodie.net/wp-content/uploads/2024/02/Easy-Butter-Chicken-TIMG.jpg",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "Butter chicken is the dish that makes people fall in love with Indian food. The key is marinating the chicken in yogurt and spices, then creating a velvety sauce that's perfectly balanced between tangy, sweet, and rich."
+      },
+      {
+        "type": "subtitle",
+        "text": "For the Chicken Marinade"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1.5 lbs boneless chicken thighs, cut into chunks",
+          "1 cup plain yogurt",
+          "1 tbsp lemon juice",
+          "2 tsp garam masala",
           "1 tsp turmeric",
           "1 tsp cumin",
-          "1 can (14 oz) coconut milk",
-          "1 can (14 oz) diced tomatoes",
+          "1 tsp cayenne pepper",
+          "Salt to taste"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "For the Sauce"
+      },
+      {
+        "type": "list",
+        "items": [
+          "4 tbsp butter",
+          "1 large onion, finely chopped",
+          "6 cloves garlic, minced",
+          "2-inch piece ginger, grated",
+          "2 tbsp tomato paste",
+          "1 can (14 oz) crushed tomatoes",
+          "1 tbsp garam masala",
+          "1 tsp cumin",
+          "1 tsp paprika",
+          "1/2 tsp fenugreek leaves (kasuri methi)",
+          "1 cup heavy cream",
+          "2 tbsp honey or sugar",
           "Salt to taste",
           "Fresh cilantro for garnish"
         ]
       },
       {
+        "type": "image",
+        "url": "https://www.thecookierookie.com/wp-content/uploads/2022/08/Featured-Indian-butter-chicken-1.jpg0"
+      },
+      {
         "type": "subtitle",
         "text": "Instructions"
       },
       {
         "type": "text",
-        "text": "1. Heat oil in a large pot over medium-high heat.\n\n2. Add chicken and cook until browned on all sides, about 5-6 minutes. Remove and set aside.\n\n3. In the same pot, add onion and cook until softened, about 5 minutes.\n\n4. Add garlic and ginger, cook for 1 minute.\n\n5. Add curry powder, turmeric, and cumin. Stir for 30 seconds until fragrant.\n\n6. Add coconut milk and diced tomatoes. Bring to a simmer.\n\n7. Return chicken to the pot. Cover and simmer for 25-30 minutes until chicken is cooked through.\n\n8. Season with salt. Garnish with cilantro and serve over rice."
+        "text": "1. Marinate the chicken: Mix all marinade ingredients in a bowl. Add chicken pieces and coat well. Cover and refrigerate for at least 2 hours (overnight is even better)."
+      },
+      {
+        "type": "text",
+        "text": "2. Cook the chicken: Heat a large skillet over high heat. Add marinated chicken (shake off excess marinade) and cook in batches until charred on the outside but not fully cooked through, about 2 minutes per side. Set aside."
+      },
+      {
+        "type": "text",
+        "text": "3. Make the sauce: In the same pan, melt butter over medium heat. Add onions and cook for 8-10 minutes until soft and golden. Add garlic and ginger, cook for 1 minute."
+      },
+      {
+        "type": "text",
+        "text": "4. Stir in tomato paste and cook for 2 minutes. Add crushed tomatoes and all spices. Simmer for 10 minutes, stirring occasionally, until the sauce thickens and oil begins to separate."
+      },
+      {
+        "type": "text",
+        "text": "5. For extra smoothness, blend the sauce with an immersion blender (optional but recommended)."
+      },
+      {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Butter_Chicken_%26_Butter_Naan_-_Home_-_Chandigarh_-_India_-_0006.jpg"
+      },
+      {
+        "type": "text",
+        "text": "6. Stir in cream and honey. Add the partially cooked chicken and any accumulated juices. Simmer for 10-12 minutes until chicken is fully cooked and sauce is luxurious."
+      },
+      {
+        "type": "text",
+        "text": "7. Crush fenugreek leaves between your palms and add to the sauce. Stir and let it simmer for 1-2 more minutes. Taste and adjust salt."
+      },
+      {
+        "type": "text",
+        "text": "8. Garnish with fresh cilantro and a drizzle of cream. Serve with basmati rice or naan bread."
       }
     ]
   },
   {
-    "title": "French Onion Soup",
-    "description": "Rich and savory French onion soup topped with melted Gruyère cheese. A classic comfort food.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800",
+    "title": "Korean Bibimbap",
+    "description": "Mixed rice bowl with seasoned vegetables, gochujang, fried egg, and optional meat. Colorful, nutritious, and endlessly customizable.",
+    "thumbnail_image_url": "https://www.recipetineats.com/tachyon/2019/05/Bibimbap_3.jpg",
     "recipe": [
       {
         "type": "text",
-        "text": "This French onion soup takes time but is worth every minute. The key is slowly caramelizing the onions to develop deep, sweet flavors."
+        "text": "Bibimbap literally means 'mixed rice' - a harmony of flavors, colors, and textures in one bowl. Each component is seasoned individually, then mixed together with spicy gochujang sauce. The crispy rice at the bottom (if using a hot stone bowl) is the best part!"
       },
       {
         "type": "subtitle",
-        "text": "Ingredients"
+        "text": "Base & Protein"
       },
       {
         "type": "list",
         "items": [
-          "4 large yellow onions, thinly sliced",
-          "4 tbsp butter",
-          "2 tbsp olive oil",
-          "1 tsp sugar",
-          "Salt and pepper",
-          "4 cups beef broth",
-          "1/2 cup dry white wine",
-          "2 sprigs fresh thyme",
-          "1 bay leaf",
-          "French bread, sliced",
-          "1 cup Gruyère cheese, grated"
+          "4 cups cooked short-grain white rice",
+          "1/2 lb beef bulgogi or ground beef (optional)",
+          "2 tsp soy sauce",
+          "1 tsp sesame oil",
+          "1 clove garlic, minced",
+          "4 eggs for frying"
         ]
       },
       {
         "type": "subtitle",
-        "text": "Instructions"
-      },
-      {
-        "type": "text",
-        "text": "1. In a large pot, melt butter and olive oil over medium-low heat.\n\n2. Add onions and cook slowly for 45-60 minutes, stirring occasionally, until deeply caramelized.\n\n3. Add sugar, salt, and pepper. Continue cooking for 10 more minutes.\n\n4. Add wine and scrape up any browned bits. Simmer until wine is reduced by half.\n\n5. Add broth, thyme, and bay leaf. Bring to a boil, then reduce heat and simmer for 30 minutes.\n\n6. Preheat broiler. Ladle soup into oven-safe bowls.\n\n7. Top each bowl with a slice of bread and sprinkle with cheese.\n\n8. Broil until cheese is bubbly and golden, about 2-3 minutes.\n\n9. Serve immediately."
-      }
-    ]
-  },
-  {
-    "title": "Chocolate Brownies",
-    "description": "Fudgy, rich chocolate brownies with a crackly top. The perfect dessert for chocolate lovers.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800",
-    "recipe": [
-      {
-        "type": "text",
-        "text": "These brownies are dense, fudgy, and incredibly chocolatey. The secret is using both cocoa powder and melted chocolate."
-      },
-      {
-        "type": "subtitle",
-        "text": "Ingredients"
+        "text": "Vegetables (Namul)"
       },
       {
         "type": "list",
         "items": [
-          "1 cup butter",
-          "2 cups sugar",
-          "4 large eggs",
-          "1 tsp vanilla extract",
-          "1 cup all-purpose flour",
-          "1/2 cup cocoa powder",
-          "1/2 tsp salt",
-          "1 cup chocolate chips"
+          "2 cups spinach, blanched",
+          "1 cup bean sprouts, blanched",
+          "1 large carrot, julienned",
+          "1 zucchini, julienned",
+          "4 shiitake mushrooms, sliced",
+          "Sesame oil and salt for seasoning each vegetable"
         ]
       },
       {
         "type": "subtitle",
-        "text": "Instructions"
-      },
-      {
-        "type": "text",
-        "text": "1. Preheat oven to 350°F (175°C). Grease a 9x13 inch baking pan.\n\n2. Melt butter in a large saucepan over low heat.\n\n3. Remove from heat and stir in sugar until well combined.\n\n4. Beat in eggs one at a time, then add vanilla.\n\n5. In a separate bowl, whisk together flour, cocoa powder, and salt.\n\n6. Gradually stir dry ingredients into wet ingredients until just combined.\n\n7. Fold in chocolate chips.\n\n8. Pour batter into prepared pan and spread evenly.\n\n9. Bake for 25-30 minutes until a toothpick inserted comes out with a few moist crumbs.\n\n10. Let cool completely before cutting into squares."
-      }
-    ]
-  },
-  {
-    "title": "Shrimp Scampi",
-    "description": "Garlicky shrimp scampi with pasta. Elegant yet simple, perfect for a date night or special dinner.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800",
-    "recipe": [
-      {
-        "type": "text",
-        "text": "This shrimp scampi is restaurant-quality but easy enough for a weeknight. The key is not overcooking the shrimp!"
-      },
-      {
-        "type": "subtitle",
-        "text": "Ingredients"
+        "text": "Gochujang Sauce"
       },
       {
         "type": "list",
         "items": [
-          "1 lb large shrimp, peeled and deveined",
-          "8 oz linguine pasta",
-          "4 tbsp butter",
-          "4 cloves garlic, minced",
-          "1/2 cup white wine",
-          "Juice of 1 lemon",
-          "1/4 cup fresh parsley, chopped",
-          "Salt and pepper",
-          "Red pepper flakes (optional)",
-          "Grated Parmesan cheese"
-        ]
-      },
-      {
-        "type": "subtitle",
-        "text": "Instructions"
-      },
-      {
-        "type": "text",
-        "text": "1. Cook pasta according to package directions until al dente. Reserve 1/2 cup pasta water.\n\n2. Pat shrimp dry and season with salt and pepper.\n\n3. Heat butter in a large skillet over medium-high heat.\n\n4. Add shrimp and cook for 1-2 minutes per side until pink and opaque. Remove and set aside.\n\n5. Add garlic to the same pan and cook for 30 seconds.\n\n6. Add wine and lemon juice. Simmer for 2 minutes.\n\n7. Add cooked pasta and shrimp back to the pan. Toss with sauce, adding pasta water if needed.\n\n8. Stir in parsley and red pepper flakes if using.\n\n9. Serve immediately with grated Parmesan."
-      }
-    ]
-  },
-  {
-    "title": "Vegetable Lasagna",
-    "description": "Layered lasagna with roasted vegetables and three types of cheese. A vegetarian comfort food classic.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=800",
-    "recipe": [
-      {
-        "type": "text",
-        "text": "This vegetable lasagna is hearty and satisfying, packed with layers of roasted vegetables, ricotta, mozzarella, and marinara sauce."
-      },
-      {
-        "type": "subtitle",
-        "text": "Ingredients"
-      },
-      {
-        "type": "list",
-        "items": [
-          "12 lasagna noodles",
-          "2 cups ricotta cheese",
-          "2 cups shredded mozzarella",
-          "1/2 cup grated Parmesan",
-          "2 cups marinara sauce",
-          "1 zucchini, sliced",
-          "1 yellow squash, sliced",
-          "1 bell pepper, sliced",
-          "1 onion, sliced",
-          "2 cups spinach",
-          "2 cloves garlic, minced",
-          "2 tbsp olive oil",
-          "Salt and pepper"
-        ]
-      },
-      {
-        "type": "subtitle",
-        "text": "Instructions"
-      },
-      {
-        "type": "text",
-        "text": "1. Preheat oven to 400°F (200°C).\n\n2. Toss vegetables with olive oil, salt, and pepper. Roast for 20 minutes until tender.\n\n3. Cook lasagna noodles according to package directions until al dente.\n\n4. In a bowl, mix ricotta with garlic, salt, and pepper.\n\n5. Reduce oven to 375°F (190°C).\n\n6. In a 9x13 inch baking dish, spread 1/2 cup marinara sauce.\n\n7. Layer: 4 noodles, 1/3 ricotta mixture, 1/3 roasted vegetables, 1/3 mozzarella, 1/3 marinara. Repeat twice.\n\n8. Top with remaining Parmesan.\n\n9. Cover with foil and bake for 30 minutes. Remove foil and bake 15 more minutes until bubbly.\n\n10. Let rest 10 minutes before serving."
-      }
-    ]
-  },
-  {
-    "title": "Pancakes",
-    "description": "Fluffy, golden pancakes perfect for weekend breakfasts. Serve with maple syrup and butter.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1528207779346-2212fe4f8b0a?w=800",
-    "recipe": [
-      {
-        "type": "text",
-        "text": "These pancakes are light, fluffy, and golden brown. The secret is not overmixing the batter - a few lumps are fine!"
-      },
-      {
-        "type": "subtitle",
-        "text": "Ingredients"
-      },
-      {
-        "type": "list",
-        "items": [
-          "1 1/2 cups all-purpose flour",
-          "3 1/2 tsp baking powder",
-          "1 tsp salt",
+          "3 tbsp gochujang (Korean chili paste)",
+          "1 tbsp sesame oil",
           "1 tbsp sugar",
-          "1 1/4 cups milk",
-          "1 egg",
-          "3 tbsp butter, melted",
-          "Maple syrup and butter for serving"
+          "1 tbsp water",
+          "1 clove garlic, minced",
+          "1 tsp rice vinegar",
+          "Toasted sesame seeds"
         ]
+      },
+      {
+        "type": "image",
+        "url": "https://images.food52.com/mnOrVJF2VHCGp-z4OfAOmTYdQN8=/07b2b06c-54f8-4e10-af7d-d6ef5612a535--Bibimbap1.jpg"
       },
       {
         "type": "subtitle",
@@ -622,18 +1123,54 @@
       },
       {
         "type": "text",
-        "text": "1. In a large bowl, sift together flour, baking powder, salt, and sugar.\n\n2. Make a well in the center and add milk, egg, and melted butter.\n\n3. Mix until just combined - batter should be slightly lumpy.\n\n4. Heat a lightly oiled griddle or frying pan over medium-high heat.\n\n5. Pour or scoop batter onto the griddle, using approximately 1/4 cup for each pancake.\n\n6. Brown on both sides, flipping when bubbles form on the surface.\n\n7. Serve hot with butter and maple syrup."
+        "text": "1. Prepare vegetables: Each vegetable should be cooked and seasoned separately. Blanch spinach for 30 seconds, squeeze dry, and season with sesame oil and salt. Do the same with bean sprouts (1 minute blanching)."
+      },
+      {
+        "type": "text",
+        "text": "2. Sauté carrot strips in a little oil until tender, 2-3 minutes. Season with salt and sesame oil. Repeat with zucchini (cook quickly to keep some crunch) and mushrooms."
+      },
+      {
+        "type": "text",
+        "text": "3. If using beef: Mix thinly sliced beef with soy sauce, sesame oil, and garlic. Sauté over high heat until cooked through, about 3-4 minutes."
+      },
+      {
+        "type": "text",
+        "text": "4. Make gochujang sauce: Whisk all sauce ingredients together until smooth."
+      },
+      {
+        "type": "text",
+        "text": "5. Fry eggs sunny-side up so the yolks are still runny."
+      },
+      {
+        "type": "text",
+        "text": "6. Assemble: Divide rice among 4 bowls. Arrange each vegetable in its own section around the bowl, creating a colorful wheel. Add beef in the center (if using). Top with a fried egg."
+      },
+      {
+        "type": "image",
+        "url": "https://images.squarespace-cdn.com/content/v1/51f7fb1ee4b03d20c9b4c34b/9d5c2e8a-012e-4a19-85a4-26f50b4623da/021_vegetarian-bibimbap-RHK.jpg"
+      },
+      {
+        "type": "text",
+        "text": "7. Serve with gochujang sauce on the side or drizzled over. To eat: Mix everything together vigorously with your spoon, breaking the yolk so it coats the rice. The mixing is essential!"
+      },
+      {
+        "type": "subtitle",
+        "text": "Dolsot Bibimbap Variation"
+      },
+      {
+        "type": "text",
+        "text": "For crispy rice: Heat a stone bowl (dolsot) until very hot. Brush with sesame oil, add rice, then arrange toppings. Let sit for 2-3 minutes to create a crispy rice crust on the bottom."
       }
     ]
   },
   {
-    "title": "Beef Burgers",
-    "description": "Juicy, flavorful homemade beef burgers. Top with your favorite fixings for the perfect burger.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800",
+    "title": "Spanish Seafood Paella",
+    "description": "Saffron-infused rice with shrimp, mussels, and squid cooked in a wide pan. The pride of Valencia, complete with crispy socarrat.",
+    "thumbnail_image_url": "https://themediterraneanchick.com/wp-content/uploads/2020/09/IMG_0825-1-scaled.jpg",
     "recipe": [
       {
         "type": "text",
-        "text": "These burgers are juicy and packed with flavor. The key is using good quality ground beef and not overworking the meat."
+        "text": "Paella is not just a dish, it's a ritual. The key is building flavor layers and achieving the socarrat - the crispy, caramelized rice crust at the bottom. Once you add the rice, don't stir! That's the secret."
       },
       {
         "type": "subtitle",
@@ -642,15 +1179,27 @@
       {
         "type": "list",
         "items": [
-          "1 1/2 lbs ground beef (80/20)",
-          "1 tsp Worcestershire sauce",
-          "1 tsp garlic powder",
+          "1/4 cup olive oil",
+          "1 lb large shrimp, peeled and deveined",
+          "1/2 lb squid, cleaned and cut into rings",
+          "1 lb mussels, scrubbed and debearded",
+          "1 onion, finely chopped",
+          "1 red bell pepper, diced",
+          "4 cloves garlic, minced",
+          "2 cups Spanish bomba or calasparra rice",
+          "1 can (14 oz) crushed tomatoes",
+          "4 cups seafood or fish stock, heated",
+          "Large pinch of saffron threads",
+          "1 tsp smoked paprika",
+          "1 bay leaf",
           "Salt and pepper",
-          "4 burger buns",
-          "Lettuce, tomato, onion",
-          "Cheese slices",
-          "Condiments of choice"
+          "1 cup frozen peas",
+          "Lemon wedges and parsley for serving"
         ]
+      },
+      {
+        "type": "image",
+        "url": "https://themediterraneanchick.com/wp-content/uploads/2020/09/IMG_0825-1-scaled.jpg"
       },
       {
         "type": "subtitle",
@@ -658,38 +1207,204 @@
       },
       {
         "type": "text",
-        "text": "1. In a bowl, gently mix ground beef with Worcestershire sauce, garlic powder, salt, and pepper.\n\n2. Form into 4 equal patties, being careful not to overwork the meat.\n\n3. Make a slight indentation in the center of each patty with your thumb.\n\n4. Heat grill or skillet to medium-high heat.\n\n5. Cook burgers for 4-5 minutes per side for medium-rare, or longer for desired doneness.\n\n6. Add cheese during the last minute of cooking if desired.\n\n7. Toast buns lightly.\n\n8. Assemble burgers with your favorite toppings and condiments.\n\n9. Serve immediately."
+        "text": "1. Steep saffron in 1/4 cup of the hot stock for 10 minutes. This releases its color and flavor."
+      },
+      {
+        "type": "text",
+        "text": "2. Heat olive oil in a large paella pan or wide shallow skillet (14-16 inches) over medium-high heat. Season shrimp and squid with salt. Sear shrimp for 1 minute per side, then remove. Sear squid for 1 minute, remove. These will finish cooking later."
+      },
+      {
+        "type": "text",
+        "text": "3. In the same pan, sauté onion and bell pepper for 5 minutes. Add garlic and cook 1 minute. Add tomatoes and smoked paprika, cook for 3-4 minutes until thick."
+      },
+      {
+        "type": "text",
+        "text": "4. Add rice and stir to coat with the sofrito (tomato mixture), about 2 minutes. This toasting adds flavor."
+      },
+      {
+        "type": "text",
+        "text": "5. Add the hot stock (including the saffron mixture) and bay leaf. Season with salt and pepper. Stir once to distribute rice evenly, then DON'T STIR AGAIN. This is crucial for socarrat."
+      },
+      {
+        "type": "text",
+        "text": "6. Bring to a boil, then reduce heat to medium-low. Let simmer uncovered for 15 minutes without stirring."
+      },
+      {
+        "type": "image",
+        "url": "https://spanishsabores.com/wp-content/uploads/2023/08/Seafood-Paella-Featured.jpg"
+      },
+      {
+        "type": "text",
+        "text": "7. Nestle mussels into the rice (hinge side down). Scatter peas over top. Add shrimp and squid back to the pan. Cook for 8-10 more minutes until mussels open and rice is tender."
+      },
+      {
+        "type": "text",
+        "text": "8. Increase heat to high for the last 1-2 minutes to create the socarrat (crispy bottom). Listen for crackling sounds and smell the toasty aroma."
+      },
+      {
+        "type": "text",
+        "text": "9. Remove from heat and cover with a kitchen towel. Let rest for 5 minutes. Garnish with lemon wedges and parsley. Serve directly from the pan - that's tradition!"
       }
     ]
   },
   {
-    "title": "Mushroom Risotto",
-    "description": "Creamy, rich risotto with earthy mushrooms. A labor of love that's worth every stir.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=800",
+    "title": "Vietnamese Pho",
+    "description": "Aromatic beef broth with rice noodles, thinly sliced beef, and fresh herbs. Vietnam's beloved comfort soup with complex, delicate flavors.",
+    "thumbnail_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJuFYW54a7tPw7dEcE--oqMSzIO1_nR078RA&s",
     "recipe": [
       {
         "type": "text",
-        "text": "Risotto requires patience and constant stirring, but the result is a creamy, luxurious dish that's worth the effort."
+        "text": "Pho is all about the broth - clear, aromatic, and deeply beefy with warm spices. Traditional versions simmer for 24 hours, but this streamlined recipe captures the essence in a more manageable time."
       },
       {
         "type": "subtitle",
-        "text": "Ingredients"
+        "text": "For the Broth"
       },
       {
         "type": "list",
         "items": [
-          "1 1/2 cups Arborio rice",
-          "4 cups warm chicken or vegetable broth",
-          "1 lb mixed mushrooms, sliced",
-          "1 onion, diced",
-          "3 cloves garlic, minced",
-          "1/2 cup white wine",
-          "4 tbsp butter",
+          "3 lbs beef bones (knuckle and leg bones)",
+          "1 lb beef brisket",
+          "2 large onions, halved",
+          "4-inch piece ginger, halved lengthwise",
+          "5 star anise",
+          "6 cloves",
+          "1 cinnamon stick",
+          "2 tbsp coriander seeds",
+          "1 tbsp fennel seeds",
+          "2 tbsp fish sauce",
+          "1 tbsp sugar",
+          "Salt to taste"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "For Serving"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 lb dried rice noodles (bánh phở)",
+          "1/2 lb eye of round steak, thinly sliced",
+          "Bean sprouts",
+          "Thai basil",
+          "Cilantro",
+          "Mint",
+          "Lime wedges",
+          "Sliced jalapeños",
+          "Hoisin sauce and sriracha"
+        ]
+      },
+      {
+        "type": "image",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJuFYW54a7tPw7dEcE--oqMSzIO1_nR078RA&s"
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Parboil bones and brisket: Place in a large pot, cover with water, and bring to a boil. Boil for 5 minutes, then drain and rinse bones thoroughly. This removes impurities for a clear broth."
+      },
+      {
+        "type": "text",
+        "text": "2. Char aromatics: Place onion halves and ginger (cut side down) directly on a gas flame or under the broiler until blackened and fragrant, about 3-4 minutes. This adds deep, smoky flavor."
+      },
+      {
+        "type": "text",
+        "text": "3. Toast spices: In a dry pan over medium heat, toast star anise, cloves, cinnamon, coriander, and fennel until fragrant, about 2-3 minutes. Don't burn them!"
+      },
+      {
+        "type": "text",
+        "text": "4. Make the broth: Return cleaned bones and brisket to the pot. Cover with 5 quarts of cold water. Add charred onions and ginger, toasted spices, fish sauce, and sugar. Bring to a boil, then reduce to the gentlest simmer."
+      },
+      {
+        "type": "text",
+        "text": "5. Simmer for 6-8 hours, skimming impurities from the surface every 30 minutes for the first 2 hours. Don't let it boil vigorously - you want a crystal-clear broth. Add water if needed to keep bones covered."
+      },
+      {
+        "type": "text",
+        "text": "6. After 3 hours, remove brisket and let cool. Slice thinly against the grain for serving."
+      },
+      {
+        "type": "text",
+        "text": "7. Strain broth through a fine-mesh sieve. Season with additional fish sauce and salt to taste. The broth should be flavorful but delicate."
+      },
+      {
+        "type": "text",
+        "text": "8. Prepare noodles: Soak rice noodles in warm water for 20 minutes. When ready to serve, blanch in boiling water for 10-15 seconds until tender. Drain well."
+      },
+      {
+        "type": "text",
+        "text": "9. Assemble: Place noodles in large bowls. Top with sliced brisket and paper-thin raw beef slices. Ladle boiling hot broth over everything (the broth cooks the raw beef). Serve with a plate of herbs, bean sprouts, lime, jalapeños, and sauces for customization."
+      },
+      {
+        "type": "text",
+        "text": "10. To eat: Squeeze lime juice, add herbs and sprouts to taste, add sauces if desired. Mix and enjoy while steaming hot!"
+      }
+    ]
+  },
+  {
+    "title": "Greek Moussaka",
+    "description": "Layered casserole with spiced meat sauce, fried eggplant, and creamy béchamel. Greece's answer to lasagna, rich and comforting.",
+    "thumbnail_image_url": "https://www.oliveandmango.com/images/uploads/2024_08_19_greek_moussaka_1.jpg",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "Moussaka is a labor of love with three distinct components that come together into something magical. The key is properly preparing the eggplant and making a rich, cinnamon-spiced meat sauce."
+      },
+      {
+        "type": "subtitle",
+        "text": "For the Eggplant"
+      },
+      {
+        "type": "list",
+        "items": [
+          "3 large eggplants, sliced into 1/4-inch rounds",
+          "Salt for sweating",
+          "Olive oil for brushing"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "For the Meat Sauce"
+      },
+      {
+        "type": "list",
+        "items": [
+          "2 lbs ground lamb (or beef)",
+          "2 onions, finely chopped",
+          "4 cloves garlic, minced",
+          "1 can (14 oz) crushed tomatoes",
+          "1/2 cup red wine",
+          "2 tbsp tomato paste",
+          "1 tsp cinnamon",
+          "1/2 tsp allspice",
+          "1 bay leaf",
+          "Salt and pepper",
+          "2 tbsp olive oil"
+        ]
+      },
+      {
+        "type": "subtitle",
+        "text": "For the Béchamel"
+      },
+      {
+        "type": "list",
+        "items": [
+          "6 tbsp butter",
+          "1/2 cup flour",
+          "4 cups whole milk, warmed",
+          "2 eggs, beaten",
           "1/2 cup grated Parmesan",
-          "2 tbsp olive oil",
-          "Salt and pepper",
-          "Fresh thyme"
+          "Pinch of nutmeg",
+          "Salt and white pepper"
         ]
+      },
+      {
+        "type": "image",
+        "url": "https://www.oliveandmango.com/images/uploads/2024_08_19_greek_moussaka_1.jpg"
       },
       {
         "type": "subtitle",
@@ -697,18 +1412,54 @@
       },
       {
         "type": "text",
-        "text": "1. Heat broth in a saucepan and keep warm over low heat.\n\n2. Heat olive oil in a large pan. Add mushrooms and cook until golden. Remove and set aside.\n\n3. Add 2 tbsp butter to the same pan. Add onion and cook until translucent.\n\n4. Add rice and stir for 2 minutes until grains are coated.\n\n5. Add wine and stir until absorbed.\n\n6. Add broth one ladle at a time, stirring constantly until each addition is absorbed before adding more.\n\n7. Continue until rice is creamy and al dente (about 20 minutes).\n\n8. Stir in remaining butter, Parmesan, and cooked mushrooms.\n\n9. Season with salt and pepper. Garnish with fresh thyme.\n\n10. Serve immediately."
+        "text": "1. Prepare eggplant: Sprinkle eggplant slices generously with salt and place in a colander. Let sit for 30 minutes to draw out moisture and bitterness. Rinse and pat very dry."
+      },
+      {
+        "type": "text",
+        "text": "2. Brush eggplant slices lightly with olive oil. Arrange on baking sheets and bake at 400°F (200°C) for 20-25 minutes until golden and tender. This is healthier than frying and less oily."
+      },
+      {
+        "type": "text",
+        "text": "3. Make meat sauce: Heat olive oil in a large pot. Brown the ground meat, breaking it up, until no longer pink. Add onions and cook for 8 minutes until soft. Add garlic and cook 1 minute."
+      },
+      {
+        "type": "text",
+        "text": "4. Add wine and let it reduce by half. Stir in crushed tomatoes, tomato paste, cinnamon, allspice, and bay leaf. Season with salt and pepper. Simmer for 30-40 minutes until thick and rich. Remove bay leaf."
+      },
+      {
+        "type": "text",
+        "text": "5. Make béchamel: Melt butter in a saucepan over medium heat. Whisk in flour and cook for 2 minutes (don't let it brown). Gradually whisk in warm milk, stirring constantly until smooth and thick, about 8-10 minutes."
+      },
+      {
+        "type": "text",
+        "text": "6. Remove from heat. Whisk in beaten eggs quickly (tempering them), then add Parmesan, nutmeg, salt, and white pepper. The sauce should be thick and creamy."
+      },
+      {
+        "type": "image",
+        "url": "https://vikalinka.com/wp-content/uploads/2024/05/Moussaka-16-Edit-500x500.jpg"
+      },
+      {
+        "type": "text",
+        "text": "7. Assemble: In a 9x13 inch baking dish, layer half the eggplant slices. Spread all the meat sauce over them. Layer remaining eggplant on top. Pour béchamel over everything, spreading to the edges."
+      },
+      {
+        "type": "text",
+        "text": "8. Bake at 350°F (175°C) for 45-50 minutes until the top is golden brown and bubbling. The béchamel should form a beautiful crust."
+      },
+      {
+        "type": "text",
+        "text": "9. Let rest for 20 minutes before cutting - this is essential for clean slices and allows flavors to settle. Serve with a simple Greek salad."
       }
     ]
   },
   {
-    "title": "Chicken Noodle Soup",
-    "description": "Classic homemade chicken noodle soup. Comforting, nourishing, and perfect for cold days.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800",
+    "title": "Sichuan Mapo Tofu",
+    "description": "Silky tofu in spicy, numbing chili oil sauce with ground pork. The famous Sichuan dish with málà (numbing-spicy) flavor.",
+    "thumbnail_image_url": "https://thewoksoflife.com/wp-content/uploads/2019/06/mapo-tofu-10.jpg",
     "recipe": [
       {
         "type": "text",
-        "text": "This chicken noodle soup is the ultimate comfort food. Homemade stock makes all the difference, but store-bought works too!"
+        "text": "Mapo tofu is all about the málà sensation - the combination of numbing Sichuan peppercorns and spicy chili oil. It's complex, deeply savory, and incredibly addictive. Don't skip the Sichuan peppercorns!"
       },
       {
         "type": "subtitle",
@@ -717,18 +1468,110 @@
       {
         "type": "list",
         "items": [
-          "2 lbs chicken thighs or breasts",
-          "8 cups chicken broth",
-          "2 carrots, diced",
-          "2 celery stalks, diced",
-          "1 onion, diced",
+          "1 lb soft or silken tofu, cut into 1-inch cubes",
+          "1/2 lb ground pork",
+          "3 tbsp vegetable oil",
+          "2 tbsp Sichuan chili bean paste (doubanjiang)",
+          "1 tbsp fermented black beans, minced",
+          "2 tbsp chili oil with sediment",
+          "4 cloves garlic, minced",
+          "1-inch ginger, minced",
+          "1 cup chicken or vegetable stock",
+          "1 tbsp soy sauce",
+          "1 tsp sugar",
+          "2 tsp Sichuan peppercorns, toasted and ground",
+          "2 tsp cornstarch mixed with 2 tbsp water",
+          "3 green onions, sliced",
+          "Salt to taste"
+        ]
+      },
+      {
+        "type": "image",
+        "url": "https://thewoksoflife.com/wp-content/uploads/2019/06/mapo-tofu-10.jpg"
+      },
+      {
+        "type": "subtitle",
+        "text": "Instructions"
+      },
+      {
+        "type": "text",
+        "text": "1. Prepare tofu: Bring a pot of water to boil with a pinch of salt. Gently add tofu cubes and simmer for 2 minutes. This firms them up and seasons them. Drain gently and set aside."
+      },
+      {
+        "type": "text",
+        "text": "2. Toast Sichuan peppercorns in a dry pan over medium heat until fragrant, about 2 minutes. Grind in a mortar and pestle or spice grinder. Set aside."
+      },
+      {
+        "type": "text",
+        "text": "3. Heat wok or large pan over high heat. Add oil and ground pork. Cook, breaking it up, until crispy and browned, about 4-5 minutes. Don't stir too much - you want some crispy bits."
+      },
+      {
+        "type": "text",
+        "text": "4. Push pork to the side. Add chili bean paste and fermented black beans to the center. Fry in the oil for about 1 minute until fragrant and the oil turns red."
+      },
+      {
+        "type": "text",
+        "text": "5. Add garlic and ginger, stir-fry for 30 seconds. Add chili oil (including the chili sediment for extra spice and flavor)."
+      },
+      {
+        "type": "text",
+        "text": "6. Pour in stock, soy sauce, and sugar. Bring to a boil. Gently slide in the tofu cubes. Reduce heat and simmer for 5 minutes so tofu absorbs the sauce. Don't stir aggressively or tofu will break."
+      },
+      {
+        "type": "text",
+        "text": "7. Add cornstarch slurry and stir gently until sauce thickens. Add half the ground Sichuan peppercorns and half the green onions. Stir gently."
+      },
+      {
+        "type": "text",
+        "text": "8. Transfer to serving dish. Top with remaining ground Sichuan peppercorns and green onions. The numbing sensation should hit right after the spice. Serve over steamed rice."
+      },
+      {
+        "type": "subtitle",
+        "text": "Pro Tip"
+      },
+      {
+        "type": "text",
+        "text": "For vegetarian version, replace pork with shiitake mushrooms (minced) and use vegetable stock. The dish is just as flavorful!"
+      }
+    ]
+  },
+  {
+    "title": "French Coq au Vin",
+    "description": "Chicken braised in red wine with mushrooms, pearl onions, and bacon. A rustic French classic that tastes like you're dining in Burgundy.",
+    "thumbnail_image_url": "https://www.foodnetwork.com/content/dam/images/food/fullset/2008/2/1/0/IG1005_Coq_Au_Vin_s4x3.jpg",
+    "recipe": [
+      {
+        "type": "text",
+        "text": "Coq au vin is French comfort food at its finest. The chicken becomes incredibly tender as it braises in wine, and the sauce is rich, velvety, and deeply satisfying. Perfect for a cold evening."
+      },
+      {
+        "type": "subtitle",
+        "text": "Ingredients"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 whole chicken (3-4 lbs), cut into 8 pieces",
+          "6 oz thick-cut bacon, cut into lardons",
+          "2 cups pearl onions, peeled",
+          "8 oz cremini mushrooms, halved",
+          "3 carrots, cut into chunks",
           "3 cloves garlic, minced",
-          "2 cups egg noodles",
-          "1 tsp dried thyme",
+          "2 tbsp tomato paste",
+          "1/4 cup cognac or brandy",
+          "1 bottle (750ml) dry red wine (Burgundy or Pinot Noir)",
+          "2 cups chicken stock",
+          "3 sprigs fresh thyme",
           "2 bay leaves",
+          "3 tbsp butter",
+          "2 tbsp flour",
           "Salt and pepper",
-          "Fresh parsley"
+          "Fresh parsley for garnish"
         ]
+      },
+      {
+        "type": "image",
+        "url": "https://www.foodnetwork.com/content/dam/images/food/fullset/2008/2/1/0/IG1005_Coq_Au_Vin_s4x3.jpg"
       },
       {
         "type": "subtitle",
@@ -736,18 +1579,54 @@
       },
       {
         "type": "text",
-        "text": "1. In a large pot, bring broth to a boil. Add chicken and simmer for 20 minutes until cooked through.\n\n2. Remove chicken and let cool. Shred when cool enough to handle.\n\n3. Add carrots, celery, and onion to the broth. Simmer for 10 minutes.\n\n4. Add garlic, thyme, and bay leaves. Simmer for 5 more minutes.\n\n5. Add noodles and cook according to package directions.\n\n6. Return shredded chicken to the pot.\n\n7. Season with salt and pepper to taste.\n\n8. Remove bay leaves. Garnish with fresh parsley.\n\n9. Serve hot."
+        "text": "1. Pat chicken pieces completely dry and season generously with salt and pepper. This is crucial for good browning."
+      },
+      {
+        "type": "text",
+        "text": "2. In a large Dutch oven, cook bacon over medium heat until crispy, about 5-6 minutes. Remove with a slotted spoon and set aside, leaving the fat in the pot."
+      },
+      {
+        "type": "text",
+        "text": "3. Working in batches, brown chicken pieces in the bacon fat, skin-side down first, until deep golden brown on both sides, about 4-5 minutes per side. Don't crowd the pan. Remove and set aside."
+      },
+      {
+        "type": "text",
+        "text": "4. In the same pot, add pearl onions and cook until golden, about 5 minutes. Add mushrooms and cook until browned, 5 more minutes. Add carrots and garlic, cook 2 minutes. Stir in tomato paste and cook 1 minute."
+      },
+      {
+        "type": "text",
+        "text": "5. Add cognac and carefully ignite with a long match to flambé (or just let it simmer to cook off the alcohol). Once flames die down, add red wine and stock. Scrape up all the browned bits from the bottom - this is flavor gold!"
+      },
+      {
+        "type": "text",
+        "text": "6. Return chicken and bacon to the pot. Add thyme and bay leaves. Bring to a simmer, then cover and transfer to a 325°F (165°C) oven. Braise for 1.5 hours until chicken is fall-off-the-bone tender."
+      },
+      {
+        "type": "image",
+        "url": "https://www.daringgourmet.com/wp-content/uploads/2013/01/Coq-Au-Vin-6.jpg"
+      },
+      {
+        "type": "text",
+        "text": "7. Remove chicken and vegetables to a serving platter and keep warm. Strain the braising liquid into a saucepan."
+      },
+      {
+        "type": "text",
+        "text": "8. Make beurre manié: Mash 2 tbsp butter with 2 tbsp flour until smooth. Bring braising liquid to a simmer and whisk in the beurre manié bit by bit until sauce thickens to coat the back of a spoon. This should take about 5 minutes."
+      },
+      {
+        "type": "text",
+        "text": "9. Taste and adjust seasoning. Pour sauce over chicken and vegetables. Garnish with fresh parsley. Serve with crusty bread, mashed potatoes, or buttered egg noodles to soak up the incredible sauce."
       }
     ]
   },
   {
-    "title": "Tiramisu",
-    "description": "Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream. Elegant and delicious.",
-    "thumbnail_image_url": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800",
+    "title": "Brazilian Feijoada",
+    "description": "Brazil's national dish - hearty black bean stew with various pork cuts, sausages, and beef. Traditionally served with rice, orange slices, and farofa.",
+    "thumbnail_image_url": "https://cheapandcheerfulcooking.com/wp-content/uploads/2020/05/vegan-feijoada-1.jpg",
     "recipe": [
       {
         "type": "text",
-        "text": "Tiramisu is a no-bake dessert that's surprisingly easy to make. The key is using quality ingredients - good espresso and real mascarpone."
+        "text": "Feijoada is the soul of Brazilian cuisine - a rich, smoky black bean stew cooked low and slow with various meats. It's traditionally made on Wednesdays and Saturdays, served as a communal feast with all the fixings."
       },
       {
         "type": "subtitle",
@@ -756,15 +1635,39 @@
       {
         "type": "list",
         "items": [
-          "1 1/2 cups strong espresso, cooled",
-          "3 tbsp coffee liqueur (optional)",
-          "24 ladyfinger cookies",
-          "1 lb mascarpone cheese",
-          "1 cup heavy cream",
-          "1/2 cup sugar",
-          "4 egg yolks",
-          "Cocoa powder for dusting"
+          "1 lb dried black beans, soaked overnight",
+          "1 lb pork shoulder, cut into chunks",
+          "1/2 lb smoked sausage (linguiça or kielbasa), sliced",
+          "1/2 lb bacon, cut into pieces",
+          "4 oz smoked pork ribs",
+          "1 bay leaf",
+          "1 large onion, chopped",
+          "6 cloves garlic, minced",
+          "2 tomatoes, diced",
+          "1 orange, quartered",
+          "Salt and pepper",
+          "2 tbsp olive oil",
+          "Smoked paprika (optional)"
         ]
+      },
+      {
+        "type": "subtitle",
+        "text": "Traditional Accompaniments"
+      },
+      {
+        "type": "list",
+        "items": [
+          "White rice",
+          "Sautéed collard greens",
+          "Orange slices",
+          "Farofa (toasted cassava flour)",
+          "Vinagrete (Brazilian salsa)",
+          "Hot sauce"
+        ]
+      },
+      {
+        "type": "image",
+        "url": "https://cheapandcheerfulcooking.com/wp-content/uploads/2020/05/vegan-feijoada-1.jpg"
       },
       {
         "type": "subtitle",
@@ -772,9 +1675,52 @@
       },
       {
         "type": "text",
-        "text": "1. Mix espresso with coffee liqueur if using.\n\n2. In a bowl, beat egg yolks with sugar until pale and thick.\n\n3. Add mascarpone and mix until smooth.\n\n4. In a separate bowl, whip heavy cream until stiff peaks form.\n\n5. Fold whipped cream into mascarpone mixture.\n\n6. Quickly dip ladyfingers in espresso mixture (don't soak).\n\n7. Arrange a layer of dipped ladyfingers in a 9x13 inch dish.\n\n8. Spread half of mascarpone mixture over ladyfingers.\n\n9. Repeat with another layer of ladyfingers and remaining mascarpone.\n\n10. Cover and refrigerate for at least 4 hours or overnight.\n\n11. Dust with cocoa powder before serving."
+        "text": "1. Drain soaked beans and place in a large pot. Add pork ribs and cover with water by 2 inches. Bring to a boil, then reduce to a simmer. Cook for 1 hour, skimming foam occasionally."
+      },
+      {
+        "type": "text",
+        "text": "2. Meanwhile, in a large skillet, render the bacon until crispy. Remove bacon and set aside. In the bacon fat, brown pork shoulder chunks on all sides, about 8 minutes total. Set aside."
+      },
+      {
+        "type": "text",
+        "text": "3. In the same skillet, brown the sausage slices. Set aside with other meats."
+      },
+      {
+        "type": "text",
+        "text": "4. After beans have cooked for 1 hour, add the browned pork shoulder, bacon, sausage, and bay leaf to the pot. Add more water if needed to cover everything. Simmer for another hour."
+      },
+      {
+        "type": "text",
+        "text": "5. Make the refogado (flavor base): Heat olive oil in a pan. Sauté onions until golden, about 8 minutes. Add garlic and cook 1 minute. Add tomatoes and cook until they break down, about 5 minutes. Season with salt, pepper, and paprika."
+      },
+      {
+        "type": "text",
+        "text": "6. Remove 2 ladles of beans from the pot and mash them. This will help thicken the stew. Return mashed beans to the pot along with the refogado. Squeeze in the orange quarters and drop them into the stew."
+      },
+      {
+        "type": "text",
+        "text": "7. Simmer for 30 more minutes, stirring occasionally, until beans are creamy and meats are fall-apart tender. The consistency should be thick but still soupy."
+      },
+      {
+        "type": "image",
+        "url": "https://easybrazilianfood.com/wp-content/uploads/2022/05/Feijoada-Rice-and-Beans-Brazilian-Angle-SQUARE.jpeg"
+      },
+      {
+        "type": "text",
+        "text": "8. Remove orange quarters and bay leaf. Taste and adjust salt. Feijoada should be well-seasoned and deeply savory."
+      },
+      {
+        "type": "text",
+        "text": "9. Serve in large bowls over white rice. Arrange all the traditional accompaniments on the table: collard greens, fresh orange slices, farofa, and vinagrete. Mix everything together as you eat!"
+      },
+      {
+        "type": "subtitle",
+        "text": "Make-Ahead Note"
+      },
+      {
+        "type": "text",
+        "text": "Feijoada actually tastes better the next day as flavors meld. It's perfect for meal prep or feeding a crowd!"
       }
     ]
   }
 ]
-

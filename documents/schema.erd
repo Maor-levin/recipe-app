@@ -4,9 +4,9 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": -208.2839,
-    "scrollLeft": -300.822,
-    "zoomLevel": 1,
+    "scrollTop": -192.7719,
+    "scrollLeft": -627.6012,
+    "zoomLevel": 0.82,
     "show": 493,
     "database": 16,
     "databaseName": "",
@@ -35,7 +35,8 @@
       "3uKeAa8r3iQiKKTwOq6V2",
       "v68FPlSmSY-HsTpLo05mh",
       "notes_table_id",
-      "favorites_table_id"
+      "favorites_table_id",
+      "XmSmRaH3uQH_cG-lZRpdh"
     ],
     "relationshipIds": [
       "phCr6Qi-8QBhptbDlY2t6",
@@ -44,7 +45,8 @@
       "notes_user_rel",
       "notes_recipe_rel",
       "favorites_user_rel",
-      "favorites_recipe_rel"
+      "favorites_recipe_rel",
+      "rv_recipe_rel"
     ],
     "indexIds": [],
     "memoIds": []
@@ -76,15 +78,15 @@
           "w-g_11Ry-E7iU2bTpKP_9"
         ],
         "ui": {
-          "x": 486.7223,
-          "y": 296.3976,
+          "x": 1031.309,
+          "y": 483.5437,
           "zIndex": 2,
           "widthName": 60,
           "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1769340172448,
+          "updateAt": 1770547639631,
           "createAt": 1753172869858
         }
       },
@@ -113,15 +115,15 @@
           "recipe_updated_at_col"
         ],
         "ui": {
-          "x": 1191.4659,
-          "y": 289.8955,
+          "x": 1001.1346,
+          "y": 70.0212,
           "zIndex": 65,
           "widthName": 60,
           "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1767698406136,
+          "updateAt": 1770547494937,
           "createAt": 1753173068097
         }
       },
@@ -144,15 +146,15 @@
           "1-llSPE7UQX83PLm3Xw-l"
         ],
         "ui": {
-          "x": 891.5682,
-          "y": 72.7868,
+          "x": 437.1924,
+          "y": 318.8312,
           "zIndex": 96,
           "widthName": 60,
           "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1767698416556,
+          "updateAt": 1770547489061,
           "createAt": 1753256468022
         }
       },
@@ -177,15 +179,15 @@
           "notes_updated_at_col"
         ],
         "ui": {
-          "x": 1172.7993,
-          "y": 672.2965,
+          "x": 433.3574,
+          "y": 79.5411,
           "zIndex": 100,
           "widthName": 60,
           "widthComment": 163,
           "color": ""
         },
         "meta": {
-          "updateAt": 1767698392805,
+          "updateAt": 1770547492600,
           "createAt": 1753270000000
         }
       },
@@ -206,16 +208,55 @@
           "favorites_created_at_col"
         ],
         "ui": {
-          "x": 674.7412,
-          "y": 709.2172,
+          "x": 436.9011,
+          "y": 526.8727,
           "zIndex": 101,
           "widthName": 60,
           "widthComment": 110,
           "color": ""
         },
         "meta": {
-          "updateAt": 1767698394362,
+          "updateAt": 1770547486411,
           "createAt": 1753270000000
+        }
+      },
+      "XmSmRaH3uQH_cG-lZRpdh": {
+        "id": "XmSmRaH3uQH_cG-lZRpdh",
+        "name": "recipe_variant",
+        "comment": "",
+        "columnIds": [
+          "6fFYXZX9h2tEtz9jSBcSA",
+          "JMj440px9kiCu6_P_pHR3",
+          "26MmErPNyptXAhxcWmQ0G",
+          "rv_modified_title_col",
+          "rv_modified_description_col",
+          "rv_modified_blocks_col",
+          "rv_changes_made_col",
+          "rv_created_at_col",
+          "rv_updated_at_col"
+        ],
+        "seqColumnIds": [
+          "6fFYXZX9h2tEtz9jSBcSA",
+          "JMj440px9kiCu6_P_pHR3",
+          "26MmErPNyptXAhxcWmQ0G",
+          "rv_modified_title_col",
+          "rv_modified_description_col",
+          "rv_modified_blocks_col",
+          "rv_changes_made_col",
+          "rv_created_at_col",
+          "rv_updated_at_col"
+        ],
+        "ui": {
+          "x": 1471.9168,
+          "y": 267.667,
+          "zIndex": 102,
+          "widthName": 75,
+          "widthComment": 60,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1770547479263,
+          "createAt": 1770318776853
         }
       }
     },
@@ -839,6 +880,186 @@
           "updateAt": 1753270000000,
           "createAt": 1753270000000
         }
+      },
+      "6fFYXZX9h2tEtz9jSBcSA": {
+        "id": "6fFYXZX9h2tEtz9jSBcSA",
+        "tableId": "XmSmRaH3uQH_cG-lZRpdh",
+        "name": "id",
+        "comment": "",
+        "dataType": "serial",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1770319193048,
+          "createAt": 1770319172125
+        }
+      },
+      "JMj440px9kiCu6_P_pHR3": {
+        "id": "JMj440px9kiCu6_P_pHR3",
+        "tableId": "XmSmRaH3uQH_cG-lZRpdh",
+        "name": "original_recipe_id",
+        "comment": "",
+        "dataType": "int",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 2,
+          "widthName": 94,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1770319209984,
+          "createAt": 1770319196630
+        }
+      },
+      "26MmErPNyptXAhxcWmQ0G": {
+        "id": "26MmErPNyptXAhxcWmQ0G",
+        "tableId": "XmSmRaH3uQH_cG-lZRpdh",
+        "name": "adjustments_normalized",
+        "comment": "Normalized adjustments (cache key)",
+        "dataType": "jsonb",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 131,
+          "widthComment": 193,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1770320000000,
+          "createAt": 1770319239981
+        }
+      },
+      "rv_modified_title_col": {
+        "id": "rv_modified_title_col",
+        "tableId": "XmSmRaH3uQH_cG-lZRpdh",
+        "name": "modified_title",
+        "comment": "",
+        "dataType": "varchar(200)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 75,
+          "widthComment": 60,
+          "widthDataType": 67,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1770319881000,
+          "createAt": 1770319881000
+        }
+      },
+      "rv_modified_description_col": {
+        "id": "rv_modified_description_col",
+        "tableId": "XmSmRaH3uQH_cG-lZRpdh",
+        "name": "modified_description",
+        "comment": "",
+        "dataType": "varchar(1000)",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 113,
+          "widthComment": 60,
+          "widthDataType": 74,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1770319881000,
+          "createAt": 1770319881000
+        }
+      },
+      "rv_modified_blocks_col": {
+        "id": "rv_modified_blocks_col",
+        "tableId": "XmSmRaH3uQH_cG-lZRpdh",
+        "name": "modified_blocks",
+        "comment": "JSONB array of RecipeBlocks",
+        "dataType": "jsonb",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 88,
+          "widthComment": 153,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1770319881000,
+          "createAt": 1770319881000
+        }
+      },
+      "rv_changes_made_col": {
+        "id": "rv_changes_made_col",
+        "tableId": "XmSmRaH3uQH_cG-lZRpdh",
+        "name": "changes_made",
+        "comment": "List of changes made",
+        "dataType": "jsonb",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 80,
+          "widthComment": 114,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1770319881000,
+          "createAt": 1770319881000
+        }
+      },
+      "rv_created_at_col": {
+        "id": "rv_created_at_col",
+        "tableId": "XmSmRaH3uQH_cG-lZRpdh",
+        "name": "created_at",
+        "comment": "",
+        "dataType": "timestamp",
+        "default": "NOW()",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1770319881000,
+          "createAt": 1770319881000
+        }
+      },
+      "rv_updated_at_col": {
+        "id": "rv_updated_at_col",
+        "tableId": "XmSmRaH3uQH_cG-lZRpdh",
+        "name": "updated_at",
+        "comment": "",
+        "dataType": "timestamp",
+        "default": "NOW()",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 62,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1770319881000,
+          "createAt": 1770319881000
+        }
       }
     },
     "relationshipEntities": {
@@ -852,18 +1073,18 @@
           "columnIds": [
             "8cecix6JCMHudRH9QJlQ8"
           ],
-          "x": 855.7223,
-          "y": 358.3976,
-          "direction": 2
+          "x": 1215.809,
+          "y": 483.5437,
+          "direction": 4
         },
         "end": {
           "tableId": "3uKeAa8r3iQiKKTwOq6V2",
           "columnIds": [
             "xuuec_nTStgb9uNhxoR5S"
           ],
-          "x": 1191.4659,
-          "y": 351.8955,
-          "direction": 1
+          "x": 1197.6345999999999,
+          "y": 318.0212,
+          "direction": 8
         },
         "meta": {
           "updateAt": 1753173100969,
@@ -880,17 +1101,17 @@
           "columnIds": [
             "e8DI6spgcWtiNbw_oHADZ"
           ],
-          "x": 1387.9659,
-          "y": 289.8955,
-          "direction": 4
+          "x": 1001.1346,
+          "y": 194.02120000000002,
+          "direction": 1
         },
         "end": {
           "tableId": "v68FPlSmSY-HsTpLo05mh",
           "columnIds": [
             "RPwiyTa-IsaIxghPh5xx9"
           ],
-          "x": 1218.5682000000002,
-          "y": 160.7868,
+          "x": 764.1924,
+          "y": 362.8312,
           "direction": 2
         },
         "meta": {
@@ -908,18 +1129,18 @@
           "columnIds": [
             "8cecix6JCMHudRH9QJlQ8"
           ],
-          "x": 671.2223,
-          "y": 296.3976,
-          "direction": 4
+          "x": 1031.309,
+          "y": 607.5437,
+          "direction": 1
         },
         "end": {
           "tableId": "v68FPlSmSY-HsTpLo05mh",
           "columnIds": [
             "yr__VQcakyXj_UzmAPDLN"
           ],
-          "x": 891.5682,
-          "y": 160.7868,
-          "direction": 1
+          "x": 764.1924,
+          "y": 450.8312,
+          "direction": 2
         },
         "meta": {
           "updateAt": 1753256623083,
@@ -936,18 +1157,18 @@
           "columnIds": [
             "8cecix6JCMHudRH9QJlQ8"
           ],
-          "x": 855.7223,
-          "y": 482.3976,
-          "direction": 2
+          "x": 1031.309,
+          "y": 524.8770333333333,
+          "direction": 1
         },
         "end": {
           "tableId": "notes_table_id",
           "columnIds": [
             "notes_user_id_col"
           ],
-          "x": 1172.7993,
-          "y": 772.2965,
-          "direction": 1
+          "x": 762.3574,
+          "y": 229.5411,
+          "direction": 2
         },
         "meta": {
           "updateAt": 1753270000000,
@@ -964,18 +1185,18 @@
           "columnIds": [
             "e8DI6spgcWtiNbw_oHADZ"
           ],
-          "x": 1387.9659,
-          "y": 537.8955000000001,
-          "direction": 8
+          "x": 1001.1346,
+          "y": 111.35453333333334,
+          "direction": 1
         },
         "end": {
           "tableId": "notes_table_id",
           "columnIds": [
             "notes_recipe_id_col"
           ],
-          "x": 1337.2993,
-          "y": 672.2965,
-          "direction": 4
+          "x": 762.3574,
+          "y": 129.5411,
+          "direction": 2
         },
         "meta": {
           "updateAt": 1753270000000,
@@ -992,18 +1213,18 @@
           "columnIds": [
             "8cecix6JCMHudRH9QJlQ8"
           ],
-          "x": 671.2223,
-          "y": 544.3976,
-          "direction": 8
+          "x": 1031.309,
+          "y": 690.2103666666666,
+          "direction": 1
         },
         "end": {
           "tableId": "favorites_table_id",
           "columnIds": [
             "favorites_user_id_col"
           ],
-          "x": 838.2412,
-          "y": 709.2172,
-          "direction": 4
+          "x": 763.9011,
+          "y": 640.8727,
+          "direction": 2
         },
         "meta": {
           "updateAt": 1753270000000,
@@ -1020,8 +1241,8 @@
           "columnIds": [
             "e8DI6spgcWtiNbw_oHADZ"
           ],
-          "x": 1191.4659,
-          "y": 475.8955,
+          "x": 1001.1346,
+          "y": 276.6878666666667,
           "direction": 1
         },
         "end": {
@@ -1029,13 +1250,41 @@
           "columnIds": [
             "favorites_recipe_id_col"
           ],
-          "x": 1001.7412,
-          "y": 785.2172,
+          "x": 763.9011,
+          "y": 564.8727,
           "direction": 2
         },
         "meta": {
           "updateAt": 1753270000000,
           "createAt": 1753270000000
+        }
+      },
+      "rv_recipe_rel": {
+        "id": "rv_recipe_rel",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 1,
+        "start": {
+          "tableId": "3uKeAa8r3iQiKKTwOq6V2",
+          "columnIds": [
+            "e8DI6spgcWtiNbw_oHADZ"
+          ],
+          "x": 1394.1345999999999,
+          "y": 194.0212,
+          "direction": 2
+        },
+        "end": {
+          "tableId": "XmSmRaH3uQH_cG-lZRpdh",
+          "columnIds": [
+            "JMj440px9kiCu6_P_pHR3"
+          ],
+          "x": 1471.9168,
+          "y": 403.667,
+          "direction": 1
+        },
+        "meta": {
+          "updateAt": 1770319942000,
+          "createAt": 1770319942000
         }
       }
     },

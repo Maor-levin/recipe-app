@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './contexts/AuthContext'
 import Header from './components/layout/Header'
 import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
 import Home from './pages/Home'
 import RecipeDetail from './pages/RecipeDetail'
 import CreateRecipe from './pages/CreateRecipe'
@@ -30,7 +31,7 @@ function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 flex flex-col">
         <Header />
         <Navbar />
         
@@ -49,15 +50,19 @@ function App() {
           </div>
         )}
         
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/recipes/:id" element={<RecipeDetail />} />
-          <Route path="/recipes/:id/edit" element={<CreateRecipe />} />
-          <Route path="/create" element={<CreateRecipe />} />
-          <Route path="/favorites" element={<Favorites />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/recipes/:id" element={<RecipeDetail />} />
+            <Route path="/recipes/:id/edit" element={<CreateRecipe />} />
+            <Route path="/create" element={<CreateRecipe />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+
+        <Footer />
       </div>
       </AuthProvider>
     </BrowserRouter>
