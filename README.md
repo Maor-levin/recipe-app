@@ -2,7 +2,7 @@
 
 > A full-stack recipe sharing platform with AI-powered dietary adaptations. Built with FastAPI, React 19, PostgreSQL, and Docker.
 
-**[Live Demo](#) | [Documentation](./documents/INDEX.md) | [GitHub](https://github.com/Maor-levin/recipe-app)**
+**[Live Demo](https://foodybubble.arkatony.duckdns.org/) | [Documentation](./documents/INDEX.md) | [GitHub](https://github.com/Maor-levin/recipe-app)**
 
 ---
 
