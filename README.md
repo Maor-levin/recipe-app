@@ -131,12 +131,26 @@ frontend-v2/
 
 ## Screenshots
 
-<!-- Add screenshots here when available -->
-<!-- Recommended: -->
-<!-- - Home page with recipe feed -->
-<!-- - Recipe editor with block-based interface -->
-<!-- - AI variant generation in action -->
-<!-- - Recipe detail page with comments -->
+### Home Page
+![Home Page](./documents/images/home-page.png)
+*Recipe feed with search and filtering*
+
+### Recipe Detail View
+![Recipe Detail](./documents/images/recipe-detail.png)
+*Complete recipe display with ingredients, instructions, and images*
+
+### AI-Powered Recipe Transformation
+![AI Before and After](./documents/images/before_and_after.png)
+*Generate dietary variants (vegan, gluten-free, etc.) with a single click - intelligent caching reduces repeated API calls by ~90%*
+
+### Block-Based Recipe Editor
+![Recipe Editor - Part 1](./documents/images/recipe-editor1.png)
+![Recipe Editor - Part 2](./documents/images/recipe-editor2.png)
+*Flexible JSONB-backed editor supporting multiple block types (ingredients, instructions, images, subtitles)*
+
+### Community Features
+![Comments](./documents/images/comments.png)
+*User comments and engagement on recipes*
 
 ---
 
