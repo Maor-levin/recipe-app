@@ -1,4 +1,4 @@
-# Recipe App
+# Foody Bubble
 
 > A full-stack recipe sharing platform with AI-powered dietary adaptations. Built with FastAPI, React 19, PostgreSQL, and Docker.
 
