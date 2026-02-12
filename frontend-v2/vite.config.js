@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     host: true,
     port: 5173,
-    allowedHosts: import.meta.env.VITE_ALLOWED_HOSTS?.split(',') || [],
+    allowedHosts: process.env.VITE_ALLOWED_HOSTS?.split(',') || [],
     watch: {
       usePolling: true,
     },
