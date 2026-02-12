@@ -70,7 +70,8 @@ cd recipe-app
 # Configure environment
 cp backend/env.example backend/.env
 cp postgres.env.example postgres.env
-# Edit .env files with your API keys (Cloudinary, OpenRouter)
+# Edit both .env files:
+# - backend/.env: Add API keys (Cloudinary, OpenRouter), set CORS origins, generate SECRET_KEY
 
 # Launch
 docker-compose up --build

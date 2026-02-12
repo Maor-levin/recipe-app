@@ -10,19 +10,17 @@ class Settings(BaseSettings):
     # Debug mode (enables SQL query logging)
     DEBUG: bool = False
     
-    # CORS origins
-    # Example: ["http://localhost:5173"]  # Vite dev
-    # Example: ["https://your-frontend.com", "https://www.your-frontend.com"]  # prod
-    CORS_ORIGINS_LIST: List[str] = ["http://localhost:5173", "http://arkatony.duckdns.org:5173"]
+    # CORS origins 
+    CORS_ORIGINS_LIST: List[str]
     
     # Cloudinary credentials for image uploads
     CLOUDINARY_CLOUD_NAME: str
     CLOUDINARY_API_KEY: str
     CLOUDINARY_API_SECRET: str
     
-    # OpenRouter API for AI recipe variants
+    # OpenRouter API
     OPENROUTER_API_KEY: str
-    OPENROUTER_MODEL: str = "meta-llama/llama-3.3-70b-instruct"
+    OPENROUTER_MODEL: str
 
     class Config:
         env_file = ".env"

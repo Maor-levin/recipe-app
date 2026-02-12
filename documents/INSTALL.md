@@ -37,17 +37,21 @@ DATABASE_URL=postgresql://recipe_user:recipe_password@db:5432/recipe_db
 SECRET_KEY=your_secret_key_here  # Generate with: python3 -c 'import secrets; print(secrets.token_hex(32))'
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 
-# Cloudinary (for image uploads)
+# CORS (JSON array format)
+CORS_ORIGINS_LIST=["http://localhost:5173"]
+# Production: CORS_ORIGINS_LIST=["https://yourdomain.com", "https://www.yourdomain.com"]
+
+# Cloudinary
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
 
 # OpenRouter AI
 OPENROUTER_API_KEY=your_openrouter_key
-OPENROUTER_MODEL=meta-llama/llama-3.3-70b-instruct  # Optional, defaults to this
+OPENROUTER_MODEL=meta-llama/llama-3.3-70b-instruct
 
-# CORS (optional)
-CORS_ORIGINS_LIST=http://localhost:5173,http://your-domain.com
+# Debug Mode (optional, enables SQL logging)
+# DEBUG=True
 ```
 
 ### PostgreSQL Configuration
@@ -61,6 +65,7 @@ cp postgres.env.example postgres.env
 Edit `postgres.env`:
 
 ```bash
+# PostgreSQL
 POSTGRES_USER=recipe_user
 POSTGRES_PASSWORD=recipe_password
 POSTGRES_DB=recipe_db
