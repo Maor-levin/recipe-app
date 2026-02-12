@@ -71,6 +71,26 @@ POSTGRES_PASSWORD=recipe_password
 POSTGRES_DB=recipe_db
 ```
 
+### Frontend Configuration
+
+Copy the example environment file:
+
+```bash
+cp frontend-v2/env.example frontend-v2/.env
+```
+
+Edit `frontend-v2/.env`:
+
+```bash
+# Where to send API requests (your backend server)
+VITE_API_BASE_URL=http://localhost:8000
+
+# What domain can access your dev server (leave empty for localhost only)
+# VITE_ALLOWED_HOSTS=yourdomain.com
+```
+
+For production/remote access, uncomment and set `VITE_ALLOWED_HOSTS` to your domain.
+
 ## Step 3: Generate Secret Key
 
 Generate a secure JWT secret key:

@@ -7,9 +7,9 @@ export default defineConfig({
   server: {
     host: true,
     port: 5173,
-    allowedHosts: ["arkatony.duckdns.org"],
+    allowedHosts: import.meta.env.VITE_ALLOWED_HOSTS?.split(',') || [],
     watch: {
-      usePolling: true, // For Docker
+      usePolling: true,
     },
   },
 });
